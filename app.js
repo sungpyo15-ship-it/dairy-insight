@@ -299,6 +299,8 @@ async function load() {
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
   const K = Object.fromEntries(kosis.map((d) => [d.id, d]));
+  const rules = await auto('milk_rules');
+  if (rules?.buyers) { RULES_SHARED = rules.buyers; if (!CS._rulesApplied && rulesFor(CS.common.buyer)) { CS._rulesApplied = true; applyRules(CS.common.buyer); } else renderCalc(); }
 
   INDICATORS = [
     ...fromManual(manual).filter((i) => i.group === '원유'),
@@ -642,6 +644,92 @@ const BUYERS = ['낙농진흥회', '서울우유', '부산우유', '빙그레', 
 const BACT = ['1A', '1B', '2', '3', '4'];
 let CS = loadCalc();
 
+// ---- 유업체별 정산 기준 (공용: data/auto/milk_rules.json, 내 기기: 엑셀 직접 불러오기) ----
+const RULES_LOCAL_KEY = 'dd-rules-local';
+let RULES_SHARED = {};
+let RULES_LOCAL = (() => { try { return JSON.parse(localStorage.getItem(RULES_LOCAL_KEY) || '{}'); } catch (_) { return {}; } })();
+const rulesFor = (name) => (RULES_LOCAL[name] ? { ...RULES_LOCAL[name], origin: '내 기기에 불러온 엑셀' }
+  : RULES_SHARED[name] ? { ...RULES_SHARED[name], origin: '공용 기준표' } : null);
+function applyRules(name) {
+  const r = rulesFor(name);
+  CS.common.buyer = name;
+  if (r) {
+    Object.assign(CS.common, r.common);
+    const inc = r.inc || {};
+    if (inc.fat?.length) CS.inc.fat = inc.fat;
+    if (inc.protein?.length) CS.inc.protein = inc.protein;
+    if (inc.scc?.length) CS.inc.scc = inc.scc.map(([th, v]) => [th == null ? 1e12 : th, v]);
+    if (inc.bact && Object.keys(inc.bact).length) CS.inc.bact = Object.fromEntries(BACT.map((g) => [g, inc.bact[g] ?? 0]));
+  }
+  saveCalc(); renderCalc();
+}
+
+// 엑셀(양식) → 기준 객체: collector/milk_rules.py와 같은 규칙
+function parseRulesWorkbook(wb) {
+  const need = ['단가', '유지방', '유단백', '체세포', '세균'];
+  const miss = need.filter((n) => !wb.SheetNames.includes(n));
+  if (miss.length) throw new Error(`시트 없음: ${miss.join(', ')} (양식의 시트 이름을 바꾸지 마세요)`);
+  const rowsOf = (name) => {
+    const rows = XLSX.utils.sheet_to_json(wb.Sheets[name], { header: 1, defval: null, raw: true });
+    const hi = rows.findIndex((r) => r && r.some((c) => String(c ?? '').trim() === '유업체'));
+    if (hi < 0) throw new Error(`'${name}' 시트에서 '유업체' 제목 줄을 찾지 못했습니다`);
+    const head = rows[hi].map((c) => String(c ?? '').replace(/\s+/g, ''));
+    return rows.slice(hi + 1).filter((r) => r && String(r[0] ?? '').trim())
+      .map((r) => Object.fromEntries(head.map((h, k) => [h, r[k]]).filter(([h]) => h)));
+  };
+  const col = (row, ...keys) => { for (const [h, v] of Object.entries(row)) if (keys.every((k) => h.includes(k))) return v; return null; };
+  const n = (v) => { if (v == null || String(v).trim() === '') return null; const x = parseFloat(String(v).replace(/[,%]/g, '')); if (isNaN(x)) throw new Error(`숫자가 아닌 값: ${v}`); return x; };
+  const buyers = {}, warnings = [];
+  rowsOf('단가').forEach((r) => {
+    const name = String(r['유업체']).trim();
+    try {
+      const c = { pDrink: n(col(r, '음용유가격')), pProc: n(col(r, '가공유가격')), pRest: n(col(r, '나머지')), pExcess: n(col(r, '초과분')),
+        rDrink: n(col(r, '음용유배정')), rProc: n(col(r, '가공유배정')) };
+      c.incScope = String(col(r, '인센티브') ?? '쿼터내').trim().startsWith('전체') ? 'all' : 'quota';
+      if (c.pDrink == null || c.pExcess == null || c.rDrink == null) throw new Error('음용유 가격·쿼터 초과분 가격·음용유 배정은 꼭 입력해야 합니다');
+      c.pProc ??= c.pDrink; c.pRest ??= c.pProc; c.rProc ??= 0;
+      if (c.rDrink + c.rProc > 100) throw new Error('음용유+가공유 배정이 100%를 넘습니다');
+      const d = col(r, '기준일');
+      buyers[name] = { date: d instanceof Date ? d.toISOString().slice(0, 10) : (d ? String(d) : ''), note: String(col(r, '출처') ?? ''),
+        common: c, inc: { fat: [], protein: [], scc: [], bact: {} } };
+    } catch (e) { warnings.push(`[단가] ${name}: ${e.message}`); }
+  });
+  [['유지방', 'fat'], ['유단백', 'protein'], ['체세포', 'scc']].forEach(([sh, key]) => rowsOf(sh).forEach((r) => {
+    const name = String(r['유업체']).trim(); if (!buyers[name]) return;
+    try { const v = n(col(r, '가감액')); if (v != null) buyers[name].inc[key].push([n(col(r, '기준')), v]); } catch (e) { warnings.push(`[${sh}] ${name}: ${e.message}`); }
+  }));
+  rowsOf('세균').forEach((r) => {
+    const name = String(r['유업체']).trim(); if (!buyers[name]) return;
+    const g = String(col(r, '등급') ?? '').trim().toUpperCase().replace('등급', ''), v = col(r, '가감액');
+    if (g && v != null) buyers[name].inc.bact[g] = n(v);
+  });
+  Object.values(buyers).forEach((b) => {
+    b.inc.fat = b.inc.fat.filter((x) => x[0] != null).sort((a, c) => a[0] - c[0]);
+    b.inc.protein = b.inc.protein.filter((x) => x[0] != null).sort((a, c) => a[0] - c[0]);
+    b.inc.scc.sort((a, c) => (a[0] ?? Infinity) - (c[0] ?? Infinity));
+  });
+  if (!Object.keys(buyers).length) throw new Error('읽을 수 있는 유업체 기준이 없습니다. ' + warnings.join(' / '));
+  return { buyers, warnings };
+}
+
+function loadScript(src) {
+  return new Promise((ok, fail) => { const t = document.createElement('script'); t.src = src; t.onload = ok; t.onerror = () => fail(new Error('엑셀 읽기 도구를 불러오지 못했습니다 (인터넷 연결 확인)')); document.head.appendChild(t); });
+}
+async function importRulesFile(file) {
+  const msg = $('#rulesMsg');
+  try {
+    msg.textContent = '엑셀을 읽는 중…';
+    if (!window.XLSX) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js');
+    const wb = XLSX.read(await file.arrayBuffer(), { type: 'array', cellDates: true });
+    const { buyers, warnings } = parseRulesWorkbook(wb);
+    RULES_LOCAL = { ...RULES_LOCAL, ...buyers };
+    try { localStorage.setItem(RULES_LOCAL_KEY, JSON.stringify(RULES_LOCAL)); } catch (_) { /* 무시 */ }
+    const names = Object.keys(buyers);
+    applyRules(names.includes(CS.common.buyer) ? CS.common.buyer : names[0]);
+    $('#rulesMsg').innerHTML = `불러옴: <b>${names.map(esc).join(', ')}</b> (이 기기에만 저장)${warnings.length ? `<br><span class="down">확인 필요: ${warnings.map(esc).join(' / ')}</span>` : ''}`;
+  } catch (e) { msg.innerHTML = `<span class="down">${esc(e.message)}</span>`; }
+}
+
 function loadCalc() {
   try {
     const saved = JSON.parse(localStorage.getItem(CALC_KEY) || 'null');
@@ -711,9 +799,18 @@ function renderCalc() {
   };
   $('#calcApp').innerHTML = `
   <div class="panel calc">
-    <h3 class="calc-h">① 납유 조건 <small>납유처 기준으로 고쳐 쓰세요 (기본값은 예시)</small></h3>
+    <h3 class="calc-h">① 납유 조건 <small>납유처를 고르면 등록된 정산 기준이 채워집니다</small></h3>
+    ${(() => { const r = rulesFor(c.buyer); return r
+      ? `<p class="rules-on">✔ <b>${esc(c.buyer)}</b> 기준 적용 · ${esc(r.origin)}${r.date ? ` · 기준일 ${esc(r.date)}` : ''}${r.note ? `<br><span class="muted">${esc(r.note)}</span>` : ''}</p>`
+      : `<p class="rules-off">${esc(c.buyer)} 정산 기준이 등록되지 않아 예시값을 씁니다. 아래에서 엑셀로 불러오거나 직접 고쳐 쓰세요.</p>`; })()}
+    <div class="rules-bar">
+      <label class="ghost strong file-btn">엑셀 기준표 불러오기<input type="file" accept=".xlsx,.xls" id="rulesFile" hidden></label>
+      <a class="ghost" href="templates/유대정산표_양식.xlsx" download>양식 내려받기</a>
+      ${Object.keys(RULES_LOCAL).length ? '<button type="button" class="ghost" data-act="clearrules">이 기기 기준 지우기</button>' : ''}
+    </div>
+    <p class="hint tiny" id="rulesMsg">유업체별 유대정산표를 양식에 옮겨 적어 불러오면 단가·배정 비율·인센티브가 한 번에 바뀝니다.</p>
     <div class="form">
-      <label>납유처 ${sel('common.buyer', BUYERS, c.buyer)}</label>
+      <label>납유처 ${sel('common.buyer', [...new Set([...Object.keys(RULES_LOCAL), ...Object.keys(RULES_SHARED), ...BUYERS])], c.buyer)}</label>
       <label>보유 쿼터 (L/일) ${num('common.quota', c.quota, 'step="1"')}</label>
       <label>쿼터 중 음용유 배정 (%) ${num('common.rDrink', c.rDrink, 'step="0.1"')}</label>
       <label>쿼터 중 가공유 배정 (%) ${num('common.rProc', c.rProc, 'step="0.1"')}</label>
@@ -865,7 +962,9 @@ document.addEventListener('input', (e) => {
   calc();
 });
 document.addEventListener('change', (e) => {
+  if (e.target.id === 'rulesFile' && e.target.files[0]) { importRulesFile(e.target.files[0]); return; }
   const el = e.target.closest('#calcApp select[data-path]'); if (!el) return;
+  if (el.dataset.path === 'common.buyer') { applyRules(el.value); return; }
   setPath(el.dataset.path, el.value, 'text'); calc();
 });
 document.addEventListener('click', (e) => {
@@ -875,6 +974,10 @@ document.addEventListener('click', (e) => {
   if (act === 'applyfeed') {
     const el = $('#feedSum-' + who); const cost = +el.dataset.cost, dm = +el.dataset.dm;
     if (cost > 0) { CS[who].feed = Math.round(cost); CS[who].dmi = Math.round(dm * 10) / 10; saveCalc(); renderCalc(); openDetails('사료 급여표'); }
+  }
+  if (act === 'clearrules' && confirm('이 기기에 불러온 유대 정산 기준을 지울까요? (공용 기준표는 그대로)')) {
+    RULES_LOCAL = {}; try { localStorage.removeItem(RULES_LOCAL_KEY); } catch (_) { /* 무시 */ }
+    applyRules(CS.common.buyer);
   }
   if (act === 'reset' && confirm('입력값을 모두 기본값으로 되돌릴까요?')) { CS = structuredClone(CALC_DEFAULTS); saveCalc(); renderCalc(); }
 });

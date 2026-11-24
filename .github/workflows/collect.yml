@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "23 1 * * *"   # 매일 10:23 KST
   workflow_dispatch: {}     # Actions 탭에서 수동 실행
+  push:
+    branches: [main]
+    paths: ["data/upload/**"]  # 유대 정산 기준 엑셀을 올리면 바로 반영
 
 permissions:
   contents: write
@@ -25,7 +28,7 @@ jobs:
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q poppler-utils tesseract-ocr tesseract-ocr-kor
-          pip install -q pillow
+          pip install -q pillow openpyxl
       - name: 수집 실행
         env:
           KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}

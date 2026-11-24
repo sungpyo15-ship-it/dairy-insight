@@ -533,6 +533,20 @@ def collect_krei():
 
 
 # ---------------------------------------------------------------------------
+# 8) 유업체별 유대 정산 기준 — data/upload/*.xlsx (사용자 업로드) → data/auto/milk_rules.json
+# ---------------------------------------------------------------------------
+def collect_milk_rules():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import milk_rules
+    res = milk_rules.collect(os.path.join(ROOT, "data", "upload"))
+    if res is None:
+        return None
+    for w in res["warnings"]:
+        print("  경고:", w)
+    return res
+
+
+# ---------------------------------------------------------------------------
 def save(result):
     os.makedirs(AUTO, exist_ok=True)
     result["collected_at"] = now_kst()
@@ -554,6 +568,7 @@ def main():
             ("grain_prices", "국제 곡물 가격 (세계은행)", collect_worldbank),
             ("us_hay_ppi", "미국 건초 생산자물가지수 (FRED)", collect_fred_hay),
             ("krei_dairy", "KREI 축산관측 젖소 (원유 수급·사육·산지가격)", collect_krei),
+            ("milk_rules", "유업체별 유대 정산 기준 (업로드 엑셀)", collect_milk_rules),
             ("forage_import", "조사료 수입", lambda: collect_customs("forage_import")),
             ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import"))]
     jobs += [(s[0], s[5], (lambda s=s: collect_kosis(s))) for s in KOSIS_TABLES]
@@ -572,10 +587,13 @@ def main():
             res = fn()
             if res is None:
                 entry["state"] = "no_key"
-                entry["message"] = "인증키 미설정 — 건너뜀"
+                entry["message"] = "업로드 파일 없음 — 건너뜀" if sid == "milk_rules" else "인증키 미설정 — 건너뜀"
             else:
                 save(res)
-                entry.update(state="ok", message=f"{len(res['records'])}행 수집",
+                msg = f"{len(res['records'])}행 수집"
+                if res.get("warnings"):
+                    msg += " · 경고: " + " / ".join(res["warnings"])[:250]
+                entry.update(state="ok", message=msg,
                              last_success=now_kst(), latest_period=latest_period(res))
         except Exception as e:  # 실패 시 기존 파일 보존
             failed += 1

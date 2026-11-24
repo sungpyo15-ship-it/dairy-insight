@@ -376,3 +376,9 @@ details.panel summary { cursor: pointer; font-weight: 700; font-size: 15px; }
 .inc-row b { grid-column: 1 / -1; font-size: 13px; }
 .inc-row label { display: flex; flex-direction: column; gap: 3px; font-size: 11px; color: var(--muted); }
 .hint.tiny { font-size: 11.5px; margin: 4px 0 0; }
+.rules-on, .rules-off { margin: 0 0 10px; padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.5; }
+.rules-on { background: var(--brand-soft); }
+.rules-off { background: var(--warn-bg); color: var(--warn-text); }
+.rules-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.rules-bar .ghost { text-decoration: none; display: inline-flex; align-items: center; }
+.file-btn { cursor: pointer; }
