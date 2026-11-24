@@ -151,7 +151,7 @@ def collect_mtrace():
 # 2) 한국은행 ECOS — 원/달러 환율 (월평균)
 # ---------------------------------------------------------------------------
 def collect_ecos():
-    key = os.environ.get("ECOS_API_KEY") or "sample"
+    key = (os.environ.get("ECOS_API_KEY") or "").strip() or "sample"
     months = recent_months(MONTHS_BACK)
     start, end = months[-1], months[0]
     n = 10 if key == "sample" else MONTHS_BACK + 2
@@ -189,7 +189,7 @@ KOSIS_TABLES = [
 
 
 def collect_kosis(spec):
-    key = os.environ.get("KOSIS_API_KEY")
+    key = (os.environ.get("KOSIS_API_KEY") or "").strip()
     if not key:
         return None
     sid, org, tbl, prd, cnt, title = spec
@@ -221,9 +221,11 @@ FORAGE_HS = [
 
 
 def collect_forage():
-    key = os.environ.get("DATA_GO_KR_KEY")
+    key = (os.environ.get("DATA_GO_KR_KEY") or "").strip()
     if not key:
         return None
+    if "%" in key:  # Encoding 키를 넣은 경우 Decoding 키로 되돌림 (아래에서 한 번만 인코딩)
+        key = urllib.parse.unquote(key)
     months = recent_months(36)
     recs = []
     # API는 조회기간 1년 이내 제한 → 12개월 단위로 나눠 요청
