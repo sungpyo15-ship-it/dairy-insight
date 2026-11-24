@@ -313,7 +313,10 @@ async function load() {
     ...fromManual(manual).filter((i) => i.group !== '원유'),
   ];
   BY_ID = Object.fromEntries(INDICATORS.map((i) => [i.id, i]));
-  $('#stamp').textContent = status?.checked_at ? `자료 점검 ${status.checked_at} · 매일 자동 갱신` : '';
+  // 일지 첫 줄: 오늘 날짜(한국 시간)
+  const kst = (o) => new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', ...o }).format(new Date());
+  $('#diaryDate').textContent = `${kst({ year: 'numeric', month: 'long', day: 'numeric' })} (${kst({ weekday: 'short' })})`;
+  $('#stamp').textContent = status?.checked_at ? `마지막 자료 점검 ${status.checked_at} · 매일 자동 갱신` : '';
   renderHome();
   Object.keys(SECTIONS).forEach(renderSection);
   renderTables(kosis); renderHealth(status); renderBriefs(briefs || []);

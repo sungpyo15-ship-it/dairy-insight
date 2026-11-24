@@ -271,3 +271,10 @@ details.panel summary { cursor: pointer; font-weight: 700; font-size: 15px; }
 .bd-bar i { display: block; height: 100%; background: var(--brand); border-radius: 6px; }
 .bd-bar i.neg { background: var(--up); }
 .bd-val { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 64px; text-align: right; }
+
+/* 히어로: 일지 날짜 줄 */
+.diary-date {
+  display: inline-block; margin: 0 0 10px; padding: 3px 0 5px;
+  font-size: 14px; font-weight: 700; color: var(--brand);
+  border-bottom: 2px dashed color-mix(in srgb, var(--brand) 45%, transparent);
+}
