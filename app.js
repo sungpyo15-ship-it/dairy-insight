@@ -704,5 +704,20 @@ $('#installBtn').onclick = async () => {
 };
 window.addEventListener('appinstalled', () => { $('#installBtn').hidden = true; });
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+// 새 버전 자동 반영: 서비스 워커를 매번 서버에서 확인하고, 새 버전이 화면을 넘겨받으면 한 번만 새로고침
+if ('serviceWorker' in navigator) {
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!hadController || reloaded) return; // 첫 방문(처음 설치)에는 새로고침하지 않음
+    reloaded = true;
+    location.reload();
+  });
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
+    .then((reg) => {
+      reg.update();
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update(); });
+    })
+    .catch(() => {});
+}
 load().catch((err) => { $('#homeKpis').textContent = '데이터를 불러오지 못했습니다: ' + err.message; });
