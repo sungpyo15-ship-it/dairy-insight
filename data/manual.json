@@ -1,0 +1,32 @@
+{
+  "_안내": "자동 수집이 어려운 지표를 직접 입력하는 파일입니다. 공식 발표문에서 확인한 값만 넣고, 출처(source)와 발표 링크(url)를 함께 적어 주세요. records가 비어 있으면 앱에 '미입력'으로 표시됩니다.",
+  "indicators": [
+    {
+      "id": "milk_price_drink",
+      "group": "원유",
+      "name": "원유 기본가격 (음용유)",
+      "unit": "원/L",
+      "source": "낙농진흥회 원유가격 결정 공고",
+      "url": "",
+      "records": []
+    },
+    {
+      "id": "milk_price_proc",
+      "group": "원유",
+      "name": "원유 기본가격 (가공유)",
+      "unit": "원/L",
+      "source": "낙농진흥회 원유가격 결정 공고",
+      "url": "",
+      "records": []
+    },
+    {
+      "id": "calf_bull",
+      "group": "가축",
+      "name": "젖소 수송아지 (초유떼기) 가격",
+      "unit": "천원/두",
+      "source": "농협 축산정보센터",
+      "url": "",
+      "records": []
+    }
+  ]
+}

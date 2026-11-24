@@ -1,55 +1,104 @@
-// DAIRY INSIGHT — MVP (정적 PWA). 데이터: data/market.json
+// DAIRY INSIGHT — 공식 데이터 기반 낙농 시장정보 (정적 PWA)
+// 데이터: data/status.json (수집 상태) · data/auto/*.json (자동 수집) · data/manual.json (직접 입력) · data/briefs.json
 const $ = (s) => document.querySelector(s);
-const fmt = (n, d = 0) => Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d });
-let DATA = null;
+const fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—'
+  : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d });
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const YEAR_COLORS = ['#9aa7a2', '#d08b5b', '#1f6f5c', '#3b6fb6', '#b5476a'];
+
+let INDICATORS = [];
 let currentGroup = '전체';
 
+async function getJSON(path) {
+  try {
+    const r = await fetch(path, { cache: 'no-cache' });
+    return r.ok ? await r.json() : null;
+  } catch (_) { return null; }
+}
+
+// ---- 자동 수집 데이터 → 지표 시계열 --------------------------------------
+function fromCarcass(d) {
+  if (!d) return [];
+  const pick = (breed, sex, field) => d.records
+    .filter((r) => r.breed === breed && r.sex === sex && r[field] != null)
+    .map((r) => ({ t: r.month, v: r[field] }));
+  const base = { source: d.source, url: d.source_url, cycle: '월간', collected: d.collected_at };
+  return [
+    { id: 'cow_price', group: '젖소 도체', name: '젖소 암소 경락단가', unit: '원/kg', series: pick('젖소', '암', 'price'), note: '착유 도태우(경산우) 시세의 기준', ...base },
+    { id: 'cow_count', group: '젖소 도체', name: '젖소 암소 등급판정두수', unit: '두', series: pick('젖소', '암', 'count'), note: '도태 물량 추이 — 증가 시 감산·구조조정 신호', ...base },
+    { id: 'cow_weight', group: '젖소 도체', name: '젖소 암소 평균 도체중', unit: 'kg', series: pick('젖소', '암', 'weight'), ...base },
+    { id: 'steer_price', group: '육우', name: '육우 거세우 경락단가', unit: '원/kg', series: pick('육우', '거세', 'price'), note: '젖소 수송아지 비육 수익성의 기준', ...base },
+    { id: 'steer_count', group: '육우', name: '육우 거세우 등급판정두수', unit: '두', series: pick('육우', '거세', 'count'), ...base },
+    { id: 'steer_weight', group: '육우', name: '육우 거세우 평균 도체중', unit: 'kg', series: pick('육우', '거세', 'weight'), ...base },
+  ].filter((i) => i.series.length);
+}
+
+function fromSimple(d, group, name) {
+  if (!d) return [];
+  return [{ id: d.id, group, name, unit: d.unit, source: d.source, url: d.source_url, cycle: '월간',
+    collected: d.collected_at, note: d.note, series: d.records.filter((r) => r.value != null).map((r) => ({ t: r.month, v: r.value })) }];
+}
+
+function fromForage(d) {
+  if (!d) return [];
+  const hsList = [...new Set(d.records.map((r) => r.hs))];
+  return hsList.flatMap((hs) => {
+    const rs = d.records.filter((r) => r.hs === hs);
+    const base = { group: '조사료', source: d.source, url: d.source_url, cycle: '월간', collected: d.collected_at };
+    return [
+      { id: 'forage_t_' + hs, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base },
+      { id: 'forage_p_' + hs, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base },
+    ].filter((i) => i.series.length);
+  });
+}
+
+function fromManual(m) {
+  if (!m) return [];
+  return m.indicators.map((i) => ({ ...i, cycle: '수동 입력', manual: true,
+    series: (i.records || []).filter((r) => r.value != null).map((r) => ({ t: r.date || r.month, v: r.value })) }));
+}
+
 async function load() {
-  const res = await fetch('data/market.json', { cache: 'no-cache' });
-  DATA = await res.json();
-  $('#updated').textContent = `기준일 ${DATA.meta.updatedAt}`;
-  if (DATA.meta.isSample) {
-    $('#notice').textContent = '⚠ ' + DATA.meta.notice;
-    $('#notice').hidden = false;
-  }
-  renderChips();
-  renderCards();
-  renderBriefs();
+  const status = await getJSON('data/status.json');
+  // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
+  const has = (id) => !!status?.datasets?.[id]?.last_success;
+  const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
+  const [carcass, usdkrw, forage, manual, briefs] = await Promise.all([
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
+  ]);
+  const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
+  const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
+
+  INDICATORS = [
+    ...fromManual(manual).filter((i) => i.group === '원유'),
+    ...fromCarcass(carcass),
+    ...fromForage(forage),
+    ...fromSimple(usdkrw, '거시', '원/달러 환율'),
+    ...fromManual(manual).filter((i) => i.group !== '원유'),
+  ];
+  $('#updated').textContent = status?.checked_at ? `수집 ${status.checked_at.replace(' KST', '')}` : '';
+  renderChips(); renderCards(); renderTables(kosis); renderHealth(status); renderBriefs(briefs || []);
   calc();
 }
 
-function change(h) {
-  const last = h[h.length - 1], prev = h[h.length - 2];
-  const diff = last - prev;
-  const pct = prev ? (diff / prev) * 100 : 0;
-  const cls = diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat';
-  const arrow = diff > 0 ? '▲' : diff < 0 ? '▼' : '–';
-  return { last, diff, pct, cls, arrow };
+// ---- 시세 카드 -------------------------------------------------------------
+function change(s) {
+  if (s.length < 2) return null;
+  const last = s[s.length - 1].v, prev = s[s.length - 2].v, diff = last - prev;
+  return { prevT: s[s.length - 2].t, diff, pct: prev ? diff / prev * 100 : 0, cls: diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat', arrow: diff > 0 ? '▲' : diff < 0 ? '▼' : '–' };
 }
 
-function sparkline(h) {
+function sparkline(s) {
+  const h = s.map((p) => p.v).slice(-24);
+  if (h.length < 2) return '';
   const w = 200, ht = 36, min = Math.min(...h), max = Math.max(...h), r = max - min || 1;
   const pts = h.map((v, i) => `${(i / (h.length - 1)) * w},${ht - 3 - ((v - min) / r) * (ht - 6)}`).join(' ');
   return `<svg viewBox="0 0 ${w} ${ht}" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="var(--brand)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`;
 }
 
-function lineChart(ind) {
-  const h = ind.history, L = ind.labels, w = 640, ht = 240, p = { l: 78, r: 14, t: 14, b: 36 };
-  const min = Math.min(...h), max = Math.max(...h), pad = (max - min) * 0.1 || 1;
-  const lo = min - pad, hi = max + pad;
-  const x = (i) => p.l + (i / (h.length - 1)) * (w - p.l - p.r);
-  const y = (v) => p.t + (1 - (v - lo) / (hi - lo)) * (ht - p.t - p.b);
-  const ticks = [lo, (lo + hi) / 2, hi];
-  const grid = ticks.map((t) => `<line x1="${p.l}" x2="${w - p.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${p.l - 6}" y="${y(t) + 4}" text-anchor="end">${fmt(t)}</text>`).join('');
-  const xl = L.map((l, i) => (i % 2 === 0 || i === L.length - 1) ? `<text x="${x(i)}" y="${ht - 8}" text-anchor="middle">${l}</text>` : '').join('');
-  const pts = h.map((v, i) => `${x(i)},${y(v)}`).join(' ');
-  const dots = h.map((v, i) => `<circle cx="${x(i)}" cy="${y(v)}" r="3" fill="var(--brand)"><title>${L[i]}: ${fmt(v)} ${ind.unit}</title></circle>`).join('');
-  return `<svg viewBox="0 0 ${w} ${ht}">${grid}${xl}<polyline points="${pts}" fill="none" stroke="var(--brand)" stroke-width="2.5"/>${dots}</svg>`;
-}
-
 function renderChips() {
-  const groups = ['전체', ...new Set(DATA.indicators.map((i) => i.group))];
-  $('#groupChips').innerHTML = groups.map((g) => `<button class="${g === currentGroup ? 'active' : ''}" data-g="${g}">${g}</button>`).join('');
+  const groups = ['전체', ...new Set(INDICATORS.map((i) => i.group))];
+  $('#groupChips').innerHTML = groups.map((g) => `<button class="${g === currentGroup ? 'active' : ''}" data-g="${esc(g)}">${esc(g)}</button>`).join('');
   $('#groupChips').onclick = (e) => {
     const g = e.target.dataset.g; if (!g) return;
     currentGroup = g; renderChips(); renderCards();
@@ -57,36 +106,102 @@ function renderChips() {
 }
 
 function renderCards() {
-  const list = DATA.indicators.filter((i) => currentGroup === '전체' || i.group === currentGroup);
+  const list = INDICATORS.filter((i) => currentGroup === '전체' || i.group === currentGroup);
   $('#cards').innerHTML = list.map((i) => {
-    const c = change(i.history);
-    return `<button class="card" data-id="${i.id}">
-      <div class="g">${i.group} · ${i.cycle}</div>
-      <div class="n">${i.name}</div>
-      <div><span class="v">${fmt(c.last)}</span><span class="u">${i.unit}</span></div>
-      <div class="d ${c.cls}">${c.arrow} ${fmt(Math.abs(c.diff))} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</div>
-      ${sparkline(i.history)}
+    if (!i.series.length) {
+      return `<div class="card empty"><div class="g">${esc(i.group)} · ${esc(i.cycle)}</div><div class="n">${esc(i.name)}</div>
+        <div class="v muted">미입력</div><div class="d flat">data/manual.json에 공식 발표값 입력 필요</div></div>`;
+    }
+    const last = i.series[i.series.length - 1], c = change(i.series);
+    return `<button class="card" data-id="${esc(i.id)}">
+      <div class="g">${esc(i.group)} · ${esc(last.t)}</div>
+      <div class="n">${esc(i.name)}</div>
+      <div><span class="v">${fmt(last.v, i.unit === '원' ? 1 : 0)}</span><span class="u">${esc(i.unit)}</span></div>
+      ${c ? `<div class="d ${c.cls}">${esc(c.prevT)} 대비 ${c.arrow} ${fmt(Math.abs(c.diff), i.unit === '원' ? 1 : 0)} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</div>` : '<div class="d flat">비교 자료 없음</div>'}
+      ${sparkline(i.series)}
     </button>`;
-  }).join('');
+  }).join('') || '<p class="hint">표시할 데이터가 없습니다. 수집 상태를 확인하세요.</p>';
   $('#cards').onclick = (e) => {
-    const card = e.target.closest('.card'); if (!card) return;
-    const ind = DATA.indicators.find((i) => i.id === card.dataset.id);
-    $('#detailTitle').textContent = `${ind.name} (${ind.unit})`;
-    $('#detailChart').innerHTML = lineChart(ind);
-    $('#detailSrc').textContent = `출처: ${ind.source} · 갱신주기: ${ind.cycle}`;
-    $('#detail').hidden = false;
-    $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const card = e.target.closest('button.card'); if (!card) return;
+    showDetail(INDICATORS.find((i) => i.id === card.dataset.id));
   };
+}
+
+// 연도별 겹쳐보기: 가로축 1~12월, 연도마다 다른 색
+function yearChart(ind) {
+  const byYear = {};
+  ind.series.forEach((p) => {
+    const [y, m] = String(p.t).split('-');
+    if (!m) return;
+    (byYear[y] = byYear[y] || [])[+m - 1] = p.v;
+  });
+  const years = Object.keys(byYear).sort().slice(-YEAR_COLORS.length);
+  const vals = years.flatMap((y) => byYear[y].filter((v) => v != null));
+  if (!vals.length) return '';
+  const w = 640, ht = 260, p = { l: 80, r: 14, t: 14, b: 36 };
+  const min = Math.min(...vals), max = Math.max(...vals), pad = (max - min) * 0.1 || Math.abs(max) * 0.05 || 1;
+  const lo = min - pad, hi = max + pad;
+  const x = (i) => p.l + (i / 11) * (w - p.l - p.r);
+  const y = (v) => p.t + (1 - (v - lo) / (hi - lo)) * (ht - p.t - p.b);
+  const ticks = [lo, (lo + hi) / 2, hi];
+  let svg = ticks.map((t) => `<line x1="${p.l}" x2="${w - p.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${p.l - 8}" y="${y(t) + 6}" text-anchor="end">${fmt(t)}</text>`).join('');
+  svg += Array.from({ length: 12 }, (_, i) => `<text x="${x(i)}" y="${ht - 8}" text-anchor="middle">${i + 1}</text>`).join('');
+  const colorOf = (yi) => YEAR_COLORS[YEAR_COLORS.length - years.length + yi];
+  years.forEach((yr, yi) => {
+    const col = colorOf(yi), arr = byYear[yr];
+    let seg = [];
+    const flush = () => { if (seg.length > 1) svg += `<polyline points="${seg.join(' ')}" fill="none" stroke="${col}" stroke-width="${yi === years.length - 1 ? 3 : 2}"/>`; seg = []; };
+    for (let i = 0; i < 12; i++) {
+      if (arr[i] == null) { flush(); continue; } // 미발표 월은 빈칸
+      seg.push(`${x(i)},${y(arr[i])}`);
+      svg += `<circle cx="${x(i)}" cy="${y(arr[i])}" r="3.5" fill="${col}"><title>${yr}-${String(i + 1).padStart(2, '0')}: ${fmt(arr[i], 1)} ${esc(ind.unit)}</title></circle>`;
+    }
+    flush();
+  });
+  $('#detailLegend').innerHTML = years.map((yr, yi) => `<span><i style="background:${colorOf(yi)}"></i>${yr}년</span>`).join('');
+  return `<svg viewBox="0 0 ${w} ${ht}">${svg}</svg>`;
+}
+
+function showDetail(ind) {
+  $('#detailTitle').textContent = `${ind.name} (${ind.unit})`;
+  $('#detailChart').innerHTML = yearChart(ind);
+  const link = ind.url ? ` · <a href="${esc(ind.url)}" target="_blank" rel="noopener">원자료</a>` : '';
+  $('#detailSrc').innerHTML = `${ind.note ? esc(ind.note) + '<br>' : ''}출처: ${esc(ind.source)}${link} · 미발표 월은 빈칸 · 임의 보정 없음`;
+  $('#detail').hidden = false;
+  $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 $('#detailClose').onclick = () => { $('#detail').hidden = true; };
 
-function renderBriefs() {
-  $('#briefs').innerHTML = DATA.briefs.map((b) => `<article class="brief">
-    <div class="meta"><span class="tag">${b.tag}</span>${b.date}</div>
-    <h3>${b.title}</h3><p>${b.body}</p></article>`).join('');
+// KOSIS 통계표: 분류 구성이 표마다 달라 최신 시점 원표를 그대로 보여줌
+function renderTables(list) {
+  $('#tables').innerHTML = list.map((d) => {
+    const last = d.records.reduce((a, r) => (r.period > a ? r.period : a), '');
+    const rows = d.records.filter((r) => r.period === last).slice(0, 60);
+    return `<details class="panel"><summary>${esc(d.title)} <span class="muted">(${esc(last)})</span></summary>
+      <div class="tbl"><table><thead><tr><th>구분</th><th>항목</th><th>값</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc([r.c1, r.c2, r.c3].filter(Boolean).join(' · '))}</td><td>${esc(r.item)}</td><td class="num">${fmt(r.value, 1)} ${esc(r.unit || '')}</td></tr>`).join('')}
+      </tbody></table></div><p class="src">출처: <a href="${esc(d.source_url)}" target="_blank" rel="noopener">${esc(d.source)}</a></p></details>`;
+  }).join('');
 }
 
-// 계산기
+function renderHealth(status) {
+  const map = { ok: ['정상', 'ok'], no_key: ['인증키 필요', 'warn'], error: ['오류(기존 자료 유지)', 'err'] };
+  const ds = status?.datasets || {};
+  $('#health').innerHTML = `<p class="hint">마지막 점검: ${esc(status?.checked_at || '—')}</p><ul class="health-list">` +
+    Object.values(ds).map((e) => {
+      const [label, cls] = map[e.state] || ['—', 'warn'];
+      return `<li><span class="badge ${cls}">${label}</span> ${esc(e.label)}<br><small>최신 ${esc(e.latest_period || '—')} · ${esc(e.message || '')}</small></li>`;
+    }).join('') + '</ul>';
+}
+
+function renderBriefs(briefs) {
+  $('#briefs').innerHTML = briefs.length ? briefs.map((b) => `<article class="brief">
+    <div class="meta"><span class="tag">${esc(b.tag)}</span>${esc(b.date)}</div>
+    <h3>${esc(b.title)}</h3><p>${esc(b.body)}</p></article>`).join('')
+    : '<div class="panel"><h2>주간 시황</h2><p class="hint">아직 발행된 시황이 없습니다. data/briefs.json에 작성하면 여기에 표시됩니다.</p></div>';
+}
+
+// ---- 계산기 ---------------------------------------------------------------
 const v = (id) => parseFloat($('#' + id).value) || 0;
 function calc() {
   const heads = v('c_heads'), yieldKg = v('c_yield');
@@ -112,7 +227,7 @@ function calc() {
 }
 document.querySelectorAll('#view-calc input').forEach((el) => el.addEventListener('input', calc));
 
-// 상담 신청 (MVP: 서버 미연동 — 운영 시 API/구글폼/CRM 연결)
+// ---- 상담 신청 (서버 미연동 — 운영 시 구글폼/CRM 연결) --------------------
 $('#leadForm').onsubmit = (e) => {
   e.preventDefault();
   const d = Object.fromEntries(new FormData(e.target));
@@ -126,7 +241,7 @@ $('#leadForm').onsubmit = (e) => {
   e.target.reset();
 };
 
-// 탭
+// ---- 탭 --------------------------------------------------------------------
 document.querySelector('.tabs').onclick = (e) => {
   const b = e.target.closest('button'); if (!b) return;
   document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('active', x === b));
