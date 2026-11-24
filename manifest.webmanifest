@@ -1,9 +1,24 @@
 {
   "name": "DAIRY INSIGHT 낙농 인사이트",
   "short_name": "낙농인사이트",
+  "description": "공식 통계로 보는 낙농 시장 — 원유 수급, 젖소 사육·시세, 사료·조사료 가격",
+  "id": "./",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f7f6",
+  "orientation": "portrait",
+  "background_color": "#f4f2ec",
   "theme_color": "#1f6f5c",
-  "lang": "ko"
+  "lang": "ko",
+  "categories": ["business", "news"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "원유·유제품", "url": "./#milk" },
+    { "name": "젖소·가축", "url": "./#cattle" },
+    { "name": "사료·조사료", "url": "./#feed" }
+  ]
 }

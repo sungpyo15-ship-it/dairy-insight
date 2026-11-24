@@ -7,7 +7,6 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const YEAR_COLORS = ['#9aa7a2', '#d08b5b', '#1f6f5c', '#3b6fb6', '#b5476a'];
 
 let INDICATORS = [];
-let currentGroup = '전체';
 
 async function getJSON(path) {
   try {
@@ -82,7 +81,7 @@ function subSeries(rs, base, rate = {}) {
   if (list.length < 2) return [];
   return list.flatMap(([code, c]) => {
     const label = `${rs[0].name.split(' (')[0]} › ${c.name || code}`;
-    const b = { ...base, source: `${base.source.split(' · HS')[0]} · HSK ${code}`, note: `세부품목 ${code}${c.name ? ' · ' + c.name : ''}` };
+    const b = { ...base, sub: true, source: `${base.source.split(' · HS')[0]} · HSK ${code}`, note: `세부품목 ${code}${c.name ? ' · ' + c.name : ''}` };
     return [
       { ...b, id: `sub_t_${code}`, name: `${label} 수입량`, unit: '톤', series: c.ton },
       { ...b, id: `sub_p_${code}`, name: `${label} 수입단가`, unit: 'USD/톤', series: c.price },
@@ -168,13 +167,44 @@ function fromManual(m) {
     series: (i.records || []).filter((r) => r.value != null).map((r) => ({ t: r.date || r.month, v: r.value })) }));
 }
 
+// ---- 화면 구성: 섹션 → 소제목(목차) → 지표 카드 -------------------------------
+// 지표의 group을 소제목에 배치한다. 목록에 없는 group은 자동으로 '기타'에 붙는다.
+const SECTIONS = {
+  milk: { title: '원유·유제품', lead: '원유 생산·소비·재고와 유제품 수입 동향', subs: [
+    { id: 'm-supply', title: '원유 수급', desc: '국내 생산·소비·재고 (원유 환산, 분기) · 원유 기본가격', groups: ['원유 수급', '원유'] },
+    { id: 'm-milk', title: '우유·멸균유 수입', desc: '관세청 월별 수입량·톤당 수입단가', groups: ['우유·멸균유'] },
+    { id: 'm-powder', title: '분유 수입', desc: '탈지·전지·가당·조제분유', groups: ['분유'] },
+    { id: 'm-whey', title: '유청·대용유 원료 수입', desc: '유장·유장분말 (사료용 포함)', groups: ['유청·대용유 원료'] },
+    { id: 'm-butter', title: '버터·치즈 수입', desc: '버터, 모차렐라 등 신선치즈, 체다·고다 등', groups: ['버터·치즈'] },
+  ] },
+  cattle: { title: '젖소·가축', lead: '젖소 사육 규모, 도축, 도체 시세와 산지가격', subs: [
+    { id: 'c-herd', title: '젖소 사육·도축', desc: '사육 마릿수·착유우·송아지 생산(분기), 도축 마릿수(월)', groups: ['젖소 사육'] },
+    { id: 'c-price', title: '젖소 산지가격', desc: '분유떼기 암송아지·초임만삭우·초산우·노폐우 (분기 평균)', groups: ['젖소 산지가격', '가축'] },
+    { id: 'c-carcass', title: '젖소 도체 시세', desc: '암소 경락단가·판정두수·도체중 (월)', groups: ['젖소 도체'] },
+    { id: 'c-beef', title: '육우', desc: '육우 거세우 경락단가·판정두수·도체중 (월)', groups: ['육우'] },
+  ] },
+  feed: { title: '사료·조사료', lead: '배합사료 생산, 조사료 수입원가, 국제 곡물과 환율', subs: [
+    { id: 'f-mixed', title: '배합사료 생산', desc: '젖소용·착유우용·송아지용 (분기)', groups: ['배합사료'] },
+    { id: 'f-forage', title: '조사료 수입', desc: '건초류·곡물 짚·알팔파 펠릿 수입량·단가·원화 수입원가', groups: ['조사료'] },
+    { id: 'f-ushay', title: '해외 조사료', desc: '미국 알팔파·기타 건초 생산자물가지수', groups: ['해외 조사료'] },
+    { id: 'f-grain', title: '국제 곡물', desc: '옥수수·대두박·대두·밀 국제가격과 원화 환산', groups: ['국제 곡물'] },
+    { id: 'f-fx', title: '환율', desc: '원/달러 월평균', groups: ['거시'] },
+  ] },
+};
+// 홈 '핵심 지표' (있는 것만 순서대로 표시)
+const HOME_KPIS = ['krei_prod', 'krei_milking', 'cow_price', 'krei_price_cull_cow', 'krei_feed_total',
+  'imp_k_121490', 'grain_krw_Maize', 'usdkrw'];
+
+let BY_ID = {};
+
 async function load() {
   const status = await getJSON('data/status.json');
   // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
   const has = (id) => !!status?.datasets?.[id]?.last_success;
   const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
   const [carcass, usdkrw, forage, dairyImp, grain, usHay, krei, manual, briefs] = await Promise.all([
-    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'), auto('us_hay_ppi'), auto('krei_dairy'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'),
+    auto('us_hay_ppi'), auto('krei_dairy'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
@@ -190,19 +220,24 @@ async function load() {
     ...fromSimple(usdkrw, '거시', '원/달러 환율'),
     ...fromManual(manual).filter((i) => i.group !== '원유'),
   ];
-  $('#updated').textContent = status?.checked_at ? `수집 ${status.checked_at.replace(' KST', '')}` : '';
-  renderChips(); renderCards(); renderTables(kosis); renderHealth(status); renderBriefs(briefs || []);
+  BY_ID = Object.fromEntries(INDICATORS.map((i) => [i.id, i]));
+  $('#stamp').textContent = status?.checked_at ? `자료 점검 ${status.checked_at} · 매일 자동 갱신` : '';
+  renderHome();
+  Object.keys(SECTIONS).forEach(renderSection);
+  renderTables(kosis); renderHealth(status); renderBriefs(briefs || []);
   calc();
+  routeFromHash();
 }
 
-// ---- 시세 카드 -------------------------------------------------------------
-// 분기 자료는 'YYYY-MM'(분기말)을 'YYYY년 N분기'로 표시
+// ---- 카드 -----------------------------------------------------------------
 const tLabel = (i, t) => (i.cycle === '분기' ? `${t.slice(0, 4)}년 ${Math.ceil(+t.slice(5, 7) / 3)}분기` : t);
+const digits = (i, v) => (['원', '원/kg'].includes(i.unit) && Math.abs(v) < 10000 ? 1 : 0);
 
 function change(s) {
   if (s.length < 2) return null;
   const last = s[s.length - 1].v, prev = s[s.length - 2].v, diff = last - prev;
-  return { prevT: s[s.length - 2].t, diff, pct: prev ? diff / prev * 100 : 0, cls: diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat', arrow: diff > 0 ? '▲' : diff < 0 ? '▼' : '–' };
+  return { prevT: s[s.length - 2].t, diff, pct: prev ? diff / prev * 100 : 0,
+    cls: diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat', arrow: diff > 0 ? '▲' : diff < 0 ? '▼' : '–' };
 }
 
 function sparkline(s) {
@@ -210,41 +245,96 @@ function sparkline(s) {
   if (h.length < 2) return '';
   const w = 200, ht = 36, min = Math.min(...h), max = Math.max(...h), r = max - min || 1;
   const pts = h.map((v, i) => `${(i / (h.length - 1)) * w},${ht - 3 - ((v - min) / r) * (ht - 6)}`).join(' ');
-  return `<svg viewBox="0 0 ${w} ${ht}" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="var(--brand)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`;
+  return `<svg viewBox="0 0 ${w} ${ht}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="var(--brand)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`;
 }
 
-function renderChips() {
-  const groups = ['전체', ...new Set(INDICATORS.map((i) => i.group))];
-  $('#groupChips').innerHTML = groups.map((g) => `<button class="${g === currentGroup ? 'active' : ''}" data-g="${esc(g)}">${esc(g)}</button>`).join('');
-  $('#groupChips').onclick = (e) => {
-    const g = e.target.dataset.g; if (!g) return;
-    currentGroup = g; renderChips(); renderCards();
-  };
+function card(i, { showGroup = false } = {}) {
+  if (!i.series.length) {
+    return `<div class="card empty"><div class="g">${esc(showGroup ? i.group + ' · ' : '')}${esc(i.cycle)}</div><div class="n">${esc(i.name)}</div>
+      <div class="v muted">미입력</div><div class="d flat">공식 발표값 입력 예정</div></div>`;
+  }
+  const last = i.series[i.series.length - 1], c = change(i.series);
+  return `<button class="card" data-id="${esc(i.id)}">
+    <div class="g">${esc(showGroup ? i.group + ' · ' : '')}${esc(tLabel(i, last.t))}</div>
+    <div class="n">${esc(i.name)}</div>
+    <div class="vrow"><span class="v">${fmt(last.v, digits(i, last.v))}</span><span class="u">${esc(i.unit)}</span></div>
+    ${c ? `<div class="d ${c.cls}">${c.arrow} ${fmt(Math.abs(c.diff), digits(i, c.diff))} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%) <span class="muted">· ${esc(tLabel(i, c.prevT))} 대비</span></div>` : '<div class="d flat">비교 자료 없음</div>'}
+    ${sparkline(i.series)}
+  </button>`;
 }
 
-function renderCards() {
-  const list = INDICATORS.filter((i) => currentGroup === '전체' || i.group === currentGroup);
-  $('#cards').innerHTML = list.map((i) => {
-    if (!i.series.length) {
-      return `<div class="card empty"><div class="g">${esc(i.group)} · ${esc(i.cycle)}</div><div class="n">${esc(i.name)}</div>
-        <div class="v muted">미입력</div><div class="d flat">data/manual.json에 공식 발표값 입력 필요</div></div>`;
-    }
-    const last = i.series[i.series.length - 1], c = change(i.series);
-    return `<button class="card" data-id="${esc(i.id)}">
-      <div class="g">${esc(i.group)} · ${esc(tLabel(i, last.t))}</div>
-      <div class="n">${esc(i.name)}</div>
-      <div><span class="v">${fmt(last.v, ['원', '원/kg'].includes(i.unit) && last.v < 10000 ? 1 : 0)}</span><span class="u">${esc(i.unit)}</span></div>
-      ${c ? `<div class="d ${c.cls}">${esc(tLabel(i, c.prevT))} 대비 ${c.arrow} ${fmt(Math.abs(c.diff), i.unit === '원' ? 1 : 0)} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</div>` : '<div class="d flat">비교 자료 없음</div>'}
-      ${sparkline(i.series)}
-    </button>`;
-  }).join('') || '<p class="hint">표시할 데이터가 없습니다. 수집 상태를 확인하세요.</p>';
-  $('#cards').onclick = (e) => {
-    const card = e.target.closest('button.card'); if (!card) return;
-    showDetail(INDICATORS.find((i) => i.id === card.dataset.id));
-  };
+// ---- 홈 -------------------------------------------------------------------
+function renderHome() {
+  const kpis = HOME_KPIS.map((id) => BY_ID[id]).filter((i) => i && i.series.length);
+  $('#homeKpis').innerHTML = kpis.map((i) => card(i, { showGroup: true })).join('') || '<p class="hint">자료를 불러오는 중입니다.</p>';
+  $('#homeToc').innerHTML = Object.entries(SECTIONS).map(([key, s]) => {
+    const n = INDICATORS.filter((i) => s.subs.some((sb) => sb.groups.includes(i.group)) && !i.sub && i.series.length).length;
+    return `<a class="toc-card" href="#${key}">
+      <span class="toc-title">${esc(s.title)}</span>
+      <span class="toc-lead">${esc(s.lead)}</span>
+      <span class="toc-items">${s.subs.map((sb) => esc(sb.title)).join(' · ')}</span>
+      <span class="toc-count">지표 ${n}개 →</span></a>`;
+  }).join('') + `<a class="toc-card alt" href="#more">
+      <span class="toc-title">더보기</span>
+      <span class="toc-lead">유대·IOFC 계산기, 주간 시황, 상담 신청, 통계표</span>
+      <span class="toc-count">열기 →</span></a>`;
 }
 
-// 연도별 겹쳐보기: 가로축 1~12월, 연도마다 다른 색
+// ---- 섹션 (목차 + 소제목별 카드) --------------------------------------------
+function renderSection(key) {
+  const s = SECTIONS[key];
+  const known = new Set(Object.values(SECTIONS).flatMap((x) => x.subs.flatMap((sb) => sb.groups)));
+  const subs = s.subs.map((sb) => ({ ...sb, items: INDICATORS.filter((i) => sb.groups.includes(i.group)) }))
+    .filter((sb) => sb.items.length);
+  if (key === 'feed') { // 어느 소제목에도 속하지 않은 지표는 마지막 섹션 '기타'로
+    const rest = INDICATORS.filter((i) => !known.has(i.group));
+    if (rest.length) subs.push({ id: 'f-etc', title: '기타', desc: '', items: rest });
+  }
+  const html = `<div class="view-head">
+      <h1>${esc(s.title)}</h1><p class="lead">${esc(s.lead)}</p>
+    </div>
+    <nav class="toc" aria-label="${esc(s.title)} 목차">${subs.map((sb) => `<a href="#${sb.id}">${esc(sb.title)}</a>`).join('')}</nav>` + subs.map((sb) => {
+      const main = sb.items.filter((i) => !i.sub && i.series.length), detail = sb.items.filter((i) => i.sub && i.series.length);
+      const empty = sb.items.filter((i) => !i.series.length);
+      return `<section class="block" id="${sb.id}">
+        <h2 class="sec-title">${esc(sb.title)}</h2>${sb.desc ? `<p class="sec-desc">${esc(sb.desc)}</p>` : ''}
+        <div class="cards">${main.map((i) => card(i)).join('')}</div>
+        ${empty.length ? `<p class="pending">입력 예정: ${empty.map((i) => esc(i.name)).join(', ')} <span class="muted">(공식 발표값 확인 후 반영)</span></p>` : ''}
+        ${detail.length ? `<details class="more-items"><summary>세부품목 ${detail.length}개 보기</summary>
+          <div class="cards">${detail.map((i) => card(i)).join('')}</div></details>` : ''}
+      </section>`;
+    }).join('') || '<p class="hint">아직 수집된 자료가 없습니다.</p>';
+  $('#view-' + key).innerHTML = html;
+  watchToc($('#view-' + key));
+}
+
+// 스크롤 위치에 맞춰 목차 칩 강조 + 칩 줄을 가로로 따라 이동
+const tocObservers = [];
+function watchToc(view) {
+  const links = [...view.querySelectorAll('.toc a')];
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.filter((en) => en.isIntersecting).forEach((en) => {
+      links.forEach((a) => {
+        const on = a.getAttribute('href') === '#' + en.target.id;
+        a.classList.toggle('on', on);
+        if (on) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+      });
+    });
+  }, { rootMargin: '-120px 0px -60% 0px' });
+  view.querySelectorAll('section.block').forEach((sec) => io.observe(sec));
+  tocObservers.push(io);
+}
+
+// 카드 클릭 → 상세 시트 (모든 화면 공통)
+document.addEventListener('click', (e) => {
+  const c = e.target.closest('button.card');
+  if (c && BY_ID[c.dataset.id]) openSheet(BY_ID[c.dataset.id]);
+  const close = e.target.closest('[data-close]');
+  if (close) hideSheet(close.dataset.close);
+});
+
+// ---- 상세 시트: 연도별 겹쳐보기 차트 + 최근 값 표 -----------------------------
 function yearChart(ind) {
   const byYear = {};
   ind.series.forEach((p) => {
@@ -255,56 +345,82 @@ function yearChart(ind) {
   const years = Object.keys(byYear).sort().slice(-YEAR_COLORS.length);
   const vals = years.flatMap((y) => byYear[y].filter((v) => v != null));
   if (!vals.length) return '';
-  const w = 640, ht = 260, p = { l: 80, r: 14, t: 14, b: 36 };
+  const w = 640, ht = 300, p = { l: 86, r: 16, t: 16, b: 40 };
   const min = Math.min(...vals), max = Math.max(...vals), pad = (max - min) * 0.1 || Math.abs(max) * 0.05 || 1;
   const lo = min - pad, hi = max + pad;
   const x = (i) => p.l + (i / 11) * (w - p.l - p.r);
   const y = (v) => p.t + (1 - (v - lo) / (hi - lo)) * (ht - p.t - p.b);
-  const ticks = [lo, (lo + hi) / 2, hi];
-  let svg = ticks.map((t) => `<line x1="${p.l}" x2="${w - p.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${p.l - 8}" y="${y(t) + 6}" text-anchor="end">${fmt(t)}</text>`).join('');
-  svg += Array.from({ length: 12 }, (_, i) => `<text x="${x(i)}" y="${ht - 8}" text-anchor="middle">${i + 1}</text>`).join('');
+  const ticks = [lo, lo + (hi - lo) / 3, lo + (hi - lo) * 2 / 3, hi];
+  let svg = ticks.map((t) => `<line x1="${p.l}" x2="${w - p.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${p.l - 10}" y="${y(t) + 7}" text-anchor="end">${fmt(t, Math.abs(hi - lo) < 10 ? 1 : 0)}</text>`).join('');
+  svg += Array.from({ length: 12 }, (_, i) => `<text x="${x(i)}" y="${ht - 10}" text-anchor="middle">${i + 1}월</text>`).join('');
   const colorOf = (yi) => YEAR_COLORS[YEAR_COLORS.length - years.length + yi];
   years.forEach((yr, yi) => {
-    const col = colorOf(yi), arr = byYear[yr];
+    const col = colorOf(yi), arr = byYear[yr], latest = yi === years.length - 1;
     let seg = [];
-    const flush = () => { if (seg.length > 1) svg += `<polyline points="${seg.join(' ')}" fill="none" stroke="${col}" stroke-width="${yi === years.length - 1 ? 3 : 2}"/>`; seg = []; };
+    const flush = () => { if (seg.length > 1) svg += `<polyline points="${seg.join(' ')}" fill="none" stroke="${col}" stroke-width="${latest ? 4 : 2.5}" stroke-linejoin="round"/>`; seg = []; };
     for (let i = 0; i < 12; i++) {
       if (arr[i] == null) { if (ind.cycle !== '분기') flush(); continue; } // 미발표 월은 빈칸 (분기 자료는 분기말끼리 연결)
       seg.push(`${x(i)},${y(arr[i])}`);
-      svg += `<circle cx="${x(i)}" cy="${y(arr[i])}" r="3.5" fill="${col}"><title>${yr}-${String(i + 1).padStart(2, '0')}: ${fmt(arr[i], 1)} ${esc(ind.unit)}</title></circle>`;
     }
     flush();
+    for (let i = 0; i < 12; i++) if (arr[i] != null) {
+      svg += `<circle cx="${x(i)}" cy="${y(arr[i])}" r="${latest ? 6 : 4}" fill="${col}" stroke="var(--card)" stroke-width="2"><title>${yr}-${String(i + 1).padStart(2, '0')}: ${fmt(arr[i], 1)} ${esc(ind.unit)}</title></circle>`;
+    }
   });
-  $('#detailLegend').innerHTML = years.map((yr, yi) => `<span><i style="background:${colorOf(yi)}"></i>${yr}년</span>`).join('');
-  return `<svg viewBox="0 0 ${w} ${ht}">${svg}</svg>`;
+  $('#sheetLegend').innerHTML = years.map((yr, yi) => `<span><i style="background:${colorOf(yi)}"></i>${yr}년</span>`).join('');
+  return `<svg viewBox="0 0 ${w} ${ht}" role="img" aria-label="${esc(ind.name)} 연도별 추이">${svg}</svg>`;
 }
 
-function showDetail(ind) {
-  $('#detailTitle').textContent = `${ind.name} (${ind.unit})`;
-  $('#detailChart').innerHTML = yearChart(ind);
-  const link = ind.url ? ` · <a href="${esc(ind.url)}" target="_blank" rel="noopener">원자료</a>` : '';
-  $('#detailSrc').innerHTML = `${ind.note ? esc(ind.note) + '<br>' : ''}출처: ${esc(ind.source)}${link} · 미발표 월은 빈칸 · 임의 보정 없음`;
-  $('#detail').hidden = false;
-  $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+function openSheet(ind) {
+  const last = ind.series[ind.series.length - 1], c = change(ind.series);
+  $('#sheetGroup').textContent = `${ind.group} · ${ind.cycle}`;
+  $('#sheetTitle').textContent = ind.name;
+  $('#sheetKpi').innerHTML = `<span class="v">${fmt(last.v, digits(ind, last.v))}</span><span class="u">${esc(ind.unit)}</span>
+    <span class="when">${esc(tLabel(ind, last.t))}</span>
+    ${c ? `<span class="d ${c.cls}">${c.arrow} ${fmt(Math.abs(c.diff), digits(ind, c.diff))} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</span>` : ''}`;
+  $('#sheetChart').innerHTML = yearChart(ind);
+  const recent = ind.series.slice(-8).reverse();
+  $('#sheetTable').innerHTML = `<table><thead><tr><th>기간</th><th class="num">값 (${esc(ind.unit)})</th></tr></thead><tbody>
+    ${recent.map((p) => `<tr><td>${esc(tLabel(ind, p.t))}</td><td class="num">${fmt(p.v, digits(ind, p.v))}</td></tr>`).join('')}</tbody></table>`;
+  const link = ind.url ? ` · <a href="${esc(ind.url)}" target="_blank" rel="noopener">원자료 보기</a>` : '';
+  $('#sheetSrc').innerHTML = `${ind.note ? esc(ind.note) + '<br>' : ''}출처: ${esc(ind.source)}${link}<br>미발표 기간은 빈칸 · 임의 보정 없음`;
+  showSheet('sheet');
 }
-$('#detailClose').onclick = () => { $('#detail').hidden = true; };
 
-// KOSIS 통계표: 분류 구성이 표마다 달라 최신 시점 원표를 그대로 보여줌
+function showSheet(id) {
+  $('#sheetBackdrop').hidden = false; $('#' + id).hidden = false;
+  requestAnimationFrame(() => { $('#sheetBackdrop').classList.add('on'); $('#' + id).classList.add('on'); });
+  document.body.classList.add('noscroll');
+  if (!history.state?.sheet) history.pushState({ sheet: id }, ''); // 휴대폰 뒤로가기로 닫기
+}
+function hideSheet(id, fromPop) {
+  const el = $('#' + id);
+  if (!el || el.hidden) return;
+  el.classList.remove('on'); $('#sheetBackdrop').classList.remove('on');
+  setTimeout(() => { el.hidden = true; $('#sheetBackdrop').hidden = true; }, 200);
+  document.body.classList.remove('noscroll');
+  if (!fromPop && history.state?.sheet) history.back();
+}
+$('#sheetClose').onclick = () => hideSheet('sheet');
+$('#sheetBackdrop').onclick = () => { hideSheet('sheet'); hideSheet('iosGuide'); };
+window.addEventListener('popstate', () => { hideSheet('sheet', true); hideSheet('iosGuide', true); });
+
+// ---- 더보기 화면 구성 요소 ---------------------------------------------------
 function renderTables(list) {
-  $('#tables').innerHTML = list.map((d) => {
+  $('#kosisTables').innerHTML = list.map((d) => {
     const last = d.records.reduce((a, r) => (r.period > a ? r.period : a), '');
-    const rows = d.records.filter((r) => r.period === last).slice(0, 60);
+    const rows = d.records.filter((r) => r.period === last).slice(0, 80);
     return `<details class="panel"><summary>${esc(d.title)} <span class="muted">(${esc(last)})</span></summary>
-      <div class="tbl"><table><thead><tr><th>구분</th><th>항목</th><th>값</th></tr></thead><tbody>
-      ${rows.map((r) => `<tr><td>${esc([r.c1, r.c2, r.c3].filter(Boolean).join(' · '))}</td><td>${esc(r.item)}</td><td class="num">${fmt(r.value, 1)} ${esc(r.unit || '')}</td></tr>`).join('')}
+      <div class="tbl"><table><thead><tr><th>구분</th><th>항목</th><th class="num">값</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc([r.c1, r.c2, r.c3, r.c4].filter(Boolean).join(' · '))}</td><td>${esc(r.item)}</td><td class="num">${fmt(r.value, 1)} ${esc(r.unit || '')}</td></tr>`).join('')}
       </tbody></table></div><p class="src">출처: <a href="${esc(d.source_url)}" target="_blank" rel="noopener">${esc(d.source)}</a></p></details>`;
-  }).join('');
+  }).join('') || '<p class="hint">KOSIS 인증키 등록 후 표시됩니다.</p>';
 }
 
 function renderHealth(status) {
   const map = { ok: ['정상', 'ok'], no_key: ['인증키 필요', 'warn'], error: ['오류(기존 자료 유지)', 'err'] };
   const ds = status?.datasets || {};
-  $('#health').innerHTML = `<p class="hint">마지막 점검: ${esc(status?.checked_at || '—')}</p><ul class="health-list">` +
+  $('#healthList').innerHTML = `<p class="hint">마지막 점검: ${esc(status?.checked_at || '—')}</p><ul class="health-list">` +
     Object.values(ds).map((e) => {
       const [label, cls] = map[e.state] || ['—', 'warn'];
       return `<li><span class="badge ${cls}">${label}</span> ${esc(e.label)}<br><small>최신 ${esc(e.latest_period || '—')} · ${esc(e.message || '')}</small></li>`;
@@ -315,7 +431,7 @@ function renderBriefs(briefs) {
   $('#briefs').innerHTML = briefs.length ? briefs.map((b) => `<article class="brief">
     <div class="meta"><span class="tag">${esc(b.tag)}</span>${esc(b.date)}</div>
     <h3>${esc(b.title)}</h3><p>${esc(b.body)}</p></article>`).join('')
-    : '<div class="panel"><h2>주간 시황</h2><p class="hint">아직 발행된 시황이 없습니다. data/briefs.json에 작성하면 여기에 표시됩니다.</p></div>';
+    : '<div class="panel"><p class="hint">아직 발행된 시황이 없습니다.</p></div>';
 }
 
 // ---- 계산기 ---------------------------------------------------------------
@@ -358,13 +474,49 @@ $('#leadForm').onsubmit = (e) => {
   e.target.reset();
 };
 
-// ---- 탭 --------------------------------------------------------------------
+// ---- 화면 이동: 하단 탭 + 주소(#milk, #m-powder 등)로 이동 -----------------------
+const VIEW_OF = { home: 'home', milk: 'milk', cattle: 'cattle', feed: 'feed', more: 'more' };
+function viewOfAnchor(id) {
+  if (VIEW_OF[id]) return id;
+  for (const [k, s] of Object.entries(SECTIONS)) if (s.subs.some((sb) => sb.id === id) || id === 'f-etc') return k;
+  return document.getElementById(id)?.closest('.view')?.id.replace('view-', '') || 'home';
+}
+function showView(view, anchor) {
+  document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('active', x.dataset.view === view));
+  document.querySelectorAll('.view').forEach((x) => x.classList.toggle('active', x.id === 'view-' + view));
+  const target = anchor && document.getElementById(anchor);
+  if (target && anchor !== view) target.scrollIntoView({ block: 'start' });
+  else window.scrollTo(0, 0);
+}
+function routeFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1)) || 'home';
+  showView(viewOfAnchor(id), id);
+}
+window.addEventListener('hashchange', routeFromHash);
+watchToc(document.getElementById('view-more'));
 document.querySelector('.tabs').onclick = (e) => {
   const b = e.target.closest('button'); if (!b) return;
-  document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('active', x === b));
-  document.querySelectorAll('.view').forEach((x) => x.classList.toggle('active', x.id === 'view-' + b.dataset.view));
-  window.scrollTo(0, 0);
+  if (location.hash === '#' + b.dataset.view) showView(b.dataset.view); else location.hash = b.dataset.view;
 };
 
+// ---- 앱 설치 ----------------------------------------------------------------
+let deferredPrompt = null;
+const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; $('#installBtn').hidden = false; });
+if (isIOS && !isStandalone()) $('#installBtn').hidden = false;
+$('#installBtn').onclick = async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice.catch(() => {});
+    deferredPrompt = null; $('#installBtn').hidden = true;
+  } else if (isIOS) {
+    showSheet('iosGuide');
+  } else {
+    location.hash = 'install';
+  }
+};
+window.addEventListener('appinstalled', () => { $('#installBtn').hidden = true; });
+
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
-load().catch((err) => { $('#cards').textContent = '데이터를 불러오지 못했습니다: ' + err.message; });
+load().catch((err) => { $('#homeKpis').textContent = '데이터를 불러오지 못했습니다: ' + err.message; });
