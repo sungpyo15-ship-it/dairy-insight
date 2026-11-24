@@ -3,1215 +3,2109 @@
  "title": "조사료 수입량·수입단가 (관세청)",
  "source": "관세청 품목별 수출입실적 (공공데이터포털)",
  "source_url": "https://www.data.go.kr/data/15100475/openapi.do",
+ "hs_names": {
+  "121410": [
+   "기타",
+   "사료용"
+  ],
+  "121490": [
+   "기타",
+   "사료용",
+   "사료용 뿌리채소류"
+  ],
+  "121300": [
+   "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]"
+  ]
+ },
  "records": [
   {
    "month": "2023-11",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 11567.0,
    "import_kusd": 2526.9,
-   "usd_per_ton": 218.5
+   "usd_per_ton": 218.5,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 11567.0,
+     "usd_per_ton": 218.5
+    }
+   ]
   },
   {
    "month": "2023-12",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 8918.5,
    "import_kusd": 1980.4,
-   "usd_per_ton": 222.1
+   "usd_per_ton": 222.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 8918.5,
+     "usd_per_ton": 222.1
+    }
+   ]
   },
   {
    "month": "2024-01",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 9583.5,
    "import_kusd": 2196.0,
-   "usd_per_ton": 229.1
+   "usd_per_ton": 229.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 9583.5,
+     "usd_per_ton": 229.1
+    }
+   ]
   },
   {
    "month": "2024-02",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 3978.3,
    "import_kusd": 903.3,
-   "usd_per_ton": 227.1
+   "usd_per_ton": 227.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 3978.3,
+     "usd_per_ton": 227.1
+    }
+   ]
   },
   {
    "month": "2024-03",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 3565.8,
    "import_kusd": 868.2,
-   "usd_per_ton": 243.5
+   "usd_per_ton": 243.5,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 3565.8,
+     "usd_per_ton": 243.5
+    }
+   ]
   },
   {
    "month": "2024-04",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 4328.2,
    "import_kusd": 1025.9,
-   "usd_per_ton": 237.0
+   "usd_per_ton": 237.0,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 4328.2,
+     "usd_per_ton": 237.0
+    }
+   ]
   },
   {
    "month": "2024-05",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 4499.7,
    "import_kusd": 998.3,
-   "usd_per_ton": 221.9
+   "usd_per_ton": 221.9,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 4499.7,
+     "usd_per_ton": 221.9
+    }
+   ]
   },
   {
    "month": "2024-06",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 4031.7,
    "import_kusd": 943.9,
-   "usd_per_ton": 234.1
+   "usd_per_ton": 234.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 4031.7,
+     "usd_per_ton": 234.1
+    }
+   ]
   },
   {
    "month": "2024-07",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 7228.1,
    "import_kusd": 1551.6,
-   "usd_per_ton": 214.7
+   "usd_per_ton": 214.7,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 7228.1,
+     "usd_per_ton": 214.7
+    }
+   ]
   },
   {
    "month": "2024-08",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 9030.8,
    "import_kusd": 1963.6,
-   "usd_per_ton": 217.4
+   "usd_per_ton": 217.4,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 9030.8,
+     "usd_per_ton": 217.4
+    }
+   ]
   },
   {
    "month": "2024-09",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 5473.1,
    "import_kusd": 1185.3,
-   "usd_per_ton": 216.6
+   "usd_per_ton": 216.6,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 5473.1,
+     "usd_per_ton": 216.6
+    }
+   ]
   },
   {
    "month": "2024-10",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 8739.1,
    "import_kusd": 1812.6,
-   "usd_per_ton": 207.4
+   "usd_per_ton": 207.4,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 8739.1,
+     "usd_per_ton": 207.4
+    }
+   ]
   },
   {
    "month": "2024-11",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 7339.8,
    "import_kusd": 1440.1,
-   "usd_per_ton": 196.2
+   "usd_per_ton": 196.2,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 7339.8,
+     "usd_per_ton": 196.2
+    }
+   ]
   },
   {
    "month": "2024-12",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 6805.4,
    "import_kusd": 1292.3,
-   "usd_per_ton": 189.9
+   "usd_per_ton": 189.9,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 6805.4,
+     "usd_per_ton": 189.9
+    }
+   ]
   },
   {
    "month": "2025-01",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 12920.1,
    "import_kusd": 2561.4,
-   "usd_per_ton": 198.3
+   "usd_per_ton": 198.3,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 12920.1,
+     "usd_per_ton": 198.3
+    }
+   ]
   },
   {
    "month": "2025-02",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 12388.1,
    "import_kusd": 2504.2,
-   "usd_per_ton": 202.1
+   "usd_per_ton": 202.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 12388.1,
+     "usd_per_ton": 202.1
+    }
+   ]
   },
   {
    "month": "2025-03",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 16163.4,
    "import_kusd": 3307.2,
-   "usd_per_ton": 204.6
+   "usd_per_ton": 204.6,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 16163.4,
+     "usd_per_ton": 204.6
+    }
+   ]
   },
   {
    "month": "2025-04",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 9649.9,
    "import_kusd": 1937.6,
-   "usd_per_ton": 200.8
+   "usd_per_ton": 200.8,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 9649.9,
+     "usd_per_ton": 200.8
+    }
+   ]
   },
   {
    "month": "2025-05",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 9950.8,
    "import_kusd": 2010.8,
-   "usd_per_ton": 202.1
+   "usd_per_ton": 202.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 9950.8,
+     "usd_per_ton": 202.1
+    }
+   ]
   },
   {
    "month": "2025-06",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 9153.5,
    "import_kusd": 1792.9,
-   "usd_per_ton": 195.9
+   "usd_per_ton": 195.9,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 9153.5,
+     "usd_per_ton": 195.9
+    }
+   ]
   },
   {
    "month": "2025-07",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 8043.8,
    "import_kusd": 1508.4,
-   "usd_per_ton": 187.5
+   "usd_per_ton": 187.5,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 8043.8,
+     "usd_per_ton": 187.5
+    }
+   ]
   },
   {
    "month": "2025-08",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 9733.0,
    "import_kusd": 1910.6,
-   "usd_per_ton": 196.3
+   "usd_per_ton": 196.3,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 9733.0,
+     "usd_per_ton": 196.3
+    }
+   ]
   },
   {
    "month": "2025-09",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 7064.0,
    "import_kusd": 1347.6,
-   "usd_per_ton": 190.8
+   "usd_per_ton": 190.8,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 7064.0,
+     "usd_per_ton": 190.8
+    }
+   ]
   },
   {
    "month": "2025-10",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 11538.8,
    "import_kusd": 2190.0,
-   "usd_per_ton": 189.8
+   "usd_per_ton": 189.8,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 11538.8,
+     "usd_per_ton": 189.8
+    }
+   ]
   },
   {
    "month": "2025-11",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 11153.6,
    "import_kusd": 2144.0,
-   "usd_per_ton": 192.2
+   "usd_per_ton": 192.2,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 11153.6,
+     "usd_per_ton": 192.2
+    }
+   ]
   },
   {
    "month": "2025-12",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 20769.1,
    "import_kusd": 4042.9,
-   "usd_per_ton": 194.7
+   "usd_per_ton": 194.7,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 20769.1,
+     "usd_per_ton": 194.7
+    }
+   ]
   },
   {
    "month": "2026-01",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 29935.2,
    "import_kusd": 6000.3,
-   "usd_per_ton": 200.4
+   "usd_per_ton": 200.4,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 29935.2,
+     "usd_per_ton": 200.4
+    }
+   ]
   },
   {
    "month": "2026-02",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 12306.6,
    "import_kusd": 2650.2,
-   "usd_per_ton": 215.4
+   "usd_per_ton": 215.4,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 12306.6,
+     "usd_per_ton": 215.4
+    }
+   ]
   },
   {
    "month": "2026-03",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 28998.8,
    "import_kusd": 6652.8,
-   "usd_per_ton": 229.4
+   "usd_per_ton": 229.4,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 28998.8,
+     "usd_per_ton": 229.4
+    }
+   ]
   },
   {
    "month": "2026-04",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 24695.6,
    "import_kusd": 5872.4,
-   "usd_per_ton": 237.8
+   "usd_per_ton": 237.8,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 24695.6,
+     "usd_per_ton": 237.8
+    }
+   ]
   },
   {
    "month": "2026-05",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 21274.0,
    "import_kusd": 5136.3,
-   "usd_per_ton": 241.4
+   "usd_per_ton": 241.4,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 21274.0,
+     "usd_per_ton": 241.4
+    }
+   ]
   },
   {
    "month": "2026-06",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 24541.6,
    "import_kusd": 6045.8,
-   "usd_per_ton": 246.3
+   "usd_per_ton": 246.3,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 24541.6,
+     "usd_per_ton": 246.3
+    }
+   ]
   },
   {
    "month": "2026-07",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 20246.5,
    "import_kusd": 5086.7,
-   "usd_per_ton": 251.2
+   "usd_per_ton": 251.2,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 20246.5,
+     "usd_per_ton": 251.2
+    }
+   ]
   },
   {
    "month": "2026-08",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 12799.4,
    "import_kusd": 2968.4,
-   "usd_per_ton": 231.9
+   "usd_per_ton": 231.9,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 12799.4,
+     "usd_per_ton": 231.9
+    }
+   ]
   },
   {
    "month": "2026-09",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 18007.2,
    "import_kusd": 4067.1,
-   "usd_per_ton": 225.9
+   "usd_per_ton": 225.9,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 18007.2,
+     "usd_per_ton": 225.9
+    }
+   ]
   },
   {
    "month": "2026-10",
    "hs": "121300",
    "name": "곡물 짚 (볏짚·밀짚 등)",
+   "category": "조사료",
    "import_ton": 20936.7,
    "import_kusd": 4502.5,
-   "usd_per_ton": 215.1
+   "usd_per_ton": 215.1,
+   "subs": [
+    {
+     "code": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "곡물의 짚과 껍질[조제하지 않은 것으로 한정하며, 절단하거나 잘게 부수거나 압착한 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 20936.7,
+     "usd_per_ton": 215.1
+    }
+   ]
   },
   {
    "month": "2023-11",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3507.2,
-   "import_kusd": 1159.7,
-   "usd_per_ton": 330.7
-  },
-  {
-   "month": "2023-11",
-   "hs": "121410",
-   "name": "알팔파 밀·펠릿",
-   "import_ton": 0.0,
-   "import_kusd": 0.6,
-   "usd_per_ton": 16605.3
+   "import_kusd": 1160.3,
+   "usd_per_ton": 330.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3507.2,
+     "usd_per_ton": 330.7
+    }
+   ]
   },
   {
    "month": "2023-12",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2302.5,
-   "import_kusd": 785.9,
-   "usd_per_ton": 341.4
-  },
-  {
-   "month": "2023-12",
-   "hs": "121410",
-   "name": "알팔파 밀·펠릿",
-   "import_ton": 0.0,
-   "import_kusd": 0.0,
-   "usd_per_ton": 375.0
+   "import_kusd": 786.0,
+   "usd_per_ton": 341.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2302.5,
+     "usd_per_ton": 341.4
+    }
+   ]
   },
   {
    "month": "2024-01",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1395.5,
    "import_kusd": 453.6,
-   "usd_per_ton": 325.1
+   "usd_per_ton": 325.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1395.5,
+     "usd_per_ton": 325.1
+    }
+   ]
   },
   {
    "month": "2024-02",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 641.2,
    "import_kusd": 198.6,
-   "usd_per_ton": 309.7
+   "usd_per_ton": 309.7,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 641.2,
+     "usd_per_ton": 309.7
+    }
+   ]
   },
   {
    "month": "2024-03",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1061.7,
    "import_kusd": 383.2,
-   "usd_per_ton": 360.9
+   "usd_per_ton": 360.9,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1061.7,
+     "usd_per_ton": 360.9
+    }
+   ]
   },
   {
    "month": "2024-04",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2729.4,
    "import_kusd": 952.5,
-   "usd_per_ton": 349.0
+   "usd_per_ton": 349.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2729.4,
+     "usd_per_ton": 349.0
+    }
+   ]
   },
   {
    "month": "2024-05",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3082.6,
    "import_kusd": 960.4,
-   "usd_per_ton": 311.6
+   "usd_per_ton": 311.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3082.6,
+     "usd_per_ton": 311.6
+    }
+   ]
   },
   {
    "month": "2024-06",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2420.8,
    "import_kusd": 750.8,
-   "usd_per_ton": 310.1
+   "usd_per_ton": 310.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2420.8,
+     "usd_per_ton": 310.1
+    }
+   ]
   },
   {
    "month": "2024-07",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1997.8,
    "import_kusd": 535.3,
-   "usd_per_ton": 268.0
+   "usd_per_ton": 268.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1997.8,
+     "usd_per_ton": 268.0
+    }
+   ]
   },
   {
    "month": "2024-08",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1981.3,
    "import_kusd": 493.3,
-   "usd_per_ton": 249.0
+   "usd_per_ton": 249.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1981.3,
+     "usd_per_ton": 249.0
+    }
+   ]
   },
   {
    "month": "2024-09",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1716.3,
    "import_kusd": 435.3,
-   "usd_per_ton": 253.6
+   "usd_per_ton": 253.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1716.3,
+     "usd_per_ton": 253.6
+    }
+   ]
   },
   {
    "month": "2024-10",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1794.1,
    "import_kusd": 441.8,
-   "usd_per_ton": 246.2
+   "usd_per_ton": 246.2,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1794.1,
+     "usd_per_ton": 246.2
+    }
+   ]
   },
   {
    "month": "2024-11",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2004.4,
    "import_kusd": 462.2,
-   "usd_per_ton": 230.6
+   "usd_per_ton": 230.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2004.4,
+     "usd_per_ton": 230.6
+    }
+   ]
   },
   {
    "month": "2024-12",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2201.8,
    "import_kusd": 496.0,
-   "usd_per_ton": 225.3
+   "usd_per_ton": 225.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2201.8,
+     "usd_per_ton": 225.3
+    }
+   ]
   },
   {
    "month": "2025-01",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1209.5,
    "import_kusd": 296.7,
-   "usd_per_ton": 245.3
+   "usd_per_ton": 245.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1209.5,
+     "usd_per_ton": 245.3
+    }
+   ]
   },
   {
    "month": "2025-02",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2849.3,
    "import_kusd": 605.7,
-   "usd_per_ton": 212.6
-  },
-  {
-   "month": "2025-02",
-   "hs": "121410",
-   "name": "알팔파 밀·펠릿",
-   "import_ton": 0.0,
-   "import_kusd": 0.1,
-   "usd_per_ton": 42500.0
+   "usd_per_ton": 212.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2849.3,
+     "usd_per_ton": 212.6
+    }
+   ]
   },
   {
    "month": "2025-03",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1369.7,
    "import_kusd": 319.4,
-   "usd_per_ton": 233.2
+   "usd_per_ton": 233.2,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1369.7,
+     "usd_per_ton": 233.2
+    }
+   ]
   },
   {
    "month": "2025-04",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3335.5,
    "import_kusd": 752.5,
-   "usd_per_ton": 225.6
+   "usd_per_ton": 225.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3335.5,
+     "usd_per_ton": 225.6
+    }
+   ]
   },
   {
    "month": "2025-05",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1981.9,
    "import_kusd": 452.0,
-   "usd_per_ton": 228.1
+   "usd_per_ton": 228.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1981.9,
+     "usd_per_ton": 228.1
+    }
+   ]
   },
   {
    "month": "2025-06",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2128.8,
    "import_kusd": 491.9,
-   "usd_per_ton": 231.1
+   "usd_per_ton": 231.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2128.8,
+     "usd_per_ton": 231.1
+    }
+   ]
   },
   {
    "month": "2025-07",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1805.9,
    "import_kusd": 398.2,
-   "usd_per_ton": 220.5
+   "usd_per_ton": 220.5,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1805.9,
+     "usd_per_ton": 220.5
+    }
+   ]
   },
   {
    "month": "2025-08",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1983.3,
    "import_kusd": 434.9,
-   "usd_per_ton": 219.3
+   "usd_per_ton": 219.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1983.3,
+     "usd_per_ton": 219.3
+    }
+   ]
   },
   {
    "month": "2025-09",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 1611.7,
    "import_kusd": 357.2,
-   "usd_per_ton": 221.6
+   "usd_per_ton": 221.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 1611.7,
+     "usd_per_ton": 221.6
+    }
+   ]
   },
   {
    "month": "2025-10",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2314.8,
    "import_kusd": 482.0,
-   "usd_per_ton": 208.2
+   "usd_per_ton": 208.2,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2314.8,
+     "usd_per_ton": 208.2
+    }
+   ]
   },
   {
    "month": "2025-11",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2578.0,
    "import_kusd": 557.1,
-   "usd_per_ton": 216.1
+   "usd_per_ton": 216.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2578.0,
+     "usd_per_ton": 216.1
+    }
+   ]
   },
   {
    "month": "2025-12",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2651.8,
    "import_kusd": 557.7,
-   "usd_per_ton": 210.3
+   "usd_per_ton": 210.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2651.8,
+     "usd_per_ton": 210.3
+    }
+   ]
   },
   {
    "month": "2026-01",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3354.0,
    "import_kusd": 728.2,
-   "usd_per_ton": 217.1
+   "usd_per_ton": 217.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3354.0,
+     "usd_per_ton": 217.1
+    }
+   ]
   },
   {
    "month": "2026-02",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2177.1,
    "import_kusd": 476.7,
-   "usd_per_ton": 218.9
+   "usd_per_ton": 218.9,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2177.1,
+     "usd_per_ton": 218.9
+    }
+   ]
   },
   {
    "month": "2026-03",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2670.1,
    "import_kusd": 571.1,
-   "usd_per_ton": 213.9
+   "usd_per_ton": 213.9,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2670.1,
+     "usd_per_ton": 213.9
+    }
+   ]
   },
   {
    "month": "2026-04",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 2065.6,
    "import_kusd": 436.1,
-   "usd_per_ton": 211.1
+   "usd_per_ton": 211.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 2065.6,
+     "usd_per_ton": 211.1
+    }
+   ]
   },
   {
    "month": "2026-05",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 4242.4,
    "import_kusd": 907.7,
-   "usd_per_ton": 214.0
+   "usd_per_ton": 214.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 4242.4,
+     "usd_per_ton": 214.0
+    }
+   ]
   },
   {
    "month": "2026-06",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3103.0,
    "import_kusd": 709.0,
-   "usd_per_ton": 228.5
+   "usd_per_ton": 228.5,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3103.0,
+     "usd_per_ton": 228.5
+    }
+   ]
   },
   {
    "month": "2026-07",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3311.4,
    "import_kusd": 718.4,
-   "usd_per_ton": 216.9
-  },
-  {
-   "month": "2026-07",
-   "hs": "121410",
-   "name": "알팔파 밀·펠릿",
-   "import_ton": null,
-   "import_kusd": null,
-   "usd_per_ton": null
+   "usd_per_ton": 216.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3311.4,
+     "usd_per_ton": 216.9
+    }
+   ]
   },
   {
    "month": "2026-08",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 698.7,
    "import_kusd": 173.1,
-   "usd_per_ton": 247.7
+   "usd_per_ton": 247.7,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 698.7,
+     "usd_per_ton": 247.7
+    }
+   ]
   },
   {
    "month": "2026-09",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3288.5,
    "import_kusd": 770.9,
-   "usd_per_ton": 234.4
+   "usd_per_ton": 234.4,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3288.5,
+     "usd_per_ton": 234.4
+    }
+   ]
   },
   {
    "month": "2026-10",
    "hs": "121410",
    "name": "알팔파 밀·펠릿",
+   "category": "조사료",
    "import_ton": 3844.2,
-   "import_kusd": 846.2,
-   "usd_per_ton": 220.1
-  },
-  {
-   "month": "2026-10",
-   "hs": "121410",
-   "name": "알팔파 밀·펠릿",
-   "import_ton": 0.0,
-   "import_kusd": 0.1,
-   "usd_per_ton": 36500.0
-  },
-  {
-   "month": "2023-11",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 14883.0,
-   "import_kusd": 5795.3,
-   "usd_per_ton": 389.4
-  },
-  {
-   "month": "2023-11",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 0.0,
-   "import_kusd": 0.0,
-   "usd_per_ton": 11000.0
+   "import_kusd": 846.4,
+   "usd_per_ton": 220.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 3844.2,
+     "usd_per_ton": 220.1
+    }
+   ]
   },
   {
    "month": "2023-11",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 90687.5,
-   "import_kusd": 28762.9,
-   "usd_per_ton": 317.2
+   "category": "조사료",
+   "import_ton": 105570.6,
+   "import_kusd": 34558.2,
+   "usd_per_ton": 327.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 90687.5,
+     "usd_per_ton": 317.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 14883.0,
+     "usd_per_ton": 389.4
+    }
+   ]
   },
   {
    "month": "2023-12",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 12707.5,
-   "import_kusd": 4986.4,
-   "usd_per_ton": 392.4
-  },
-  {
-   "month": "2023-12",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 102466.2,
-   "import_kusd": 32431.7,
-   "usd_per_ton": 316.5
+   "category": "조사료",
+   "import_ton": 115173.8,
+   "import_kusd": 37418.2,
+   "usd_per_ton": 324.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 102466.2,
+     "usd_per_ton": 316.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12707.5,
+     "usd_per_ton": 392.4
+    }
+   ]
   },
   {
    "month": "2024-01",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 11497.2,
-   "import_kusd": 4521.4,
-   "usd_per_ton": 393.3
-  },
-  {
-   "month": "2024-01",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 65046.2,
-   "import_kusd": 20584.3,
-   "usd_per_ton": 316.5
+   "category": "조사료",
+   "import_ton": 76543.4,
+   "import_kusd": 25105.7,
+   "usd_per_ton": 328.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 65046.2,
+     "usd_per_ton": 316.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 11497.2,
+     "usd_per_ton": 393.3
+    }
+   ]
   },
   {
    "month": "2024-02",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 11852.3,
-   "import_kusd": 4512.6,
-   "usd_per_ton": 380.7
-  },
-  {
-   "month": "2024-02",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 59359.8,
-   "import_kusd": 19361.1,
-   "usd_per_ton": 326.2
+   "category": "조사료",
+   "import_ton": 71212.0,
+   "import_kusd": 23873.7,
+   "usd_per_ton": 335.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 59359.8,
+     "usd_per_ton": 326.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 11852.3,
+     "usd_per_ton": 380.7
+    }
+   ]
   },
   {
    "month": "2024-03",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 14753.4,
-   "import_kusd": 5611.3,
-   "usd_per_ton": 380.3
-  },
-  {
-   "month": "2024-03",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 67017.3,
-   "import_kusd": 20993.6,
-   "usd_per_ton": 313.3
+   "category": "조사료",
+   "import_ton": 81770.6,
+   "import_kusd": 26604.8,
+   "usd_per_ton": 325.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 67017.3,
+     "usd_per_ton": 313.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 14753.4,
+     "usd_per_ton": 380.3
+    }
+   ]
   },
   {
    "month": "2024-04",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 22491.5,
-   "import_kusd": 8542.6,
-   "usd_per_ton": 379.8
-  },
-  {
-   "month": "2024-04",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 82390.5,
-   "import_kusd": 25893.8,
-   "usd_per_ton": 314.3
+   "category": "조사료",
+   "import_ton": 104882.1,
+   "import_kusd": 34436.4,
+   "usd_per_ton": 328.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 82390.5,
+     "usd_per_ton": 314.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 22491.5,
+     "usd_per_ton": 379.8
+    }
+   ]
   },
   {
    "month": "2024-05",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 24223.8,
-   "import_kusd": 9172.2,
-   "usd_per_ton": 378.6
-  },
-  {
-   "month": "2024-05",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 94310.8,
-   "import_kusd": 30267.1,
-   "usd_per_ton": 320.9
+   "category": "조사료",
+   "import_ton": 118534.6,
+   "import_kusd": 39439.2,
+   "usd_per_ton": 332.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 94310.8,
+     "usd_per_ton": 320.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 24223.8,
+     "usd_per_ton": 378.6
+    }
+   ]
   },
   {
    "month": "2024-06",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 15804.6,
-   "import_kusd": 5969.8,
-   "usd_per_ton": 377.7
-  },
-  {
-   "month": "2024-06",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 82412.7,
-   "import_kusd": 25802.1,
-   "usd_per_ton": 313.1
+   "category": "조사료",
+   "import_ton": 98217.3,
+   "import_kusd": 31771.9,
+   "usd_per_ton": 323.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 82412.7,
+     "usd_per_ton": 313.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 15804.6,
+     "usd_per_ton": 377.7
+    }
+   ]
   },
   {
    "month": "2024-07",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 15215.0,
-   "import_kusd": 5655.5,
-   "usd_per_ton": 371.7
-  },
-  {
-   "month": "2024-07",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 87790.8,
-   "import_kusd": 27429.3,
-   "usd_per_ton": 312.4
+   "category": "조사료",
+   "import_ton": 103005.8,
+   "import_kusd": 33084.8,
+   "usd_per_ton": 321.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 87790.8,
+     "usd_per_ton": 312.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 15215.0,
+     "usd_per_ton": 371.7
+    }
+   ]
   },
   {
    "month": "2024-08",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 12535.7,
-   "import_kusd": 4626.4,
-   "usd_per_ton": 369.1
-  },
-  {
-   "month": "2024-08",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 80299.6,
-   "import_kusd": 24788.9,
-   "usd_per_ton": 308.7
+   "category": "조사료",
+   "import_ton": 92835.3,
+   "import_kusd": 29415.3,
+   "usd_per_ton": 316.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 80299.6,
+     "usd_per_ton": 308.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12535.7,
+     "usd_per_ton": 369.1
+    }
+   ]
   },
   {
    "month": "2024-09",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 10031.4,
-   "import_kusd": 3488.8,
-   "usd_per_ton": 347.8
-  },
-  {
-   "month": "2024-09",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 74911.0,
-   "import_kusd": 23625.3,
-   "usd_per_ton": 315.4
+   "category": "조사료",
+   "import_ton": 84942.4,
+   "import_kusd": 27114.1,
+   "usd_per_ton": 319.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 74911.0,
+     "usd_per_ton": 315.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 10031.4,
+     "usd_per_ton": 347.8
+    }
+   ]
   },
   {
    "month": "2024-10",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 14002.9,
-   "import_kusd": 4858.8,
-   "usd_per_ton": 347.0
-  },
-  {
-   "month": "2024-10",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 102529.4,
-   "import_kusd": 31556.7,
-   "usd_per_ton": 307.8
+   "category": "조사료",
+   "import_ton": 116532.2,
+   "import_kusd": 36415.5,
+   "usd_per_ton": 312.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 102529.4,
+     "usd_per_ton": 307.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 14002.9,
+     "usd_per_ton": 347.0
+    }
+   ]
   },
   {
    "month": "2024-11",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 13636.6,
-   "import_kusd": 4607.5,
-   "usd_per_ton": 337.9
-  },
-  {
-   "month": "2024-11",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 101363.8,
-   "import_kusd": 31252.6,
-   "usd_per_ton": 308.3
+   "category": "조사료",
+   "import_ton": 115000.4,
+   "import_kusd": 35860.0,
+   "usd_per_ton": 311.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 101363.8,
+     "usd_per_ton": 308.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13636.6,
+     "usd_per_ton": 337.9
+    }
+   ]
   },
   {
    "month": "2024-12",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 13450.8,
-   "import_kusd": 4473.1,
-   "usd_per_ton": 332.6
-  },
-  {
-   "month": "2024-12",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 95711.0,
-   "import_kusd": 29507.9,
-   "usd_per_ton": 308.3
+   "category": "조사료",
+   "import_ton": 109161.8,
+   "import_kusd": 33981.0,
+   "usd_per_ton": 311.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 95711.0,
+     "usd_per_ton": 308.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13450.8,
+     "usd_per_ton": 332.6
+    }
+   ]
   },
   {
    "month": "2025-01",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 17305.3,
-   "import_kusd": 5847.5,
-   "usd_per_ton": 337.9
-  },
-  {
-   "month": "2025-01",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 79368.5,
-   "import_kusd": 24489.5,
-   "usd_per_ton": 308.6
+   "category": "조사료",
+   "import_ton": 96673.8,
+   "import_kusd": 30337.0,
+   "usd_per_ton": 313.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 79368.5,
+     "usd_per_ton": 308.6
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 17305.3,
+     "usd_per_ton": 337.9
+    }
+   ]
   },
   {
    "month": "2025-02",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 16294.1,
-   "import_kusd": 5418.0,
-   "usd_per_ton": 332.5
-  },
-  {
-   "month": "2025-02",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 83291.7,
-   "import_kusd": 25841.6,
-   "usd_per_ton": 310.3
+   "category": "조사료",
+   "import_ton": 99585.8,
+   "import_kusd": 31259.5,
+   "usd_per_ton": 313.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 83291.7,
+     "usd_per_ton": 310.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16294.1,
+     "usd_per_ton": 332.5
+    }
+   ]
   },
   {
    "month": "2025-03",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 18319.9,
-   "import_kusd": 6114.7,
-   "usd_per_ton": 333.8
-  },
-  {
-   "month": "2025-03",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 89934.1,
-   "import_kusd": 27722.1,
-   "usd_per_ton": 308.2
-  },
-  {
-   "month": "2025-04",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 0.0,
-   "import_kusd": 0.1,
-   "usd_per_ton": 128000.0
-  },
-  {
-   "month": "2025-04",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 16432.4,
-   "import_kusd": 5474.9,
-   "usd_per_ton": 333.2
+   "category": "조사료",
+   "import_ton": 108253.9,
+   "import_kusd": 33836.8,
+   "usd_per_ton": 312.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 89934.1,
+     "usd_per_ton": 308.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 18319.9,
+     "usd_per_ton": 333.8
+    }
+   ]
   },
   {
    "month": "2025-04",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 98226.5,
-   "import_kusd": 30727.8,
-   "usd_per_ton": 312.8
+   "category": "조사료",
+   "import_ton": 114658.8,
+   "import_kusd": 36202.9,
+   "usd_per_ton": 315.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 98226.5,
+     "usd_per_ton": 312.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16432.4,
+     "usd_per_ton": 333.2
+    },
+    {
+     "code": "사료용 뿌리채소류",
+     "name": "사료용 뿌리채소류",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
   },
   {
    "month": "2025-05",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 21080.5,
-   "import_kusd": 6897.2,
-   "usd_per_ton": 327.2
-  },
-  {
-   "month": "2025-05",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 96484.5,
-   "import_kusd": 30768.0,
-   "usd_per_ton": 318.9
+   "category": "조사료",
+   "import_ton": 117565.0,
+   "import_kusd": 37665.2,
+   "usd_per_ton": 320.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 96484.5,
+     "usd_per_ton": 318.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 21080.5,
+     "usd_per_ton": 327.2
+    }
+   ]
   },
   {
    "month": "2025-06",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 22590.4,
-   "import_kusd": 7469.8,
-   "usd_per_ton": 330.7
-  },
-  {
-   "month": "2025-06",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 93144.4,
-   "import_kusd": 28768.2,
-   "usd_per_ton": 308.9
+   "category": "조사료",
+   "import_ton": 115734.8,
+   "import_kusd": 36238.1,
+   "usd_per_ton": 313.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 93144.4,
+     "usd_per_ton": 308.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 22590.4,
+     "usd_per_ton": 330.7
+    }
+   ]
   },
   {
    "month": "2025-07",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 13180.0,
-   "import_kusd": 4402.3,
-   "usd_per_ton": 334.0
-  },
-  {
-   "month": "2025-07",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 89606.1,
-   "import_kusd": 27490.5,
-   "usd_per_ton": 306.8
+   "category": "조사료",
+   "import_ton": 102786.1,
+   "import_kusd": 31892.7,
+   "usd_per_ton": 310.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 89606.1,
+     "usd_per_ton": 306.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13180.0,
+     "usd_per_ton": 334.0
+    }
+   ]
   },
   {
    "month": "2025-08",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 12069.8,
-   "import_kusd": 4004.5,
-   "usd_per_ton": 331.8
-  },
-  {
-   "month": "2025-08",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 81256.1,
-   "import_kusd": 25469.9,
-   "usd_per_ton": 313.5
+   "category": "조사료",
+   "import_ton": 93325.9,
+   "import_kusd": 29474.4,
+   "usd_per_ton": 315.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 81256.1,
+     "usd_per_ton": 313.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12069.8,
+     "usd_per_ton": 331.8
+    }
+   ]
   },
   {
    "month": "2025-09",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 11212.8,
-   "import_kusd": 3780.1,
-   "usd_per_ton": 337.1
-  },
-  {
-   "month": "2025-09",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 91370.4,
-   "import_kusd": 27936.9,
-   "usd_per_ton": 305.8
+   "category": "조사료",
+   "import_ton": 102583.1,
+   "import_kusd": 31717.0,
+   "usd_per_ton": 309.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 91370.4,
+     "usd_per_ton": 305.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 11212.8,
+     "usd_per_ton": 337.1
+    }
+   ]
   },
   {
    "month": "2025-10",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 12844.3,
-   "import_kusd": 4205.9,
-   "usd_per_ton": 327.5
-  },
-  {
-   "month": "2025-10",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 89360.9,
-   "import_kusd": 27015.9,
-   "usd_per_ton": 302.3
+   "category": "조사료",
+   "import_ton": 102205.1,
+   "import_kusd": 31221.8,
+   "usd_per_ton": 305.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 89360.9,
+     "usd_per_ton": 302.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12844.3,
+     "usd_per_ton": 327.5
+    }
+   ]
   },
   {
    "month": "2025-11",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 13896.8,
-   "import_kusd": 4596.2,
-   "usd_per_ton": 330.7
-  },
-  {
-   "month": "2025-11",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 94934.1,
-   "import_kusd": 28880.5,
-   "usd_per_ton": 304.2
+   "category": "조사료",
+   "import_ton": 108830.8,
+   "import_kusd": 33476.7,
+   "usd_per_ton": 307.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 94934.1,
+     "usd_per_ton": 304.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13896.8,
+     "usd_per_ton": 330.7
+    }
+   ]
   },
   {
    "month": "2025-12",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 19106.5,
-   "import_kusd": 6260.2,
-   "usd_per_ton": 327.6
-  },
-  {
-   "month": "2025-12",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 124890.8,
-   "import_kusd": 38253.0,
-   "usd_per_ton": 306.3
+   "category": "조사료",
+   "import_ton": 143997.3,
+   "import_kusd": 44513.2,
+   "usd_per_ton": 309.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 124890.8,
+     "usd_per_ton": 306.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 19106.5,
+     "usd_per_ton": 327.6
+    }
+   ]
   },
   {
    "month": "2026-01",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 16355.7,
-   "import_kusd": 5416.8,
-   "usd_per_ton": 331.2
-  },
-  {
-   "month": "2026-01",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 129804.9,
-   "import_kusd": 39783.7,
-   "usd_per_ton": 306.5
+   "category": "조사료",
+   "import_ton": 146160.5,
+   "import_kusd": 45200.5,
+   "usd_per_ton": 309.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 129804.9,
+     "usd_per_ton": 306.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16355.7,
+     "usd_per_ton": 331.2
+    }
+   ]
   },
   {
    "month": "2026-02",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 16444.1,
-   "import_kusd": 5501.4,
-   "usd_per_ton": 334.5
-  },
-  {
-   "month": "2026-02",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 108559.5,
-   "import_kusd": 33771.6,
-   "usd_per_ton": 311.1
+   "category": "조사료",
+   "import_ton": 125003.5,
+   "import_kusd": 39273.0,
+   "usd_per_ton": 314.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 108559.5,
+     "usd_per_ton": 311.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16444.1,
+     "usd_per_ton": 334.5
+    }
+   ]
   },
   {
    "month": "2026-03",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 18192.8,
-   "import_kusd": 6070.5,
-   "usd_per_ton": 333.7
-  },
-  {
-   "month": "2026-03",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 141407.2,
-   "import_kusd": 44858.5,
-   "usd_per_ton": 317.2
+   "category": "조사료",
+   "import_ton": 159600.0,
+   "import_kusd": 50928.9,
+   "usd_per_ton": 319.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 141407.2,
+     "usd_per_ton": 317.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 18192.8,
+     "usd_per_ton": 333.7
+    }
+   ]
   },
   {
    "month": "2026-04",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 23579.4,
-   "import_kusd": 7853.2,
-   "usd_per_ton": 333.1
-  },
-  {
-   "month": "2026-04",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 137364.5,
-   "import_kusd": 44208.0,
-   "usd_per_ton": 321.8
+   "category": "조사료",
+   "import_ton": 160943.9,
+   "import_kusd": 52061.2,
+   "usd_per_ton": 323.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 137364.5,
+     "usd_per_ton": 321.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 23579.4,
+     "usd_per_ton": 333.1
+    }
+   ]
   },
   {
    "month": "2026-05",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 15364.7,
-   "import_kusd": 5267.0,
-   "usd_per_ton": 342.8
-  },
-  {
-   "month": "2026-05",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 110453.9,
-   "import_kusd": 35138.5,
-   "usd_per_ton": 318.1
+   "category": "조사료",
+   "import_ton": 125818.5,
+   "import_kusd": 40405.5,
+   "usd_per_ton": 321.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 110453.9,
+     "usd_per_ton": 318.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 15364.7,
+     "usd_per_ton": 342.8
+    }
+   ]
   },
   {
    "month": "2026-06",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 16409.4,
-   "import_kusd": 5854.1,
-   "usd_per_ton": 356.8
-  },
-  {
-   "month": "2026-06",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 125115.8,
-   "import_kusd": 40672.7,
-   "usd_per_ton": 325.1
+   "category": "조사료",
+   "import_ton": 141525.2,
+   "import_kusd": 46526.8,
+   "usd_per_ton": 328.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 125115.8,
+     "usd_per_ton": 325.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16409.4,
+     "usd_per_ton": 356.8
+    }
+   ]
   },
   {
    "month": "2026-07",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 16938.0,
-   "import_kusd": 6121.6,
-   "usd_per_ton": 361.4
-  },
-  {
-   "month": "2026-07",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 97671.1,
-   "import_kusd": 31593.1,
-   "usd_per_ton": 323.5
+   "category": "조사료",
+   "import_ton": 114609.1,
+   "import_kusd": 37714.7,
+   "usd_per_ton": 329.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 97671.1,
+     "usd_per_ton": 323.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16938.0,
+     "usd_per_ton": 361.4
+    }
+   ]
   },
   {
    "month": "2026-08",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 13061.4,
-   "import_kusd": 4674.0,
-   "usd_per_ton": 357.9
-  },
-  {
-   "month": "2026-08",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 74326.5,
-   "import_kusd": 23785.2,
-   "usd_per_ton": 320.0
+   "category": "조사료",
+   "import_ton": 87387.9,
+   "import_kusd": 28459.2,
+   "usd_per_ton": 325.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 74326.5,
+     "usd_per_ton": 320.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13061.4,
+     "usd_per_ton": 357.9
+    }
+   ]
   },
   {
    "month": "2026-09",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 10367.7,
-   "import_kusd": 3871.7,
-   "usd_per_ton": 373.4
-  },
-  {
-   "month": "2026-09",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 78065.5,
-   "import_kusd": 24553.6,
-   "usd_per_ton": 314.5
+   "category": "조사료",
+   "import_ton": 88433.2,
+   "import_kusd": 28425.3,
+   "usd_per_ton": 321.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 78065.5,
+     "usd_per_ton": 314.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 10367.7,
+     "usd_per_ton": 373.4
+    }
+   ]
   },
   {
    "month": "2026-10",
    "hs": "121490",
    "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 13370.1,
-   "import_kusd": 5134.9,
-   "usd_per_ton": 384.1
-  },
-  {
-   "month": "2026-10",
-   "hs": "121490",
-   "name": "건초류 (알팔파·티머시·연맥 건초 등)",
-   "import_ton": 103991.9,
-   "import_kusd": 31901.1,
-   "usd_per_ton": 306.8
+   "category": "조사료",
+   "import_ton": 117362.0,
+   "import_kusd": 37036.0,
+   "usd_per_ton": 315.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 103991.9,
+     "usd_per_ton": 306.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13370.1,
+     "usd_per_ton": 384.1
+    }
+   ]
   }
  ],
- "collected_at": "2026-11-24 22:47 KST"
+ "collected_at": "2026-11-24 23:38 KST"
 }
