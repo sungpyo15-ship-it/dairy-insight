@@ -124,6 +124,33 @@ function fromUsHay(d) {
   });
 }
 
+// KREI 축산관측 젖소 (분기): 기간 'YYYY-Qn' → 분기말 월 'YYYY-MM'로 바꿔 연도별 차트에 배치
+const qToMonth = (p) => { const [y, q] = p.split('-Q'); return `${y}-${String(q * 3).padStart(2, '0')}`; };
+function fromKrei(d) {
+  if (!d) return [];
+  const base = { cycle: '분기', source: d.source, url: d.source_url, collected: d.collected_at,
+    note: `${d.latest_issue} 기준 · ${d.method}` };
+  const mk = (rows, key, id, group, name, unit) => ({ ...base, id, group, name, unit,
+    series: rows.filter((r) => r[key] != null).map((r) => ({ t: qToMonth(r.period), v: r[key] })) });
+  const sup = d.supply || [], herd = d.herd || [];
+  const out = [
+    mk(sup, 'production', 'krei_prod', '원유 수급', '원유 국내 생산량', '천 톤'),
+    mk(sup, 'consumption', 'krei_cons', '원유 수급', '유제품 국내 소비량 (원유 환산)', '천 톤'),
+    mk(sup, 'import', 'krei_imp', '원유 수급', '유제품 수입량 (원유 환산)', '천 톤'),
+    mk(sup, 'stock', 'krei_stock', '원유 수급', '분기말 재고 (원유 환산)', '천 톤'),
+    mk(herd, 'total', 'krei_herd', '젖소 사육', '젖소 총 사육 마릿수', '천 마리'),
+    mk(herd, 'milking', 'krei_milking', '젖소 사육', '착유우 마릿수', '천 마리'),
+    mk(herd, 'births', 'krei_births', '젖소 사육', '송아지 생산 마릿수 (분기)', '천 마리'),
+  ];
+  const items = [...new Set((d.prices || []).map((r) => r.item))];
+  items.forEach((it) => {
+    const rs = (d.prices || []).filter((r) => r.item === it);
+    out.push({ ...base, id: 'krei_price_' + it, group: '젖소 산지가격', name: `${rs[0].name} 산지가격 (분기 평균)`, unit: '원/마리',
+      series: rs.map((r) => ({ t: qToMonth(r.period), v: r.won })) });
+  });
+  return out.filter((i) => i.series.length);
+}
+
 function fromManual(m) {
   if (!m) return [];
   return m.indicators.map((i) => ({ ...i, cycle: '수동 입력', manual: true,
@@ -135,14 +162,15 @@ async function load() {
   // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
   const has = (id) => !!status?.datasets?.[id]?.last_success;
   const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
-  const [carcass, usdkrw, forage, dairyImp, grain, usHay, manual, briefs] = await Promise.all([
-    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'), auto('us_hay_ppi'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
+  const [carcass, usdkrw, forage, dairyImp, grain, usHay, krei, manual, briefs] = await Promise.all([
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'), auto('us_hay_ppi'), auto('krei_dairy'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
 
   INDICATORS = [
     ...fromManual(manual).filter((i) => i.group === '원유'),
+    ...fromKrei(krei),
     ...fromCarcass(carcass),
     ...fromCustoms(dairyImp, usdkrw),
     ...fromCustoms(forage, usdkrw),
@@ -157,6 +185,9 @@ async function load() {
 }
 
 // ---- 시세 카드 -------------------------------------------------------------
+// 분기 자료는 'YYYY-MM'(분기말)을 'YYYY년 N분기'로 표시
+const tLabel = (i, t) => (i.cycle === '분기' ? `${t.slice(0, 4)}년 ${Math.ceil(+t.slice(5, 7) / 3)}분기` : t);
+
 function change(s) {
   if (s.length < 2) return null;
   const last = s[s.length - 1].v, prev = s[s.length - 2].v, diff = last - prev;
@@ -189,10 +220,10 @@ function renderCards() {
     }
     const last = i.series[i.series.length - 1], c = change(i.series);
     return `<button class="card" data-id="${esc(i.id)}">
-      <div class="g">${esc(i.group)} · ${esc(last.t)}</div>
+      <div class="g">${esc(i.group)} · ${esc(tLabel(i, last.t))}</div>
       <div class="n">${esc(i.name)}</div>
       <div><span class="v">${fmt(last.v, ['원', '원/kg'].includes(i.unit) && last.v < 10000 ? 1 : 0)}</span><span class="u">${esc(i.unit)}</span></div>
-      ${c ? `<div class="d ${c.cls}">${esc(c.prevT)} 대비 ${c.arrow} ${fmt(Math.abs(c.diff), i.unit === '원' ? 1 : 0)} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</div>` : '<div class="d flat">비교 자료 없음</div>'}
+      ${c ? `<div class="d ${c.cls}">${esc(tLabel(i, c.prevT))} 대비 ${c.arrow} ${fmt(Math.abs(c.diff), i.unit === '원' ? 1 : 0)} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</div>` : '<div class="d flat">비교 자료 없음</div>'}
       ${sparkline(i.series)}
     </button>`;
   }).join('') || '<p class="hint">표시할 데이터가 없습니다. 수집 상태를 확인하세요.</p>';
@@ -227,7 +258,7 @@ function yearChart(ind) {
     let seg = [];
     const flush = () => { if (seg.length > 1) svg += `<polyline points="${seg.join(' ')}" fill="none" stroke="${col}" stroke-width="${yi === years.length - 1 ? 3 : 2}"/>`; seg = []; };
     for (let i = 0; i < 12; i++) {
-      if (arr[i] == null) { flush(); continue; } // 미발표 월은 빈칸
+      if (arr[i] == null) { if (ind.cycle !== '분기') flush(); continue; } // 미발표 월은 빈칸 (분기 자료는 분기말끼리 연결)
       seg.push(`${x(i)},${y(arr[i])}`);
       svg += `<circle cx="${x(i)}" cy="${y(arr[i])}" r="3.5" fill="${col}"><title>${yr}-${String(i + 1).padStart(2, '0')}: ${fmt(arr[i], 1)} ${esc(ind.unit)}</title></circle>`;
     }

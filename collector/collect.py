@@ -514,6 +514,25 @@ def collect_fred_hay():
 
 
 # ---------------------------------------------------------------------------
+# 7) KREI 축산관측 젖소 (분기) — 원유 수급표·사육 마릿수·산지가격 OCR 추출 (인증키 불필요)
+# ---------------------------------------------------------------------------
+def download_bytes(url):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        return r.read()
+
+
+def collect_krei():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import krei
+    try:
+        prev = json.load(open(os.path.join(AUTO, "krei_dairy.json"), encoding="utf-8"))
+    except Exception:
+        prev = None
+    return krei.collect(http_get, download_bytes, prev)
+
+
+# ---------------------------------------------------------------------------
 def save(result):
     os.makedirs(AUTO, exist_ok=True)
     result["collected_at"] = now_kst()
@@ -534,6 +553,7 @@ def main():
             ("usdkrw", "원/달러 환율", collect_ecos),
             ("grain_prices", "국제 곡물 가격 (세계은행)", collect_worldbank),
             ("us_hay_ppi", "미국 건초 생산자물가지수 (FRED)", collect_fred_hay),
+            ("krei_dairy", "KREI 축산관측 젖소 (원유 수급·사육·산지가격)", collect_krei),
             ("forage_import", "조사료 수입", lambda: collect_customs("forage_import")),
             ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import"))]
     jobs += [(s[0], s[5], (lambda s=s: collect_kosis(s))) for s in KOSIS_TABLES]

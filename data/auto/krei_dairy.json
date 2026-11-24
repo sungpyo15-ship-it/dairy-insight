@@ -1,0 +1,274 @@
+{
+ "id": "krei_dairy",
+ "title": "KREI 축산관측 젖소 (원유 수급·사육 마릿수·산지가격)",
+ "source": "한국농촌경제연구원 농업관측센터 「축산관측 젖소」 (원유 수급표 원자료: 낙농진흥회)",
+ "source_url": "https://www.aglook.kr/main/uObserveMonth/OVR0000000016",
+ "latest_issue": "축산관측 젖소 2026년 09월호",
+ "latest_issue_url": "https://www.aglook.kr/main/uObserveMonth/OVR0000000016/download/8755/ORGTEXT_FILE",
+ "method": "PDF 300dpi OCR(Tesseract) · 표는 합계·재고 연결 검증 통과분만 반영",
+ "warnings": [
+  "산지가격 판독 불가로 제외: 초산우"
+ ],
+ "units": {
+  "supply": "천 톤(원유 환산)",
+  "herd": "천 마리",
+  "prices": "원/마리"
+ },
+ "supply": [
+  {
+   "period": "2025-Q1",
+   "carryover": 95.0,
+   "production": 493.0,
+   "import": 598.0,
+   "supply_total": 1186.0,
+   "consumption": 1016.0,
+   "export": 33.0,
+   "stock": 138.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q2",
+   "carryover": 138.0,
+   "production": 513.0,
+   "import": 570.0,
+   "supply_total": 1221.0,
+   "consumption": 1026.0,
+   "export": 31.0,
+   "stock": 164.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q3",
+   "carryover": 164.0,
+   "production": 464.0,
+   "import": 724.0,
+   "supply_total": 1352.0,
+   "consumption": 1193.0,
+   "export": 30.0,
+   "stock": 129.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q4",
+   "carryover": 129.0,
+   "production": 481.0,
+   "import": 536.0,
+   "supply_total": 1146.0,
+   "consumption": 1023.0,
+   "export": 33.0,
+   "stock": 90.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q1",
+   "carryover": 90.0,
+   "production": 492.0,
+   "import": 648.0,
+   "supply_total": 1230.0,
+   "consumption": 1062.0,
+   "export": 24.0,
+   "stock": 144.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q2",
+   "carryover": 144.0,
+   "production": 505.0,
+   "import": 646.0,
+   "supply_total": 1295.0,
+   "consumption": 1128.0,
+   "export": 18.0,
+   "stock": 149.0,
+   "issue": "2026-09"
+  }
+ ],
+ "herd": [
+  {
+   "period": "2025-Q1",
+   "total": 377.0,
+   "under1": 71.0,
+   "age1to2": 65.0,
+   "over2": 241.0,
+   "milking": 192.0,
+   "births": 20.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q2",
+   "total": 371.0,
+   "under1": 68.0,
+   "age1to2": 65.0,
+   "over2": 238.0,
+   "milking": 191.0,
+   "births": 14.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q3",
+   "total": 373.0,
+   "under1": 69.0,
+   "age1to2": 64.0,
+   "over2": 241.0,
+   "milking": 192.0,
+   "births": 21.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q4",
+   "total": 375.0,
+   "under1": 68.0,
+   "age1to2": 66.0,
+   "over2": 240.0,
+   "milking": 190.0,
+   "births": 21.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q1",
+   "total": 371.0,
+   "under1": 69.0,
+   "age1to2": 66.0,
+   "over2": 236.0,
+   "milking": 189.0,
+   "births": 20.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q2",
+   "total": 365.0,
+   "under1": 68.0,
+   "age1to2": 65.0,
+   "over2": 232.0,
+   "milking": 187.0,
+   "births": 13.0,
+   "issue": "2026-09"
+  }
+ ],
+ "prices": [
+  {
+   "item": "calf_female",
+   "name": "분유떼기 암송아지",
+   "won": 223000,
+   "period": "2026-Q2",
+   "issue": "2026-09"
+  },
+  {
+   "item": "cull_cow",
+   "name": "노폐우",
+   "won": 1375000,
+   "period": "2025-Q4",
+   "issue": "2026-03"
+  },
+  {
+   "item": "cull_cow",
+   "name": "노폐우",
+   "won": 1417000,
+   "period": "2026-Q1",
+   "issue": "2026-06"
+  },
+  {
+   "item": "cull_cow",
+   "name": "노폐우",
+   "won": 1541000,
+   "period": "2026-Q2",
+   "issue": "2026-09"
+  },
+  {
+   "item": "first_calver",
+   "name": "초산우",
+   "won": 3683000,
+   "period": "2026-Q1",
+   "issue": "2026-06"
+  },
+  {
+   "item": "heifer_springer",
+   "name": "초임만삭우",
+   "won": 3553000,
+   "period": "2025-Q4",
+   "issue": "2026-03"
+  },
+  {
+   "item": "heifer_springer",
+   "name": "초임만삭우",
+   "won": 3553000,
+   "period": "2026-Q1",
+   "issue": "2026-06"
+  },
+  {
+   "item": "heifer_springer",
+   "name": "초임만삭우",
+   "won": 3555000,
+   "period": "2026-Q2",
+   "issue": "2026-09"
+  }
+ ],
+ "records": [
+  {
+   "period": "2025-Q1",
+   "carryover": 95.0,
+   "production": 493.0,
+   "import": 598.0,
+   "supply_total": 1186.0,
+   "consumption": 1016.0,
+   "export": 33.0,
+   "stock": 138.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q2",
+   "carryover": 138.0,
+   "production": 513.0,
+   "import": 570.0,
+   "supply_total": 1221.0,
+   "consumption": 1026.0,
+   "export": 31.0,
+   "stock": 164.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q3",
+   "carryover": 164.0,
+   "production": 464.0,
+   "import": 724.0,
+   "supply_total": 1352.0,
+   "consumption": 1193.0,
+   "export": 30.0,
+   "stock": 129.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2025-Q4",
+   "carryover": 129.0,
+   "production": 481.0,
+   "import": 536.0,
+   "supply_total": 1146.0,
+   "consumption": 1023.0,
+   "export": 33.0,
+   "stock": 90.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q1",
+   "carryover": 90.0,
+   "production": 492.0,
+   "import": 648.0,
+   "supply_total": 1230.0,
+   "consumption": 1062.0,
+   "export": 24.0,
+   "stock": 144.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q2",
+   "carryover": 144.0,
+   "production": 505.0,
+   "import": 646.0,
+   "supply_total": 1295.0,
+   "consumption": 1128.0,
+   "export": 18.0,
+   "stock": 149.0,
+   "issue": "2026-09"
+  }
+ ],
+ "collected_at": "2026-11-24 23:34 KST"
+}

@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: OCR 도구 설치 (KREI 보고서 판독용)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q poppler-utils tesseract-ocr tesseract-ocr-kor
+          pip install -q pillow
       - name: 수집 실행
         env:
           KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
