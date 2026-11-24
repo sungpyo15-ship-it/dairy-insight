@@ -2,81 +2,88 @@
  "datasets": {
   "carcass": {
    "label": "젖소·육우 도체 성적·경락가",
-   "last_success": "2026-11-24 23:38 KST",
+   "last_success": "2026-11-25 00:26 KST",
    "latest_period": "2026-10",
    "state": "ok",
    "message": "136행 수집"
   },
   "usdkrw": {
    "label": "원/달러 환율",
-   "last_success": "2026-11-24 23:38 KST",
+   "last_success": "2026-11-25 00:26 KST",
    "latest_period": "2026-10",
    "state": "ok",
    "message": "10행 수집"
   },
   "forage_import": {
    "label": "조사료 수입",
-   "last_success": "2026-11-24 23:38 KST",
+   "last_success": "2026-11-25 00:26 KST",
    "latest_period": "2026-10",
    "state": "ok",
    "message": "108행 수집"
   },
   "kosis_dairy_herd": {
    "label": "젖소 시도/사육규모별 농장수 및 마릿수 (가축동향, 이력제 자료)",
-   "last_success": "2026-11-24 23:41 KST",
+   "last_success": "2026-11-25 00:27 KST",
    "latest_period": "202603",
    "state": "ok",
    "message": "3620행 수집"
   },
   "kosis_milk_supply": {
    "label": "우유 및 유제품 생산·소비 상황 (농림축산식품부)",
-   "last_success": "2026-11-24 23:41 KST",
+   "last_success": "2026-11-25 00:27 KST",
    "latest_period": "2025",
    "state": "ok",
    "message": "180행 수집"
   },
   "kosis_dairy_profit": {
    "label": "젖소 두당 수익성 (농축산물생산비조사)",
-   "last_success": "2026-11-24 23:41 KST",
+   "last_success": "2026-11-25 00:27 KST",
    "latest_period": "2025",
    "state": "ok",
    "message": "200행 수집"
   },
   "kosis_dairy_cost": {
    "label": "젖소 두당 사육비 (농축산물생산비조사)",
-   "last_success": "2026-11-24 23:41 KST",
+   "last_success": "2026-11-25 00:27 KST",
    "latest_period": "2025",
    "state": "ok",
    "message": "1395행 수집"
   },
   "grain_prices": {
    "label": "국제 곡물 가격 (세계은행)",
-   "last_success": "2026-11-24 23:38 KST",
+   "last_success": "2026-11-25 00:26 KST",
    "latest_period": "2026-10",
    "state": "ok",
    "message": "244행 수집"
   },
   "us_hay_ppi": {
    "label": "미국 건초 생산자물가지수 (FRED)",
-   "last_success": "2026-11-24 23:38 KST",
+   "last_success": "2026-11-25 00:26 KST",
    "latest_period": "2026-10",
    "state": "ok",
    "message": "122행 수집"
   },
   "dairy_import": {
    "label": "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)",
-   "last_success": "2026-11-24 23:40 KST",
+   "last_success": "2026-11-25 00:27 KST",
    "latest_period": "2026-10",
    "state": "ok",
    "message": "352행 수집"
   },
   "krei_dairy": {
-   "label": "KREI 축산관측 젖소 (원유 수급·사육·산지가격·배합사료·도축)",
-   "last_success": "2026-11-24 23:38 KST",
+   "label": "KREI 축산관측 젖소 (원유 수급·사육·산지가격)",
+   "last_success": "2026-11-25 00:26 KST",
    "latest_period": "2026-Q2",
    "state": "ok",
-   "message": "6행 수집"
+   "message": "6행 수집 · 경고: 산지가격 판독 불가로 제외: 초산우"
+  },
+  "milk_rules": {
+   "label": "유업체별 유대 정산 기준 (업로드 엑셀)",
+   "last_success": null,
+   "latest_period": null,
+   "state": "no_key",
+   "message": "업로드 파일 없음 — 건너뜀"
   }
  },
- "checked_at": "2026-11-24 23:38 KST"
+ "checked_at": "2026-11-25 00:26 KST"
 }
