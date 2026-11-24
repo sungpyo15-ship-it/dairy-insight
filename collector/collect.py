@@ -226,30 +226,58 @@ def collect_kosis(spec):
 
 
 # ---------------------------------------------------------------------------
-# 4) 관세청 품목별 수출입실적 (공공데이터포털) — 조사료 수입 (인증키 필요)
+# 4) 관세청 품목별 수출입실적 (공공데이터포털) — 조사료·유제품 수입 (인증키 필요)
+#    HS 6자리로 조회하고, 응답이 10자리 세부품목으로 나뉘어 오면 월별로 합산한다.
+#    관세청이 돌려준 품목명(hs_names)을 함께 저장해 코드가 의도한 품목인지 검증한다.
 # ---------------------------------------------------------------------------
-FORAGE_HS = [
-    ("121410", "알팔파 밀·펠릿"),
-    ("121490", "건초류 (알팔파·티머시·연맥 건초 등)"),
-    ("121300", "곡물 짚 (볏짚·밀짚 등)"),
-]
+CUSTOMS_URL = "https://apis.data.go.kr/1220000/Itemtrade/getItemtradeList"
+CUSTOMS_SETS = {
+    "forage_import": {
+        "title": "조사료 수입량·수입단가 (관세청)",
+        "items": [
+            ("121410", "알팔파 밀·펠릿", "조사료"),
+            ("121490", "건초류 (알팔파·티머시·연맥 건초 등)", "조사료"),
+            ("121300", "곡물 짚 (볏짚·밀짚 등)", "조사료"),
+        ],
+    },
+    "dairy_import": {
+        "title": "유제품 수입량·수입단가 (관세청)",
+        "items": [
+            ("040110", "우유 (지방 1% 이하)", "우유·멸균유"),
+            ("040120", "우유 (지방 1~6%, 멸균유 대부분)", "우유·멸균유"),
+            ("040210", "탈지분유 (지방 1.5% 이하)", "분유"),
+            ("040221", "전지분유 (무가당)", "분유"),
+            ("040229", "가당 분유", "분유"),
+            ("190110", "조제분유 (영유아용 조제식료품)", "분유"),
+            ("040410", "유장·유장분말 (대용유 원료)", "유청·대용유 원료"),
+            ("040510", "버터", "버터·치즈"),
+            ("040610", "신선치즈 (모차렐라 등)", "버터·치즈"),
+            ("040690", "기타 치즈 (체다·고다 등)", "버터·치즈"),
+        ],
+    },
+}
 
 
-def collect_forage():
+def _customs_key():
     key = (os.environ.get("DATA_GO_KR_KEY") or "").strip()
-    if not key:
-        return None
     if "%" in key:  # Encoding 키를 넣은 경우 Decoding 키로 되돌림 (아래에서 한 번만 인코딩)
         key = urllib.parse.unquote(key)
+    return key
+
+
+def collect_customs(set_id):
+    key = _customs_key()
+    if not key:
+        return None
+    spec = CUSTOMS_SETS[set_id]
     months = recent_months(36)
-    recs = []
+    agg, names = {}, {}
     # API는 조회기간 1년 이내 제한 → 12개월 단위로 나눠 요청
     for i in range(0, len(months), 12):
         chunk = months[i:i + 12]
-        for hs, name in FORAGE_HS:
-            url = ("https://apis.data.go.kr/1220000/Itemtrade/getItemtradeList?"
-                   + urllib.parse.urlencode({"serviceKey": key, "strtYymm": chunk[-1],
-                                             "endYymm": chunk[0], "hsSgn": hs}))
+        for hs, name, cat in spec["items"]:
+            url = CUSTOMS_URL + "?" + urllib.parse.urlencode(
+                {"serviceKey": key, "strtYymm": chunk[-1], "endYymm": chunk[0], "hsSgn": hs})
             root = ET.fromstring(http_get(url))
             code = root.findtext(".//resultCode")
             if code not in (None, "00"):
@@ -258,16 +286,29 @@ def collect_forage():
                 ym = re.sub(r"\D", "", it.findtext("year") or "")
                 if len(ym) != 6:
                     continue  # '총계' 행 제외
-                wgt, usd = num(it.findtext("impWgt")), num(it.findtext("impDlr"))
-                recs.append({"month": f"{ym[:4]}-{ym[4:]}", "hs": hs, "name": name,
-                             "import_ton": round(wgt / 1000, 1) if wgt else None,
-                             "import_kusd": round(usd / 1000, 1) if usd else None,
-                             "usd_per_ton": round(usd / (wgt / 1000), 1) if wgt and usd else None})
+                if it.findtext("statKor"):
+                    names.setdefault(hs, set()).add(it.findtext("statKor").strip())
+                # 세부품목(10자리) 단위로 덮어써서 같은 달이 중복 응답돼도 두 번 더하지 않음
+                sub = it.findtext("hsCd") or it.findtext("statKor") or hs
+                agg[(hs, ym, sub)] = (num(it.findtext("impWgt")) or 0, num(it.findtext("impDlr")) or 0)
+    totals = {}
+    for (hs, ym, _), (w, u) in agg.items():
+        t = totals.setdefault((hs, ym), [0.0, 0.0])
+        t[0] += w
+        t[1] += u
+    meta = {hs: (name, cat) for hs, name, cat in spec["items"]}
+    recs = []
+    for (hs, ym), (wgt, usd) in totals.items():
+        recs.append({"month": f"{ym[:4]}-{ym[4:]}", "hs": hs, "name": meta[hs][0], "category": meta[hs][1],
+                     "import_ton": round(wgt / 1000, 1),
+                     "import_kusd": round(usd / 1000, 1),
+                     "usd_per_ton": round(usd / (wgt / 1000), 1) if wgt and usd else None})
     if not recs:
         raise RuntimeError("수집된 행이 없습니다")
-    return {"id": "forage_import", "title": "조사료 수입량·수입단가 (관세청)",
+    return {"id": set_id, "title": spec["title"],
             "source": "관세청 품목별 수출입실적 (공공데이터포털)",
             "source_url": "https://www.data.go.kr/data/15100475/openapi.do",
+            "hs_names": {k: sorted(v) for k, v in names.items()},
             "records": sorted(recs, key=lambda x: (x["hs"], x["month"]))}
 
 
@@ -374,7 +415,8 @@ def main():
     jobs = [("carcass", "젖소·육우 도체 성적·경락가", collect_mtrace),
             ("usdkrw", "원/달러 환율", collect_ecos),
             ("grain_prices", "국제 곡물 가격 (세계은행)", collect_worldbank),
-            ("forage_import", "조사료 수입", collect_forage)]
+            ("forage_import", "조사료 수입", lambda: collect_customs("forage_import")),
+            ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import"))]
     jobs += [(s[0], s[5], (lambda s=s: collect_kosis(s))) for s in KOSIS_TABLES]
 
     try:

@@ -14,6 +14,7 @@
 | 원/달러 환율 (월평균) | 한국은행 ECOS | 선택 (없으면 최근 10개월만) | `data/auto/usdkrw.json` |
 | 국제 곡물 월평균 가격 (옥수수·대두박·대두·밀) + 원화 환산 | 세계은행 Pink Sheet (CC BY 4.0) | 불필요 | `data/auto/grain_prices.json` |
 | 조사료 수입량·수입단가 (알팔파 밀·펠릿, 건초류, 곡물 짚) | 관세청 품목별 수출입실적 | `DATA_GO_KR_KEY` | `data/auto/forage_import.json` |
+| 유제품 수입량·수입단가 (우유·멸균유, 탈지·전지·가당·조제분유, 유장, 버터, 치즈) | 관세청 품목별 수출입실적 | `DATA_GO_KR_KEY` | `data/auto/dairy_import.json` |
 | 젖소 시도/사육규모별 농장수·마릿수 | KOSIS 가축동향 DT_1EO241 | `KOSIS_API_KEY` | `data/auto/kosis_dairy_herd.json` |
 | 우유 및 유제품 생산·소비 상황 | KOSIS 농식품부 DT_114N_1C001 | `KOSIS_API_KEY` | `data/auto/kosis_milk_supply.json` |
 | 젖소 두당 수익성·사육비 | KOSIS 생산비조사 DT_2EE303, DT_2EE302 | `KOSIS_API_KEY` | `data/auto/kosis_dairy_*.json` |

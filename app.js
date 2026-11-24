@@ -39,15 +39,18 @@ function fromSimple(d, group, name) {
     collected: d.collected_at, note: d.note, series: d.records.filter((r) => r.value != null).map((r) => ({ t: r.month, v: r.value })) }];
 }
 
-function fromForage(d) {
+// 관세청 수입 실적(조사료·유제품): 품목별 수입량·톤당 수입단가, 품목군(category)별로 묶어 표시
+function fromCustoms(d) {
   if (!d) return [];
   const hsList = [...new Set(d.records.map((r) => r.hs))];
   return hsList.flatMap((hs) => {
     const rs = d.records.filter((r) => r.hs === hs);
-    const base = { group: '조사료', source: d.source, url: d.source_url, cycle: '월간', collected: d.collected_at };
+    const names = d.hs_names?.[hs]?.join(', ');
+    const base = { group: rs[0].category || '조사료', source: `${d.source} · HS ${hs}`, url: d.source_url, cycle: '월간',
+      collected: d.collected_at, note: names ? `관세청 품목명: ${names}` : '' };
     return [
-      { id: 'forage_t_' + hs, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base },
-      { id: 'forage_p_' + hs, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base },
+      { id: `imp_t_${hs}`, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base },
+      { id: `imp_p_${hs}`, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base },
     ].filter((i) => i.series.length);
   });
 }
@@ -84,8 +87,8 @@ async function load() {
   // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
   const has = (id) => !!status?.datasets?.[id]?.last_success;
   const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
-  const [carcass, usdkrw, forage, grain, manual, briefs] = await Promise.all([
-    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('grain_prices'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
+  const [carcass, usdkrw, forage, dairyImp, grain, manual, briefs] = await Promise.all([
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
@@ -93,7 +96,8 @@ async function load() {
   INDICATORS = [
     ...fromManual(manual).filter((i) => i.group === '원유'),
     ...fromCarcass(carcass),
-    ...fromForage(forage),
+    ...fromCustoms(dairyImp),
+    ...fromCustoms(forage),
     ...fromGrain(grain, usdkrw),
     ...fromSimple(usdkrw, '거시', '원/달러 환율'),
     ...fromManual(manual).filter((i) => i.group !== '원유'),
