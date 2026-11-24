@@ -620,7 +620,8 @@ function renderBriefs(briefs) {
 }
 
 // ---- 유대·IOFC 계산기 (현재 vs 목표) -----------------------------------------
-// 단가·배정비율·인센티브 기준은 납유처마다 다르므로 모두 '예시 기본값'이며 사용자가 고쳐 쓴다.
+// 단가·배정비율·인센티브 기준은 납유처마다 다르므로 '예시 기본값'이며 사용자가 고쳐 쓴다.
+// 확인된 값: 쿼터 초과분 가격 100원/L (사용자 확인)
 const CALC_KEY = 'dd-calc-v1';
 const CALC_DEFAULTS = {
   common: { buyer: '서울우유', quota: 1800, rDrink: 88.6, rProc: 4.5, pDrink: 1084, pProc: 882, pRest: 882, pExcess: 100, incScope: 'quota' },
@@ -722,7 +723,7 @@ function renderCalc() {
       <label>쿼터 초과분 가격 (원/L) ${num('common.pExcess', c.pExcess)}</label>
       <label>성분·위생 인센티브 적용 ${`<select data-path="common.incScope"><option value="quota" ${c.incScope === 'quota' ? 'selected' : ''}>쿼터 내 물량만</option><option value="all" ${c.incScope === 'all' ? 'selected' : ''}>초과유 포함 전체</option></select>`}</label>
     </div>
-    <p class="hint">납유량은 쿼터 안에서 음용유 배정 → 가공유 배정 → 나머지 구간(${fmt(Math.max(0, 100 - c.rDrink - c.rProc), 1)}%) 순으로 채우고, 쿼터를 넘는 물량은 초과분 가격으로 정산합니다. 구간별 가격은 납유처 정산 기준으로 확인해 주세요.</p>
+    <p class="hint">납유량은 쿼터 안에서 음용유 배정 → 가공유 배정 → 나머지 구간(${fmt(Math.max(0, 100 - c.rDrink - c.rProc), 1)}%) 순으로 채우고, 쿼터를 넘는 물량은 초과분 가격(일반적으로 100원/L)으로 정산합니다. 그 밖의 구간별 가격은 납유처 정산 기준으로 확인해 주세요.</p>
   </div>
 
   <div class="panel calc">
