@@ -1,4 +1,4 @@
-# DAIRY INSIGHT · 낙농 인사이트
+# DAIRY DIARY · 낙농 시장정보 (저장소: dairy-insight)
 
 공식 통계 기반 낙농 시장정보 웹앱(PWA)입니다. 한우 인사이트와는 별도 저장소로 운영합니다.
 

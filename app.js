@@ -1,4 +1,4 @@
-// DAIRY INSIGHT — 공식 데이터 기반 낙농 시장정보 (정적 PWA)
+// DAIRY DIARY — 공식 데이터 기반 낙농 시장정보 (정적 PWA)
 // 데이터: data/status.json (수집 상태) · data/auto/*.json (자동 수집) · data/manual.json (직접 입력) · data/briefs.json
 const $ = (s) => document.querySelector(s);
 const fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—'
