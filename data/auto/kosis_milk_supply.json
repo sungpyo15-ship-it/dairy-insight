@@ -1,0 +1,1811 @@
+{
+ "id": "kosis_milk_supply",
+ "title": "우유 및 유제품 생산·소비 상황 (농림축산식품부)",
+ "source": "KOSIS 114/DT_114N_1C001",
+ "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=114&tblId=DT_114N_1C001",
+ "period_type": "Y",
+ "levels": 1,
+ "records": [
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2069581.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2058230.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2040751.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2049434.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2088786.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2034384.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1975414.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1929913.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1942274.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "합계",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1950983.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 78.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 44.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 47.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 53.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 53.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 58.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 44.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 29.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 19.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "서울특별시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3029.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2481.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2465.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2433.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2296.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1978.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1736.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1350.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1209.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "부산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1140.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 5795.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4587.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4142.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4065.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4151.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3924.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3306.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2794.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2839.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대구광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2616.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 14948.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15061.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15318.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 16123.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15145.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 14765.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 14709.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 13979.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 13358.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "인천광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 14209.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2930.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3088.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2930.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2671.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2880.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2592.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2215.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 2174.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1855.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "광주광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 1306.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "대전광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": null
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4791.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4606.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3979.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 4017.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3976.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3572.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3480.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3390.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3233.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "울산광역시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 3239.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 23809.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 24624.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 24231.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 24033.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 23888.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 22722.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 21788.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 20441.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 20411.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "세종특별자치시",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 19815.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 856106.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 849267.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 841142.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 845126.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 869356.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 849888.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 828131.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 815327.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 819980.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경기도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 835891.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 87852.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 90732.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 90643.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 91738.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 96932.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 95738.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 94122.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 93170.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 92964.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "강원특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 92532.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 113330.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 108930.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 105875.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 105842.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 104439.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 100929.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 96460.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 92109.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 93996.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 92524.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 347973.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 345630.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 343846.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 340890.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 349997.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 336929.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 328675.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 322759.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 324916.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "충청남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 318413.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 156679.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 157922.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 155753.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 156210.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 158268.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 153031.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 145123.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 140033.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 141901.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전북특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 144084.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 141708.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 141835.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 141572.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 144891.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 144406.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 140581.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 134746.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 131709.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 133376.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "전라남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 132562.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 171199.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 170117.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 168009.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 166856.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 167444.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 164052.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 160565.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 153545.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 153868.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상북도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 150715.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 123076.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 124249.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 127216.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 128943.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 130166.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 129501.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 127166.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 123573.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 124562.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "경상남도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 126885.0
+  },
+  {
+   "period": "2016",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 16278.0
+  },
+  {
+   "period": "2017",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15057.0
+  },
+  {
+   "period": "2018",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 13583.0
+  },
+  {
+   "period": "2019",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15543.0
+  },
+  {
+   "period": "2020",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15389.0
+  },
+  {
+   "period": "2021",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 14124.0
+  },
+  {
+   "period": "2022",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 13148.0
+  },
+  {
+   "period": "2023",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 13531.0
+  },
+  {
+   "period": "2024",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 13787.0
+  },
+  {
+   "period": "2025",
+   "item": "생산량",
+   "unit": "톤",
+   "c1": "제주특별자치도",
+   "c2": null,
+   "c3": null,
+   "c4": null,
+   "value": 15051.0
+  }
+ ],
+ "collected_at": "2026-11-24 23:41 KST"
+}
