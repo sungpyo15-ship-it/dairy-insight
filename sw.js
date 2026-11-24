@@ -1,5 +1,5 @@
 // 오프라인 지원: 화면 파일·data JSON 모두 네트워크 우선(새 버전 즉시 반영), 실패 시 캐시
-const CACHE = 'di-v9';
+const CACHE = 'di-v10';
 const ASSETS = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 self.addEventListener('install', (e) => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS))); });

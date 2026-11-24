@@ -320,7 +320,6 @@ async function load() {
   renderHome();
   Object.keys(SECTIONS).forEach(renderSection);
   renderTables(kosis); renderHealth(status); renderBriefs(briefs || []);
-  calc();
   routeFromHash();
 }
 
@@ -620,31 +619,266 @@ function renderBriefs(briefs) {
     : '<div class="panel"><p class="hint">아직 발행된 시황이 없습니다.</p></div>';
 }
 
-// ---- 계산기 ---------------------------------------------------------------
-const v = (id) => parseFloat($('#' + id).value) || 0;
-function calc() {
-  const heads = v('c_heads'), yieldKg = v('c_yield');
-  const liters = yieldKg / 1.03; // 원유 비중 약 1.03 (kg → L)
-  const p = Math.min(Math.max(v('c_procpct'), 0), 100) / 100;
-  const unit = (1 - p) * (v('c_base') + v('c_incent')) + p * (v('c_proc') + v('c_incent'));
-  const rev = liters * unit, feed = v('c_feed'), iofc = rev - feed;
-  const feedRatio = rev ? (feed / rev) * 100 : 0;
-  $('#calcResult').innerHTML = `
-    평균 정산단가: <b>${fmt(unit, 1)}</b> 원/L<br>
-    두당 일 유대수입: <b>${fmt(rev)}</b> 원 · 유대 대비 사료비율 <b>${fmt(feedRatio, 1)}%</b><br>
-    두당 일 IOFC: <b>${fmt(iofc)}</b> 원<br>
-    농장 월 IOFC (30일): <b>${fmt(iofc * heads * 30 / 10000)}</b> 만원 · 연간 <b>${fmt(iofc * heads * 365 / 1e6, 1)}</b> 백만원`;
+// ---- 유대·IOFC 계산기 (현재 vs 목표) -----------------------------------------
+// 단가·배정비율·인센티브 기준은 납유처마다 다르므로 모두 '예시 기본값'이며 사용자가 고쳐 쓴다.
+const CALC_KEY = 'dd-calc-v1';
+const CALC_DEFAULTS = {
+  common: { buyer: '서울우유', quota: 1800, rDrink: 88.6, rProc: 4.5, pDrink: 1084, pProc: 882, pRest: 882, pExcess: 100, incScope: 'quota' },
+  cur: { heads: 60, yield: 28, fat: 3.9, protein: 3.2, scc: 250, bact: '1A', feed: 16500, dmi: 24, young: 0 },
+  tgt: { heads: 60, yield: 31, fat: 4.0, protein: 3.3, scc: 150, bact: '1A', feed: 17500, dmi: 25, young: 0 },
+  // 인센티브 기준표 (원/L): 기준값 이상(또는 미만) 구간별 가감액
+  inc: {
+    fat: [[3.0, -103], [3.1, -41], [3.2, -30], [3.3, -20], [3.4, -10], [3.5, 0], [3.6, 10], [3.7, 20], [3.8, 56]], // 해당 값 '이상' (첫 칸은 이하)
+    protein: [[0, 0], [3.0, 4], [3.1, 11], [3.2, 19]],                                                         // 해당 값 '이상'
+    scc: [[200, 52], [350, 39], [500, 0], [750, 0], [Infinity, 0]],                                              // 해당 값(천) '미만'
+    bact: { '1A': 52, '1B': 36, '2': 3, '3': -15, '4': 0 },
+  },
+  quota: { price: 620000, buy: null, rate: 6 },
+  add: { cost: 400, gain: 0.8 },
+  feedRows: { cur: [], tgt: [] },
+};
+const BUYERS = ['낙농진흥회', '서울우유', '부산우유', '빙그레', '건국우유', '남양유업', '매일유업', '비락우유', '동원', '기타'];
+const BACT = ['1A', '1B', '2', '3', '4'];
+let CS = loadCalc();
 
-  const addCost = v('c_addcost'), gainL = v('c_addgain') / 1.03;
-  const addRev = gainL * unit, net = addRev - addCost;
-  const roi = addCost ? (net / addCost) * 100 : 0;
-  const breakeven = unit ? (addCost / unit) * 1.03 : 0;
-  $('#addResult').innerHTML = `
-    두당 일 추가수입: <b>${fmt(addRev)}</b> 원 − 비용 ${fmt(addCost)} 원 = 순이익 <b class="${net >= 0 ? 'up' : 'down'}">${fmt(net)}</b> 원<br>
-    투자수익률(ROI): <b>${fmt(roi)}%</b> · 손익분기 유량 증가: <b>${fmt(breakeven, 2)}</b> kg/두/일<br>
-    농장 연간 순효과: <b>${fmt(net * heads * 365 / 10000)}</b> 만원`;
+function loadCalc() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CALC_KEY) || 'null');
+    if (saved) return deepMerge(structuredClone(CALC_DEFAULTS), saved);
+  } catch (_) { /* 저장소 사용 불가 */ }
+  return structuredClone(CALC_DEFAULTS);
 }
-document.querySelectorAll('#view-calc input').forEach((el) => el.addEventListener('input', calc));
+function deepMerge(a, b) {
+  for (const k in b) a[k] = b[k] && typeof b[k] === 'object' && !Array.isArray(b[k]) ? deepMerge(a[k] || {}, b[k]) : b[k];
+  return a;
+}
+function saveCalc() { try { localStorage.setItem(CALC_KEY, JSON.stringify(CS, (k, v) => (v === Infinity ? 1e12 : v))); } catch (_) { /* 무시 */ } }
+
+// 인센티브 산정
+function incOf(sc) {
+  const T = CS.inc, r1 = (x) => Math.round(x * 10) / 10;
+  const step = (table, x) => { let v = table[0][1]; for (const [th, inc] of table) if (r1(x) >= th) v = inc; return v; };
+  const fat = step(T.fat, sc.fat), protein = sc.protein ? step(T.protein, sc.protein) : 0;
+  const scc = (T.scc.find(([th]) => sc.scc < (th >= 1e12 ? Infinity : th)) || T.scc[T.scc.length - 1])[1];
+  const bact = T.bact[sc.bact] ?? 0;
+  return { fat, protein, scc, bact, total: fat + protein + scc + bact };
+}
+// 납유량 → 음용·가공·초과 배분과 유대수입
+function milkRevenue(V, quota, inc) {
+  const c = CS.common;
+  // 쿼터 안: 음용유 배정 → 가공유 배정 → 나머지(쿼터 안 잔여 구간) / 쿼터 밖: 초과유
+  const capD = quota * c.rDrink / 100, capP = quota * c.rProc / 100, capR = Math.max(0, quota - capD - capP);
+  const vd = Math.min(V, capD), vp = Math.min(Math.max(V - vd, 0), capP);
+  const vr = Math.min(Math.max(V - vd - vp, 0), capR), ve = Math.max(V - vd - vp - vr, 0);
+  const excInc = c.incScope === 'all' ? inc : 0;
+  const rev = vd * (c.pDrink + inc) + vp * (c.pProc + inc) + vr * (c.pRest + inc) + ve * (c.pExcess + excInc);
+  return { vd, vp, vr, ve, rev, avg: V ? rev / V : 0 };
+}
+function scenario(sc) {
+  const inc = incOf(sc), V = sc.heads * sc.yield;
+  const m = milkRevenue(V, CS.common.quota, inc.total);
+  const feedDay = sc.heads * sc.feed, iofc = m.rev - feedDay - sc.young;
+  return { sc, inc, V, ...m, feedDay, iofc,
+    perHeadRev: sc.heads ? m.rev / sc.heads : 0, perHeadIofc: sc.heads ? (m.rev - feedDay) / sc.heads : 0,
+    feedPerL: sc.yield ? sc.feed / sc.yield : 0, feedRatio: m.rev ? (feedDay + sc.young) / m.rev * 100 : 0,
+    feedPerDM: sc.dmi ? sc.feed / sc.dmi : null, eff: sc.dmi ? sc.yield / sc.dmi : null,
+    quotaPct: CS.common.quota ? V / CS.common.quota * 100 : 0 };
+}
+
+// 화면 그리기 (입력 구조는 한 번만 만들고, 결과만 다시 계산)
+const num = (path, val, attrs = '') => `<input type="number" inputmode="decimal" data-path="${path}" value="${val ?? ''}" ${attrs}>`;
+function renderCalc() {
+  const c = CS.common;
+  const rowsIn = [
+    ['heads', '착유두수 (두)', 'step="1"'], ['yield', '두당 납유량 (L/일)', 'step="0.1"'], ['fat', '유지방 (%)', 'step="0.1"'],
+    ['protein', '유단백 (%)', 'step="0.1"'], ['scc', '체세포수 (천/mL)', 'step="1"'], ['bact', '세균수 등급', ''],
+    ['feed', '착유우 두당 사료비 (원/일)', 'step="10"'], ['dmi', '건물섭취량 (kg/두, 선택)', 'step="0.1"'], ['young', '육성·건유우 사료비 (원/일, 농장 합계)', 'step="100"'],
+  ];
+  const sel = (path, list, cur) => `<select data-path="${path}">${list.map((x) => `<option ${String(x) === String(cur) ? 'selected' : ''}>${x}</option>`).join('')}</select>`;
+  const incRow = (key, label, unitLabel) => `<div class="inc-row"><b>${label}</b>${CS.inc[key].map(([th, v], k) =>
+    `<label>${th >= 1e12 || th === Infinity ? `${CS.inc[key][k - 1][0]} 이상` : `${th}${unitLabel}`}${num(`inc.${key}.${k}.1`, v, 'step="1"')}</label>`).join('')}</div>`;
+  const feedTable = (who) => {
+    const rows = CS.feedRows[who].length ? CS.feedRows[who] : Array.from({ length: 5 }, () => ({}));
+    CS.feedRows[who] = rows;
+    return `<table class="feed-tbl"><thead><tr><th>사료명</th><th>급여량<br>kg/두</th><th>단가<br>원/kg</th><th>수분<br>%</th></tr></thead><tbody>
+      ${rows.map((r, k) => `<tr><td><input data-path="feedRows.${who}.${k}.name" value="${esc(r.name || '')}" placeholder="${k === 0 ? '예: TMR 혼합사료' : ''}"></td>
+        <td>${num(`feedRows.${who}.${k}.kg`, r.kg, 'step="0.1"')}</td><td>${num(`feedRows.${who}.${k}.price`, r.price, 'step="1"')}</td><td>${num(`feedRows.${who}.${k}.moist`, r.moist, 'step="1"')}</td></tr>`).join('')}
+      </tbody></table>
+      <div class="feed-sum" id="feedSum-${who}"></div>
+      <div class="feed-actions"><button type="button" class="ghost" data-act="addrow" data-who="${who}">＋ 줄 추가</button>
+        <button type="button" class="ghost strong" data-act="applyfeed" data-who="${who}">${who === 'cur' ? '현재' : '목표'}에 반영</button></div>`;
+  };
+  $('#calcApp').innerHTML = `
+  <div class="panel calc">
+    <h3 class="calc-h">① 납유 조건 <small>납유처 기준으로 고쳐 쓰세요 (기본값은 예시)</small></h3>
+    <div class="form">
+      <label>납유처 ${sel('common.buyer', BUYERS, c.buyer)}</label>
+      <label>보유 쿼터 (L/일) ${num('common.quota', c.quota, 'step="1"')}</label>
+      <label>쿼터 중 음용유 배정 (%) ${num('common.rDrink', c.rDrink, 'step="0.1"')}</label>
+      <label>쿼터 중 가공유 배정 (%) ${num('common.rProc', c.rProc, 'step="0.1"')}</label>
+      <label>음용유 기본가격 (원/L) ${num('common.pDrink', c.pDrink)}</label>
+      <label>가공유 가격 (원/L) ${num('common.pProc', c.pProc)}</label>
+      <label>쿼터 안 나머지 구간 가격 (원/L) ${num('common.pRest', c.pRest)}</label>
+      <label>쿼터 초과분 가격 (원/L) ${num('common.pExcess', c.pExcess)}</label>
+      <label>성분·위생 인센티브 적용 ${`<select data-path="common.incScope"><option value="quota" ${c.incScope === 'quota' ? 'selected' : ''}>쿼터 내 물량만</option><option value="all" ${c.incScope === 'all' ? 'selected' : ''}>초과유 포함 전체</option></select>`}</label>
+    </div>
+    <p class="hint">납유량은 쿼터 안에서 음용유 배정 → 가공유 배정 → 나머지 구간(${fmt(Math.max(0, 100 - c.rDrink - c.rProc), 1)}%) 순으로 채우고, 쿼터를 넘는 물량은 초과분 가격으로 정산합니다. 구간별 가격은 납유처 정산 기준으로 확인해 주세요.</p>
+  </div>
+
+  <div class="panel calc">
+    <h3 class="calc-h">② 현재 vs 목표</h3>
+    <table class="cmp-in"><thead><tr><th></th><th>현재</th><th>목표</th></tr></thead><tbody>
+      ${rowsIn.map(([k, label, a]) => `<tr><th>${label}</th>${['cur', 'tgt'].map((w) => `<td>${k === 'bact' ? sel(`${w}.bact`, BACT, CS[w].bact) : num(`${w}.${k}`, CS[w][k], a)}</td>`).join('')}</tr>`).join('')}
+    </tbody></table>
+  </div>
+
+  <div class="panel calc">
+    <h3 class="calc-h">③ 결과</h3>
+    <div id="calcOut"></div>
+    <a class="cta" href="#contact">이 결과로 컨설팅 상담 신청 →</a>
+  </div>
+
+  <details class="panel calc"><summary>사료 급여표로 사료비 계산하기</summary>
+    <p class="hint">사료별 두당 급여량(원물 kg)·단가·수분을 넣고 [반영]을 누르면 두당 사료비와 건물섭취량이 채워집니다.</p>
+    <h4>현재 급여</h4>${feedTable('cur')}
+    <h4>목표(제안) 급여</h4>${feedTable('tgt')}
+  </details>
+
+  <details class="panel calc"><summary>쿼터 구매 분석</summary>
+    <p class="hint">쿼터를 사면 쿼터 초과분이 쿼터 안 물량으로 바뀝니다. 추가수익 = 쿼터 구매 후 유대 − 구매 전 유대 (목표 시나리오 기준, 엑셀처럼 인센티브 차이를 전체 물량에 곱하지 않음).</p>
+    <div class="form">
+      <label>쿼터 가격 (원/L) ${num('quota.price', CS.quota.price, 'step="1000"')}</label>
+      <label>구매량 (L/일, 비우면 필요량 자동) ${num('quota.buy', CS.quota.buy, 'step="1"')}</label>
+      <label>대출 금리 (%/년) ${num('quota.rate', CS.quota.rate, 'step="0.1"')}</label>
+    </div>
+    <div class="result" id="quotaOut"></div>
+  </details>
+
+  <details class="panel calc"><summary>첨가제 투자 시뮬레이션</summary>
+    <p class="hint">현재 시나리오 기준. 늘어난 유량이 쿼터를 넘으면 초과유 가격으로 계산합니다. 기대 효과는 실증·문헌값으로 보수적으로 넣으세요.</p>
+    <div class="form">
+      <label>첨가제 두당 일 비용 (원) ${num('add.cost', CS.add.cost, 'step="10"')}</label>
+      <label>기대 유량 증가 (L/두/일) ${num('add.gain', CS.add.gain, 'step="0.1"')}</label>
+    </div>
+    <div class="result" id="addOut"></div>
+  </details>
+
+  <details class="panel calc"><summary>성분·위생 인센티브 기준표 (원/L, 편집)</summary>
+    <p class="hint">기본값은 예시입니다. 소속 집유주체의 최신 유대 기준표로 고쳐 쓰세요. 체세포 고등급 감액·세균 4등급은 탈지분유 가격 연동 등 기준이 달라 0으로 두었습니다.</p>
+    ${incRow('fat', '유지방', '%')}
+    <p class="hint tiny">유지방: 첫 칸은 '이하', 나머지는 해당 값 '이상'</p>
+    ${incRow('protein', '유단백', '%')}
+    <p class="hint tiny">유단백: 해당 값 '이상' (첫 칸은 기준 미만)</p>
+    ${incRow('scc', '체세포', '천 미만')}
+    <div class="inc-row"><b>세균수</b>${BACT.map((g) => `<label>${g}등급${num(`inc.bact.${g}`, CS.inc.bact[g], 'step="1"')}</label>`).join('')}</div>
+  </details>
+  <button type="button" class="ghost reset" data-act="reset">입력값 모두 기본값으로 되돌리기</button>`;
+  calc();
+}
+
+function setPath(path, raw, type) {
+  const keys = path.split('.'); let o = CS;
+  for (let k = 0; k < keys.length - 1; k++) o = o[keys[k]] ??= {};
+  const last = keys[keys.length - 1];
+  o[last] = type === 'number' ? (raw === '' ? null : parseFloat(raw)) : raw;
+}
+
+function calc() {
+  if (!$('#calcOut')) return;
+  const A = scenario(CS.cur), B = scenario(CS.tgt);
+  const won = (x) => fmt(x), man = (x) => fmt(x / 10000, 0) + '만', pct = (x) => fmt(x, 1) + '%';
+  const diff = (a, b, f, good = 1) => { const d = b - a; const cls = d === 0 ? 'flat' : (d * good > 0 ? 'good' : 'bad'); return `<td class="num ${cls}">${d > 0 ? '+' : ''}${f(d)}</td>`; };
+  const row = (label, a, b, f = won, good = 1, strong = false) => (a == null || b == null) ? '' :
+    `<tr class="${strong ? 'strong' : ''}"><th>${label}</th><td class="num">${f(a)}</td><td class="num">${f(b)}</td>${diff(a, b, f, good)}</tr>`;
+  const grp = (t) => `<tr class="grp"><th colspan="4">${t}</th></tr>`;
+  $('#calcOut').innerHTML = `<div class="tbl"><table class="cmp-out"><thead><tr><th></th><th>현재</th><th>목표</th><th>차이</th></tr></thead><tbody>
+    ${grp('유대 단가 (원/L)')}
+    ${row('성분·위생 인센티브', A.inc.total, B.inc.total)}
+    ${row('　유지방 / 유단백', A.inc.fat + A.inc.protein, B.inc.fat + B.inc.protein)}
+    ${row('　체세포 / 세균', A.inc.scc + A.inc.bact, B.inc.scc + B.inc.bact)}
+    ${row('평균 정산 유대', A.avg, B.avg, (x) => fmt(x, 1), 1, true)}
+    ${grp('납유량 배분 (L/일)')}
+    ${row('총 납유량', A.V, B.V)}
+    ${row('　음용유 배정', A.vd, B.vd)}
+    ${row('　가공유 배정', A.vp, B.vp)}
+    ${row('　쿼터 안 나머지 구간', A.vr, B.vr)}
+    ${row('　쿼터 초과분', A.ve, B.ve, won, -1)}
+    ${row('쿼터 대비 납유', A.quotaPct, B.quotaPct, pct)}
+    ${grp('농장 수익 (원)')}
+    ${row('일 유대수입', A.rev, B.rev)}
+    ${row('일 착유우 사료비', A.feedDay, B.feedDay, won, -1)}
+    ${row('일 육성·건유 사료비', A.sc.young, B.sc.young, won, -1)}
+    ${row('사료비 공제 수익(IOFC) / 일', A.iofc, B.iofc, won, 1, true)}
+    ${row('IOFC / 월', A.iofc * 365 / 12, B.iofc * 365 / 12, man, 1)}
+    ${row('IOFC / 년', A.iofc * 365, B.iofc * 365, man, 1, true)}
+    ${grp('두당·리터당')}
+    ${row('두당 일 유대수입', A.perHeadRev, B.perHeadRev)}
+    ${row('두당 일 IOFC (착유사료 공제)', A.perHeadIofc, B.perHeadIofc)}
+    ${row('우유 L당 착유사료비', A.feedPerL, B.feedPerL, (x) => fmt(x, 1), -1)}
+    ${row('유사비 (사료비 ÷ 유대수입)', A.feedRatio, B.feedRatio, pct, -1)}
+    ${row('건물 kg당 사료비', A.feedPerDM, B.feedPerDM, won, -1)}
+    ${row('사료효율 (L ÷ 건물 kg)', A.eff, B.eff, (x) => fmt(x, 2))}
+  </tbody></table></div>
+  <p class="hint">목표 달성 시 연간 사료비 공제 수익 <b class="${B.iofc >= A.iofc ? 'up' : 'down'}">${B.iofc >= A.iofc ? '+' : ''}${fmt((B.iofc - A.iofc) * 365 / 10000, 0)}만 원</b>${B.ve > 0 ? ` · 목표 납유량 중 ${fmt(B.ve)}L/일이 쿼터를 넘어 ${fmt(CS.common.pExcess)}원/L로 정산됩니다 — 쿼터 구매 분석을 확인하세요.` : ''}</p>`;
+
+  // 급여표 합계
+  ['cur', 'tgt'].forEach((w) => {
+    const el = $('#feedSum-' + w); if (!el) return;
+    const rows = CS.feedRows[w].filter((r) => r.kg > 0);
+    const cost = rows.reduce((a, r) => a + r.kg * (r.price || 0), 0), dm = rows.reduce((a, r) => a + r.kg * (100 - (r.moist || 0)) / 100, 0);
+    el.innerHTML = rows.length ? `두당 사료비 <b>${fmt(cost)}원/일</b> · 원물 ${fmt(rows.reduce((a, r) => a + r.kg, 0), 1)}kg · 건물 <b>${fmt(dm, 1)}kg</b> · 건물 kg당 ${fmt(dm ? cost / dm : 0)}원` : '급여 사료를 입력하세요.';
+    el.dataset.cost = cost; el.dataset.dm = dm;
+  });
+
+  // 쿼터 구매
+  const q = CS.quota, c = CS.common, inc = A.inc.total;
+  const need = Math.max(0, B.V - c.quota); // 목표 납유량이 모두 쿼터 안에 들도록
+  const buy = q.buy > 0 ? q.buy : Math.ceil(need);
+  const incB = B.inc.total, base = milkRevenue(B.V, c.quota, incB).rev, after = milkRevenue(B.V, c.quota + buy, incB).rev;
+  const gainDay = after - base, gainMon = gainDay * 365 / 12, cost = buy * (q.price || 0), i = (q.rate || 0) / 100 / 12;
+  let payback = '—';
+  if (gainMon > 0 && cost > 0) {
+    payback = i > 0 ? (gainMon > cost * i ? `${fmt(Math.log(gainMon / (gainMon - cost * i)) / Math.log(1 + i), 1)}개월 (이자 포함)` : '이자도 못 갚음 — 회수 불가') : `${fmt(cost / gainMon, 1)}개월`;
+  }
+  $('#quotaOut').innerHTML = `목표 납유량(${fmt(B.V)}L/일)이 모두 쿼터 안에 들려면 추가 쿼터 <b>${fmt(need, 0)} L/일</b>이 필요합니다.<br>
+    구매량 <b>${fmt(buy)} L</b> × ${fmt(q.price)}원 = 구매금액 <b>${man(cost)}원</b><br>
+    추가 유대수입: 일 <b>${fmt(gainDay)}원</b> · 월 <b>${man(gainMon)}원</b><br>
+    회수기간: <b>${payback}</b>${cost > 0 && gainMon > 0 ? ` · 단순 ${fmt(cost / gainMon, 1)}개월` : ''}`;
+
+  // 첨가제 (현재 기준, 쿼터 반영 한계 단가)
+  const ad = CS.add, extraV = (CS.cur.heads || 0) * (ad.gain || 0);
+  const addRev = milkRevenue(A.V + extraV, c.quota, inc).rev - A.rev;
+  const addCost = (CS.cur.heads || 0) * (ad.cost || 0), net = addRev - addCost;
+  const margPerL = extraV ? addRev / extraV : 0;
+  $('#addOut').innerHTML = `늘어난 우유의 평균 단가: <b>${fmt(margPerL, 1)}원/L</b>${A.V + extraV > c.quota ? ' <span class="muted">(쿼터를 넘는 물량은 초과분 가격)</span>' : ''}<br>
+    농장 일 추가수입 ${fmt(addRev)}원 − 첨가제 비용 ${fmt(addCost)}원 = 순이익 <b class="${net >= 0 ? 'up' : 'down'}">${fmt(net)}원/일</b><br>
+    투자수익률(ROI): <b>${addCost ? fmt(net / addCost * 100) : 0}%</b> · 손익분기 유량 증가: <b>${margPerL ? fmt((ad.cost || 0) / margPerL, 2) : '—'} L/두/일</b><br>
+    연간 순효과: <b>${man(net * 365)}원</b>`;
+  saveCalc();
+}
+
+// 입력·버튼 처리 (이벤트 위임)
+document.addEventListener('input', (e) => {
+  const el = e.target.closest('#calcApp [data-path]'); if (!el) return;
+  setPath(el.dataset.path, el.value, el.type === 'number' ? 'number' : 'text');
+  calc();
+});
+document.addEventListener('change', (e) => {
+  const el = e.target.closest('#calcApp select[data-path]'); if (!el) return;
+  setPath(el.dataset.path, el.value, 'text'); calc();
+});
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('#calcApp [data-act]'); if (!b) return;
+  const act = b.dataset.act, who = b.dataset.who;
+  if (act === 'addrow') { CS.feedRows[who].push({}); saveCalc(); renderCalc(); openDetails('사료 급여표'); }
+  if (act === 'applyfeed') {
+    const el = $('#feedSum-' + who); const cost = +el.dataset.cost, dm = +el.dataset.dm;
+    if (cost > 0) { CS[who].feed = Math.round(cost); CS[who].dmi = Math.round(dm * 10) / 10; saveCalc(); renderCalc(); openDetails('사료 급여표'); }
+  }
+  if (act === 'reset' && confirm('입력값을 모두 기본값으로 되돌릴까요?')) { CS = structuredClone(CALC_DEFAULTS); saveCalc(); renderCalc(); }
+});
+function openDetails(prefix) { document.querySelectorAll('#calcApp details').forEach((d) => { if (d.querySelector('summary').textContent.startsWith(prefix)) d.open = true; }); }
+renderCalc();
 
 // ---- 상담 신청 (서버 미연동 — 운영 시 구글폼/CRM 연결) --------------------
 $('#leadForm').onsubmit = (e) => {

@@ -57,26 +57,8 @@
 
       <section class="block" id="calc">
         <h2 class="sec-title">유대 · IOFC 계산기</h2>
-        <div class="panel">
-          <p class="hint">IOFC(사료비 제외 수익) = 두당 일 유대수입 − 두당 일 사료비. 단가는 소속 집유주체 기준으로 직접 입력하세요.</p>
-          <div class="form">
-            <label>착유두수 <input type="number" id="c_heads" value="60" min="1" inputmode="numeric"></label>
-            <label>두당 일평균 유량 (kg) <input type="number" id="c_yield" value="31" step="0.1" inputmode="decimal"></label>
-            <label>기본 원유가 (원/L) <input type="number" id="c_base" value="1084" inputmode="numeric"></label>
-            <label>성분·위생 인센티브 합계 (원/L) <input type="number" id="c_incent" value="120" inputmode="numeric"></label>
-            <label>두당 일 사료비 (원) <input type="number" id="c_feed" value="17500" inputmode="numeric"></label>
-            <label>쿼터 초과·가공유 정산 비율 (%) <input type="number" id="c_procpct" value="10" min="0" max="100" inputmode="numeric"></label>
-            <label>가공유 단가 (원/L) <input type="number" id="c_proc" value="882" inputmode="numeric"></label>
-          </div>
-          <div class="result" id="calcResult"></div>
-          <h3>첨가제 투자 시뮬레이션</h3>
-          <div class="form">
-            <label>첨가제 두당 일 비용 (원) <input type="number" id="c_addcost" value="400" inputmode="numeric"></label>
-            <label>기대 유량 증가 (kg/두/일) <input type="number" id="c_addgain" value="0.8" step="0.1" inputmode="decimal"></label>
-          </div>
-          <div class="result" id="addResult"></div>
-          <p class="hint">기대 효과치는 농장 실증·문헌값으로 보수적으로 입력하세요. 결과는 참고용 추정치입니다.</p>
-        </div>
+        <p class="sec-desc">현재와 목표를 나란히 넣으면 유대, 사료비 공제 수익(IOFC), 쿼터 구매 효과까지 계산합니다. 입력값은 이 휴대폰에만 저장됩니다.</p>
+        <div id="calcApp"></div>
       </section>
 
       <section class="block" id="brief">
