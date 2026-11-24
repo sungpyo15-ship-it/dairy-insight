@@ -22,6 +22,7 @@ import re
 import sys
 import traceback
 import urllib.parse
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 import io
@@ -66,10 +67,21 @@ def num(s):
         return None
 
 
-def http_get(url, opener=None, data=None, headers=None, timeout=90):
-    req = urllib.request.Request(url, data=data, headers={"User-Agent": UA, **(headers or {})})
-    with (opener or urllib.request.build_opener()).open(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", "replace")
+def http_get(url, opener=None, data=None, headers=None, timeout=90, tries=3):
+    """일시적 연결 끊김에 대비해 최대 3회 시도 (5초, 15초 간격)."""
+    import time
+    for attempt in range(tries):
+        try:
+            req = urllib.request.Request(url, data=data, headers={"User-Agent": UA, **(headers or {})})
+            with (opener or urllib.request.build_opener()).open(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", "replace")
+        except (urllib.error.URLError, ConnectionError, TimeoutError) as e:
+            if isinstance(e, urllib.error.HTTPError) and e.code < 500:
+                raise  # 4xx(인증 오류 등)는 재시도해도 소용없음
+            if attempt == tries - 1:
+                raise
+            print(f"  재시도 {attempt + 1}/{tries - 1}: {e}")
+            time.sleep(5 if attempt == 0 else 15)
 
 
 # ---------------------------------------------------------------------------
