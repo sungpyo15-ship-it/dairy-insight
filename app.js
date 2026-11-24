@@ -401,17 +401,36 @@ function kpiTile(i) {
 function renderHome() {
   const kpis = HOME_KPIS.map((id) => BY_ID[id]).filter((i) => i && i.series.length);
   $('#homeKpis').innerHTML = kpis.map(kpiTile).join('') || '<p class="hint">자료를 불러오는 중입니다.</p>';
-  $('#homeToc').innerHTML = Object.entries(SECTIONS).map(([key, s]) => {
-    const n = INDICATORS.filter((i) => s.subs.some((sb) => sb.groups.includes(i.group)) && !i.sub && i.series.length).length;
-    return `<a class="toc-card" href="#${key}">
-      <span class="toc-title">${esc(s.title)}</span>
-      <span class="toc-lead">${esc(s.lead)}</span>
-      <span class="toc-items">${s.subs.map((sb) => esc(sb.title)).join(' · ')}</span>
-      <span class="toc-count">지표 ${n}개 →</span></a>`;
-  }).join('') + `<a class="toc-card alt" href="#more">
-      <span class="toc-title">더보기</span>
-      <span class="toc-lead">유대·IOFC 계산기, 주간 시황, 상담 신청, 통계표</span>
-      <span class="toc-count">열기 →</span></a>`;
+  // 목차: 일기장 장(章) 카드 — 장 번호·분야 색, 소제목 바로가기 칩, 지표 수·최근 기록 시점
+  const norm = (t) => (/^\d{4}$/.test(t) ? `${t}-12` : t); // 연간 자료는 그해 12월로 비교
+  $('#homeToc').innerHTML = Object.entries(SECTIONS).map(([key, s], idx) => {
+    const subs = s.subs.map((sb) => ({ ...sb, items: INDICATORS.filter((i) => sb.groups.includes(i.group) && !i.sub && i.series.length) }))
+      .filter((sb) => sb.items.length);
+    const items = subs.flatMap((sb) => sb.items);
+    const latest = items.reduce((a, i) => { const t = i.series[i.series.length - 1].t; return !a || norm(t) > norm(a.t) ? { t, i } : a; }, null);
+    const cls = SECTION_TAG[key][1];
+    return `<article class="chap chap-${cls}">
+      <a class="chap-head" href="#${key}">
+        <span class="chap-no">${String(idx + 1).padStart(2, '0')}</span>
+        <span class="chap-text"><span class="chap-title">${esc(s.title)}</span><span class="chap-lead">${esc(s.lead)}</span></span>
+        <span class="chap-go" aria-hidden="true">›</span>
+      </a>
+      <nav class="chap-subs" aria-label="${esc(s.title)} 소제목">${subs.map((sb) => `<a href="#${sb.id}">${esc(sb.title)}<b>${sb.items.length}</b></a>`).join('')}</nav>
+      <p class="chap-meta">지표 ${items.length}개${latest ? ` · 최근 기록 ${esc(tLabel(latest.i, latest.t))}` : ''}</p>
+    </article>`;
+  }).join('') + `<article class="chap chap-more">
+      <a class="chap-head" href="#more">
+        <span class="chap-no">+</span>
+        <span class="chap-text"><span class="chap-title">더보기</span><span class="chap-lead">목장 경영에 바로 쓰는 도구</span></span>
+        <span class="chap-go" aria-hidden="true">›</span>
+      </a>
+      <nav class="chap-tools" aria-label="도구 바로가기">
+        <a href="#calc"><span>🧮</span>유대·IOFC<br>계산기</a>
+        <a href="#brief"><span>📰</span>주간<br>시황</a>
+        <a href="#contact"><span>💬</span>컨설팅<br>상담 신청</a>
+        <a href="#tables"><span>📊</span>KOSIS<br>통계표</a>
+      </nav>
+    </article>`;
 }
 
 // ---- 섹션 (목차 + 소제목별 카드) --------------------------------------------

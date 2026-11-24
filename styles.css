@@ -145,18 +145,44 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 .more-items summary::after { content: " ▾"; }
 .more-items[open] summary::after { content: " ▴"; }
 
-/* 홈 목차 카드 */
-.toc-grid { display: grid; gap: 10px; grid-template-columns: 1fr; margin-top: 10px; }
-@media (min-width: 640px) { .toc-grid { grid-template-columns: repeat(2, 1fr); } }
-.toc-card {
-  display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--text);
-  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow);
+/* 홈 목차: 일기장 장(章) 카드 */
+.toc-grid { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 10px; }
+@media (min-width: 760px) { .toc-grid { grid-template-columns: repeat(2, 1fr); } }
+.chap {
+  --kc: var(--brand); position: relative; overflow: hidden;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 0 0 12px 14px;
 }
-.toc-card.alt { background: var(--brand-soft); }
-.toc-title { font-size: 17px; font-weight: 800; }
-.toc-lead { font-size: 13px; color: var(--muted); }
-.toc-items { font-size: 12px; color: var(--text); opacity: .85; }
-.toc-count { font-size: 13px; font-weight: 700; color: var(--brand); margin-top: 4px; }
+.chap::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--kc); }
+.chap-milk { --kc: var(--c-milk); } .chap-cattle { --kc: var(--c-cattle); } .chap-feed { --kc: var(--c-feed); }
+.chap-more { --kc: var(--c-macro); background: color-mix(in srgb, var(--brand-soft) 60%, var(--card)); }
+.chap-head { display: flex; align-items: center; gap: 12px; padding: 14px 14px 8px 6px; text-decoration: none; color: var(--text); }
+.chap-no {
+  flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+  font-size: 15px; font-weight: 900; letter-spacing: .02em; color: var(--kc);
+  background: color-mix(in srgb, var(--kc) 13%, transparent);
+  border: 1.5px dashed color-mix(in srgb, var(--kc) 45%, transparent);
+}
+.chap-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.chap-title { font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
+.chap-lead { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+.chap-go { flex: none; font-size: 26px; line-height: 1; color: var(--kc); font-weight: 300; }
+.chap-subs { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 14px 0 6px; }
+.chap-subs a {
+  display: inline-flex; align-items: center; gap: 5px; text-decoration: none; color: var(--text);
+  font-size: 12.5px; font-weight: 600; padding: 6px 10px; border-radius: 999px;
+  background: var(--bg); border: 1px solid var(--line);
+}
+.chap-subs a b { font-size: 10.5px; font-weight: 800; color: var(--kc); background: color-mix(in srgb, var(--kc) 12%, transparent); padding: 0 6px; border-radius: 999px; }
+.chap-subs a:active { border-color: var(--kc); }
+.chap-meta { margin: 10px 14px 0 6px; padding-top: 8px; border-top: 1px dashed var(--line); font-size: 12px; color: var(--muted); }
+.chap-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 2px 14px 2px 6px; }
+.chap-tools a {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; text-decoration: none;
+  color: var(--text); font-size: 11.5px; font-weight: 650; line-height: 1.3;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 4px;
+}
+.chap-tools a span { font-size: 20px; line-height: 1; }
 
 /* 패널·폼 */
 .panel {
