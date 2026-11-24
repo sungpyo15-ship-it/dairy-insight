@@ -161,6 +161,92 @@ function fromKrei(d) {
   return out.filter((i) => i.series.length);
 }
 
+// ---- KOSIS 통계표 → 지표 카드 (전국·평균 값 + 지역별·규모별·항목별 분해) ----------
+const SCALE_ORDER = ['20 미만', '20~50 미만', '50~100 미만', '100 이상'];
+const FARM_SIZE = ['50두미만', '50~69두', '70~99두', '100두이상'];
+const COST_ITEMS = ['사료비', '가축상각비', '자가노동비', '고용노동비', '농구비', '수도광열비', '영농시설비',
+  '방역치료비', '차입금이자', '자본용역비'];
+// 시도 약칭
+const REGION_SHORT = { 서울특별시: '서울', 부산광역시: '부산', 대구광역시: '대구', 인천광역시: '인천', 광주광역시: '광주', 대전광역시: '대전',
+  울산광역시: '울산', 세종특별자치시: '세종', 경기도: '경기', 강원특별자치도: '강원', 강원도: '강원', 충청북도: '충북', 충청남도: '충남',
+  전북특별자치도: '전북', 전라북도: '전북', 전라남도: '전남', 경상북도: '경북', 경상남도: '경남', 제주특별자치도: '제주', 전남광주통합특별시: '전남광주(통합)' };
+const region = (n) => REGION_SHORT[n] || REGION_SHORT[n.replace(/도도$/, '도')] || n;
+// 행정구역 통합 과도기: '전남광주통합' 행이 전남+광주 합계와 함께 실리면 중복이므로 제외
+const dropMerged = (rows) => (rows.some((r) => r.c1 === '전라남도') ? rows.filter((r) => r.c1 !== '전남광주통합특별시') : rows);
+const kosisT = (p) => (p.length === 6 ? `${p.slice(0, 4)}-${String(+p.slice(4) * 3).padStart(2, '0')}` : p); // 분기 YYYYQQ → 분기말 월
+const latestOf = (rows) => rows.reduce((a, r) => (r.period > a ? r.period : a), '');
+const kosisBase = (d, cycle) => ({ cycle, source: `${d.source} · ${d.title}`, url: d.source_url, collected: d.collected_at });
+
+function fromKosis(K) {
+  const out = [];
+  const herd = K.kosis_dairy_herd;
+  if (herd) {
+    const R = herd.records, base = { ...kosisBase(herd, '분기'), group: '젖소 농장' };
+    const nat = (item, c2) => R.filter((r) => r.c1 === '전국' && r.c2 === c2 && r.item === item && r.value != null)
+      .sort((a, b) => a.period.localeCompare(b.period));
+    const last = latestOf(R), lastLabel = tLabel({ cycle: '분기' }, kosisT(last));
+    const bd = (item) => [
+      { title: `사육 규모별 (${lastLabel})`, rows: SCALE_ORDER.map((c2) => ({ label: c2.replace(' 미만', '두 미만').replace(' 이상', '두 이상'),
+        v: R.find((r) => r.c1 === '전국' && r.c2 === c2 && r.item === item && r.period === last)?.value })) },
+      { title: `시도별 (${lastLabel})`, sort: true, rows: dropMerged(R.filter((r) => r.c1 !== '전국' && r.c2 === '합계' && r.item === item && r.period === last && r.value > 0))
+        .map((r) => ({ label: region(r.c1), v: r.value })) },
+    ];
+    const farms = nat('농장수', '합계'), heads = nat('마릿수', '합계'), big = nat('마릿수', '100 이상');
+    out.push(
+      { ...base, id: 'kosis_farms', name: '젖소 사육 농장 수 (전국)', unit: '호', series: farms.map((r) => ({ t: kosisT(r.period), v: r.value })), breakdowns: bd('농장수') },
+      { ...base, id: 'kosis_heads', name: '젖소 사육 마릿수 (이력제, 전국)', unit: '마리', series: heads.map((r) => ({ t: kosisT(r.period), v: r.value })), breakdowns: bd('마릿수'),
+        note: '축산물이력제 기준 — 가축동향조사(KREI 표) 마릿수와 집계 기준이 달라 차이가 있음' },
+      { ...base, id: 'kosis_avg_herd', name: '농장당 평균 사육 마릿수', unit: '마리', note: '계산값 = 전국 마릿수 ÷ 농장 수',
+        series: heads.map((h) => { const f = farms.find((x) => x.period === h.period); return f ? { t: kosisT(h.period), v: Math.round(h.value / f.value * 10) / 10 } : null; }).filter(Boolean) },
+      { ...base, id: 'kosis_big_share', name: '100두 이상 농장의 사육 비중', unit: '%', note: '계산값 = 100두 이상 농장 마릿수 ÷ 전국 마릿수',
+        series: big.map((b) => { const h = heads.find((x) => x.period === b.period); return h ? { t: kosisT(b.period), v: Math.round(b.value / h.value * 1000) / 10 } : null; }).filter(Boolean) },
+    );
+  }
+  const milk = K.kosis_milk_supply;
+  if (milk) {
+    const R = milk.records, last = latestOf(R);
+    out.push({ ...kosisBase(milk, '연간'), group: '원유 생산', id: 'kosis_milk_prod', name: '원유 생산량 (연간, 전국)', unit: '천 톤',
+      series: R.filter((r) => r.c1 === '합계' && r.value != null).sort((a, b) => a.period.localeCompare(b.period)).map((r) => ({ t: r.period, v: Math.round(r.value / 100) / 10 })),
+      breakdowns: [{ title: `시도별 (${last}년, 천 톤)`, sort: true, rows: dropMerged(R.filter((r) => r.c1 !== '합계' && r.period === last && r.value > 0))
+        .map((r) => ({ label: region(r.c1), v: Math.round(r.value / 100) / 10 })) }] });
+  }
+  const manwon = (v) => Math.round(v / 1000) / 10; // 원 → 만원 (소수 1자리)
+  const byScale = (R, c1, last) => ({ title: `사육 규모별 (${last}년, 만원/두)`, rows: FARM_SIZE.map((c2) => ({ label: c2,
+    v: manwon(R.find((r) => r.c1 === c1 && r.c2 === c2 && r.period === last)?.value ?? NaN) })) });
+  const avgSeries = (R, c1) => R.filter((r) => r.c1 === c1 && r.c2 === '평균' && r.value != null)
+    .sort((a, b) => a.period.localeCompare(b.period)).map((r) => ({ t: r.period, v: manwon(r.value) }));
+  const prof = K.kosis_dairy_profit;
+  if (prof) {
+    const R = prof.records, last = latestOf(R), base = { ...kosisBase(prof, '연간'), group: '목장 수익성', unit: '만원/두' };
+    [['총수입(A)', 'kosis_profit_rev', '젖소 두당 총수입'], ['비용합계(C)', 'kosis_profit_cost', '젖소 두당 생산비 (비용합계)'],
+      ['소득(A-B)', 'kosis_profit_income', '젖소 두당 소득'], ['순수익(A-C)', 'kosis_profit_net', '젖소 두당 순수익']].forEach(([c1, id, name]) =>
+      out.push({ ...base, id, name, series: avgSeries(R, c1), breakdowns: [byScale(R, c1, last)],
+        note: '전체 평균 기준 · 소득 = 총수입 − 일반비(자가노동비·자본용역비 제외), 순수익 = 총수입 − 비용합계' }));
+  }
+  const cost = K.kosis_dairy_cost;
+  if (cost) {
+    const R = cost.records, last = latestOf(R), base = { ...kosisBase(cost, '연간'), group: '생산비', unit: '만원/두' };
+    const first = (c1, c2, p) => R.find((r) => r.c1 === c1 && r.c2 === c2 && r.period === p)?.value; // 이름이 겹치는 하위 항목 대비 첫 항목 사용
+    const total = first('비용합계', '평균', last);
+    const items = COST_ITEMS.map((c1) => ({ label: c1, v: first(c1, '평균', last) })).filter((x) => x.v != null);
+    const rest = total - items.reduce((a, x) => a + x.v, 0);
+    const costBreak = { title: `비용 구성 (${last}년 평균, 만원/두)`, sort: true,
+      rows: [...items, ...(rest > 0 ? [{ label: '기타(차액)', v: rest }] : [])].map((x) => ({ label: x.label, v: manwon(x.v) })) };
+    const feedBreak = { title: `사료비 구성 (${last}년 평균, 만원/두)`, rows: ['농후사료', 'TMR사료', '조사료'].map((c1) => ({ label: c1, v: manwon(first(c1, '평균', last) ?? NaN) })) };
+    out.push(
+      { ...base, id: 'kosis_cost_total', name: '젖소 두당 사육비 (비용합계)', series: avgSeries(R, '비용합계'), breakdowns: [costBreak, byScale(R, '비용합계', last)] },
+      { ...base, id: 'kosis_cost_feed', name: '젖소 두당 사료비', series: avgSeries(R, '사료비'), breakdowns: [feedBreak, byScale(R, '사료비', last)] },
+      { ...base, id: 'kosis_cost_conc', name: '두당 농후사료비', series: avgSeries(R, '농후사료') },
+      { ...base, id: 'kosis_cost_tmr', name: '두당 TMR사료비', series: avgSeries(R, 'TMR사료') },
+      { ...base, id: 'kosis_cost_rough', name: '두당 조사료비', series: avgSeries(R, '조사료') },
+      { ...base, id: 'kosis_feed_share', name: '사육비 중 사료비 비중', unit: '%', note: '계산값 = 사료비 ÷ 비용합계 (전체 평균)',
+        series: [...new Set(R.map((r) => r.period))].sort().map((p) => { const f = first('사료비', '평균', p), t = first('비용합계', '평균', p);
+          return f && t ? { t: p, v: Math.round(f / t * 1000) / 10 } : null; }).filter(Boolean) },
+    );
+  }
+  return out.filter((i) => i.series.length);
+}
+
 function fromManual(m) {
   if (!m) return [];
   return m.indicators.map((i) => ({ ...i, cycle: '수동 입력', manual: true,
@@ -172,15 +258,19 @@ function fromManual(m) {
 const SECTIONS = {
   milk: { title: '원유·유제품', lead: '원유 생산·소비·재고와 유제품 수입 동향', subs: [
     { id: 'm-supply', title: '원유 수급', desc: '국내 생산·소비·재고 (원유 환산, 분기) · 원유 기본가격', groups: ['원유 수급', '원유'] },
+    { id: 'm-prod', title: '원유 생산 (연간·시도별)', desc: '농림축산식품부 우유 생산 통계 (KOSIS)', groups: ['원유 생산'] },
     { id: 'm-milk', title: '우유·멸균유 수입', desc: '관세청 월별 수입량·톤당 수입단가', groups: ['우유·멸균유'] },
     { id: 'm-powder', title: '분유 수입', desc: '탈지·전지·가당·조제분유', groups: ['분유'] },
     { id: 'm-whey', title: '유청·대용유 원료 수입', desc: '유장·유장분말 (사료용 포함)', groups: ['유청·대용유 원료'] },
     { id: 'm-butter', title: '버터·치즈 수입', desc: '버터, 모차렐라 등 신선치즈, 체다·고다 등', groups: ['버터·치즈'] },
   ] },
-  cattle: { title: '젖소·가축', lead: '젖소 사육 규모, 도축, 도체 시세와 산지가격', subs: [
+  cattle: { title: '젖소·가축', lead: '젖소 사육 규모, 도축, 시세와 산지가격, 목장 수익성', subs: [
     { id: 'c-herd', title: '젖소 사육·도축', desc: '사육 마릿수·착유우·송아지 생산(분기), 도축 마릿수(월)', groups: ['젖소 사육'] },
+    { id: 'c-farm', title: '젖소 농장 규모', desc: '농장 수·마릿수(이력제), 농장당 평균, 100두 이상 비중 (분기, KOSIS)', groups: ['젖소 농장'] },
     { id: 'c-price', title: '젖소 산지가격', desc: '분유떼기 암송아지·초임만삭우·초산우·노폐우 (분기 평균)', groups: ['젖소 산지가격', '가축'] },
     { id: 'c-carcass', title: '젖소 도체 시세', desc: '암소 경락단가·판정두수·도체중 (월)', groups: ['젖소 도체'] },
+    { id: 'c-profit', title: '목장 수익성', desc: '젖소 두당 총수입·생산비·소득·순수익 (연간, 농축산물생산비조사)', groups: ['목장 수익성'] },
+    { id: 'c-cost', title: '젖소 생산비', desc: '두당 사육비와 사료비 구성 (연간)', groups: ['생산비'] },
     { id: 'c-beef', title: '육우', desc: '육우 거세우 경락단가·판정두수·도체중 (월)', groups: ['육우'] },
   ] },
   feed: { title: '사료·조사료', lead: '배합사료 생산, 조사료 수입원가, 국제 곡물과 환율', subs: [
@@ -192,7 +282,7 @@ const SECTIONS = {
   ] },
 };
 // 홈 '핵심 지표' (있는 것만 순서대로 표시)
-const HOME_KPIS = ['krei_prod', 'krei_milking', 'cow_price', 'krei_price_cull_cow', 'krei_feed_total',
+const HOME_KPIS = ['krei_prod', 'krei_milking', 'kosis_profit_net', 'cow_price', 'krei_price_cull_cow', 'krei_feed_total',
   'imp_k_121490', 'grain_krw_Maize', 'usdkrw'];
 
 let BY_ID = {};
@@ -208,10 +298,12 @@ async function load() {
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
+  const K = Object.fromEntries(kosis.map((d) => [d.id, d]));
 
   INDICATORS = [
     ...fromManual(manual).filter((i) => i.group === '원유'),
     ...fromKrei(krei),
+    ...fromKosis(K),
     ...fromCarcass(carcass),
     ...fromCustoms(dairyImp, usdkrw),
     ...fromCustoms(forage, usdkrw),
@@ -230,8 +322,8 @@ async function load() {
 }
 
 // ---- 카드 -----------------------------------------------------------------
-const tLabel = (i, t) => (i.cycle === '분기' ? `${t.slice(0, 4)}년 ${Math.ceil(+t.slice(5, 7) / 3)}분기` : t);
-const digits = (i, v) => (['원', '원/kg'].includes(i.unit) && Math.abs(v) < 10000 ? 1 : 0);
+const tLabel = (i, t) => (i.cycle === '분기' ? `${t.slice(0, 4)}년 ${Math.ceil(+t.slice(5, 7) / 3)}분기` : i.cycle === '연간' ? `${t}년` : t);
+const digits = (i, v) => ((['원', '원/kg'].includes(i.unit) && Math.abs(v) < 10000) || ['만원/두', '%'].includes(i.unit) || (i.unit === '마리' && Math.abs(v) < 1000 && v % 1) ? 1 : 0);
 
 function change(s) {
   if (s.length < 2) return null;
@@ -371,6 +463,38 @@ function yearChart(ind) {
   return `<svg viewBox="0 0 ${w} ${ht}" role="img" aria-label="${esc(ind.name)} 연도별 추이">${svg}</svg>`;
 }
 
+// 연간 자료: 가로축 연도 추이
+function trendChart(ind) {
+  const pts = ind.series;
+  if (!pts.length) return '';
+  const w = 640, ht = 280, p = { l: 86, r: 20, t: 20, b: 40 };
+  const vals = pts.map((q) => q.v), min = Math.min(...vals), max = Math.max(...vals);
+  const pad = (max - min) * 0.15 || Math.abs(max) * 0.05 || 1, lo = min - pad, hi = max + pad;
+  const x = (i) => p.l + (pts.length === 1 ? 0.5 : i / (pts.length - 1)) * (w - p.l - p.r);
+  const y = (v) => p.t + (1 - (v - lo) / (hi - lo)) * (ht - p.t - p.b);
+  let svg = [lo, lo + (hi - lo) / 3, lo + (hi - lo) * 2 / 3, hi].map((t) => `<line x1="${p.l}" x2="${w - p.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${p.l - 10}" y="${y(t) + 7}" text-anchor="end">${fmt(t, Math.abs(hi - lo) < 10 ? 1 : 0)}</text>`).join('');
+  if (lo < 0 && hi > 0) svg += `<line x1="${p.l}" x2="${w - p.r}" y1="${y(0)}" y2="${y(0)}" stroke="var(--muted)" stroke-dasharray="6 6"/>`;
+  svg += pts.map((q, i) => `<text x="${x(i)}" y="${ht - 10}" text-anchor="middle">${esc(String(q.t).slice(2))}</text>`).join('');
+  svg += `<polyline points="${pts.map((q, i) => `${x(i)},${y(q.v)}`).join(' ')}" fill="none" stroke="var(--brand)" stroke-width="4" stroke-linejoin="round"/>`;
+  svg += pts.map((q, i) => `<circle cx="${x(i)}" cy="${y(q.v)}" r="5.5" fill="var(--brand)" stroke="var(--card)" stroke-width="2"><title>${esc(q.t)}: ${fmt(q.v, 1)} ${esc(ind.unit)}</title></circle>`).join('');
+  $('#sheetLegend').innerHTML = `<span><i style="background:var(--brand)"></i>연도별 (‘${esc(String(pts[0].t).slice(2))}~‘${esc(String(pts[pts.length - 1].t).slice(2))})</span>`;
+  return `<svg viewBox="0 0 ${w} ${ht}" role="img" aria-label="${esc(ind.name)} 연도별 추이">${svg}</svg>`;
+}
+
+// 분해 막대: 지역별·규모별·항목별 비교
+function breakdownHTML(ind) {
+  return (ind.breakdowns || []).map((bd) => {
+    let rows = bd.rows.filter((r) => r.v != null && !isNaN(r.v));
+    if (bd.sort) rows = rows.sort((a, b) => b.v - a.v);
+    if (!rows.length) return '';
+    const max = Math.max(...rows.map((r) => Math.abs(r.v))) || 1;
+    return `<div class="bd"><h3>${esc(bd.title)}</h3>${rows.map((r) => `<div class="bd-row">
+      <span class="bd-label">${esc(r.label)}</span>
+      <span class="bd-bar"><i class="${r.v < 0 ? 'neg' : ''}" style="width:${Math.max(2, Math.abs(r.v) / max * 100)}%"></i></span>
+      <span class="bd-val">${fmt(r.v, Math.abs(r.v) < 100 && r.v % 1 ? 1 : 0)}</span></div>`).join('')}</div>`;
+  }).join('');
+}
+
 function openSheet(ind) {
   const last = ind.series[ind.series.length - 1], c = change(ind.series);
   $('#sheetGroup').textContent = `${ind.group} · ${ind.cycle}`;
@@ -378,7 +502,8 @@ function openSheet(ind) {
   $('#sheetKpi').innerHTML = `<span class="v">${fmt(last.v, digits(ind, last.v))}</span><span class="u">${esc(ind.unit)}</span>
     <span class="when">${esc(tLabel(ind, last.t))}</span>
     ${c ? `<span class="d ${c.cls}">${c.arrow} ${fmt(Math.abs(c.diff), digits(ind, c.diff))} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</span>` : ''}`;
-  $('#sheetChart').innerHTML = yearChart(ind);
+  $('#sheetChart').innerHTML = ind.cycle === '연간' ? trendChart(ind) : yearChart(ind);
+  $('#sheetBreak').innerHTML = breakdownHTML(ind);
   const recent = ind.series.slice(-8).reverse();
   $('#sheetTable').innerHTML = `<table><thead><tr><th>기간</th><th class="num">값 (${esc(ind.unit)})</th></tr></thead><tbody>
     ${recent.map((p) => `<tr><td>${esc(tLabel(ind, p.t))}</td><td class="num">${fmt(p.v, digits(ind, p.v))}</td></tr>`).join('')}</tbody></table>`;

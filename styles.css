@@ -261,3 +261,13 @@ details.panel summary { cursor: pointer; font-weight: 700; font-size: 15px; }
 .tabs button.active .ti { transform: scale(1.1); }
 .pending { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; border: 1px dashed var(--line); font-size: 13px; }
 .toc a.on { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+/* 상세 창: 분해 막대 */
+.bd { margin-top: 16px; }
+.bd h3 { margin: 0 0 8px; font-size: 14px; }
+.bd-row { display: grid; grid-template-columns: 92px 1fr auto; align-items: center; gap: 8px; padding: 4px 0; font-size: 13px; }
+.bd-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bd-bar { height: 12px; background: var(--bg); border-radius: 6px; overflow: hidden; }
+.bd-bar i { display: block; height: 100%; background: var(--brand); border-radius: 6px; }
+.bd-bar i.neg { background: var(--up); }
+.bd-val { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 64px; text-align: right; }
