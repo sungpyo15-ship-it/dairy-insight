@@ -1,6 +1,6 @@
 {
  "id": "krei_dairy",
- "title": "KREI 축산관측 젖소 (원유 수급·사육 마릿수·산지가격)",
+ "title": "KREI 축산관측 젖소 (원유 수급·사육·산지가격·배합사료·도축)",
  "source": "한국농촌경제연구원 농업관측센터 「축산관측 젖소」 (원유 수급표 원자료: 낙농진흥회)",
  "source_url": "https://www.aglook.kr/main/uObserveMonth/OVR0000000016",
  "latest_issue": "축산관측 젖소 2026년 09월호",
@@ -12,8 +12,76 @@
  "units": {
   "supply": "천 톤(원유 환산)",
   "herd": "천 마리",
-  "prices": "원/마리"
+  "prices": "원/마리",
+  "feed": "천 톤",
+  "slaughter": "마리"
  },
+ "feed": [
+  {
+   "period": "2025-Q1",
+   "total": 317.0,
+   "milking": 239.0,
+   "calf": 62.0,
+   "other": 15.0,
+   "issue": "2026-06"
+  },
+  {
+   "period": "2025-Q2",
+   "total": 314.0,
+   "milking": 239.0,
+   "calf": 60.0,
+   "other": 15.0,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-Q1",
+   "total": 311.0,
+   "milking": 236.0,
+   "calf": 58.0,
+   "other": 17.0,
+   "issue": "2026-06"
+  },
+  {
+   "period": "2026-Q2",
+   "total": 305.0,
+   "milking": 232.0,
+   "calf": 57.0,
+   "other": 16.0,
+   "issue": "2026-09"
+  }
+ ],
+ "slaughter": [
+  {
+   "period": "2025-12",
+   "head": 5349,
+   "yoy_pct": 6.0,
+   "issue": "2026-03"
+  },
+  {
+   "period": "2026-04",
+   "head": 4661,
+   "yoy_pct": -9.1,
+   "issue": "2026-06"
+  },
+  {
+   "period": "2026-05",
+   "head": 3667,
+   "yoy_pct": -0.7,
+   "issue": "2026-06"
+  },
+  {
+   "period": "2026-06",
+   "head": 4174,
+   "yoy_pct": 19.1,
+   "issue": "2026-09"
+  },
+  {
+   "period": "2026-07",
+   "head": 4225,
+   "yoy_pct": 4.1,
+   "issue": "2026-09"
+  }
+ ],
  "supply": [
   {
    "period": "2025-Q1",
@@ -270,5 +338,5 @@
    "issue": "2026-09"
   }
  ],
- "collected_at": "2026-11-24 23:34 KST"
+ "collected_at": "2026-11-24 23:43 KST"
 }

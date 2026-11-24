@@ -142,6 +142,17 @@ function fromKrei(d) {
     mk(herd, 'milking', 'krei_milking', '젖소 사육', '착유우 마릿수', '천 마리'),
     mk(herd, 'births', 'krei_births', '젖소 사육', '송아지 생산 마릿수 (분기)', '천 마리'),
   ];
+  const feed = d.feed || [];
+  const feedNote = { note: `원자료: 농림축산식품부 · ${base.note}` };
+  out.push(
+    { ...mk(feed, 'total', 'krei_feed_total', '배합사료', '젖소용 배합사료 생산량 (분기)', '천 톤'), ...feedNote },
+    { ...mk(feed, 'milking', 'krei_feed_milk', '배합사료', '착유우용 배합사료 생산량 (분기)', '천 톤'), ...feedNote },
+    { ...mk(feed, 'calf', 'krei_feed_calf', '배합사료', '송아지용 배합사료 생산량 (분기)', '천 톤'), ...feedNote },
+  );
+  const sl = d.slaughter || [];
+  if (sl.length) out.push({ ...base, id: 'krei_slaughter', group: '젖소 사육', name: '젖소 도축 마릿수 (월)', unit: '마리', cycle: '월간',
+    note: `원자료: 농림축산검역본부 · 보고서마다 최근 2개월씩 실려 매 분기 누적 · ${base.note}`,
+    series: sl.map((r) => ({ t: r.period, v: r.head })) });
   const items = [...new Set((d.prices || []).map((r) => r.item))];
   items.forEach((it) => {
     const rs = (d.prices || []).filter((r) => r.item === it);

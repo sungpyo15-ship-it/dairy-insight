@@ -19,7 +19,7 @@
 | 젖소 시도/사육규모별 농장수·마릿수 | KOSIS 가축동향 DT_1EO241 | `KOSIS_API_KEY` | `data/auto/kosis_dairy_herd.json` |
 | 우유 및 유제품 생산·소비 상황 | KOSIS 농식품부 DT_114N_1C001 | `KOSIS_API_KEY` | `data/auto/kosis_milk_supply.json` |
 | 젖소 두당 수익성·사육비 | KOSIS 생산비조사 DT_2EE303, DT_2EE302 | `KOSIS_API_KEY` | `data/auto/kosis_dairy_*.json` |
-| 원유 수급표(국내생산·수입·소비·재고, 분기), 젖소 사육 마릿수(연령별·착유우·송아지 생산), 젖소 산지가격 | KREI 「축산관측 젖소」 분기 보고서 PDF를 OCR로 판독 (수급표 원자료: 낙농진흥회) | 불필요 | `data/auto/krei_dairy.json` |
+| 원유 수급표(국내생산·수입·소비·재고, 분기), 젖소 사육 마릿수(연령별·착유우·송아지 생산), 젖소 산지가격, 젖소용 배합사료 생산량(분기), 젖소 도축 마릿수(월) | KREI 「축산관측 젖소」 분기 보고서 PDF를 OCR로 판독 (수급표 원자료: 낙농진흥회) | 불필요 | `data/auto/krei_dairy.json` |
 | 원유 기본가격, 젖소 수송아지 가격 | 낙농진흥회, 농협 축산정보센터 | 직접 입력 | `data/manual.json` |
 
 ## 자동 수집

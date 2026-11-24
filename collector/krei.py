@@ -170,6 +170,60 @@ def parse_herd(text):
     return out
 
 
+def issue_year_for(issue, q=None, month=None):
+    """보고서는 직전 기간을 다룬다: 발간 분기 이상인 분기, 발간 월보다 늦은 월은 전년도."""
+    y, m = int(issue[:4]), int(issue[5:7])
+    if q is not None:
+        return y - 1 if q >= (m - 1) // 3 + 1 else y
+    return y - 1 if month > m else y
+
+
+def first_two(text, label_re):
+    """label 줄의 앞 두 숫자(전년, 금년). 줄 끝에 옆 차트 눈금이 붙어도 무시."""
+    for ln in text.splitlines():
+        ln = ln.strip()
+        if re.match(label_re, ln) and not re.search(r"[:：]|만|천\s*톤", ln):  # 요약 문장 줄 제외, 표 행만
+            v = nums(re.sub(label_re, "", ln, count=1))
+            if len(v) >= 2:
+                return v[:2]
+    return None
+
+
+def parse_feed(text, issue):
+    """젖소용 배합사료 생산량 (천 톤, 분기) — 해당 분기와 전년 같은 분기."""
+    m = re.search(r"(\d)분기[^\n]{0,12}배합사료\s*생산량", text)
+    if not m:
+        raise ValueError("배합사료 생산량 분기를 찾지 못했습니다")
+    q = int(m.group(1))
+    total, milk, calf, other = (first_two(text, lab) for lab in (r"전체", r"착유우용", r"송아지용", r"기타"))
+    if not all([total, milk, calf, other]):
+        raise ValueError("배합사료 표 행 일부를 읽지 못했습니다")
+    for i in range(2):
+        if not close(milk[i] + calf[i] + other[i], total[i], 2):
+            raise ValueError(f"배합사료 합계 불일치: {milk[i]}+{calf[i]}+{other[i]}≠{total[i]}")
+    y = issue_year_for(issue, q=q)
+    return [{"period": f"{y - 1 + i}-Q{q}", "total": total[i], "milking": milk[i], "calf": calf[i],
+             "other": other[i]} for i in range(2)]
+
+
+def parse_slaughter(text, issue):
+    """젖소 도축 마릿수 (월별) — '6월: 4,174마리(전년 대비 19.1% 증가)' 형식."""
+    i = text.find("도축")
+    if i < 0:
+        raise ValueError("도축 동향을 찾지 못했습니다")
+    seg = text[i:i + 800]
+    out = []
+    for m in re.finditer(r"(\d{1,2})월\s*[:：]\s*(\d{1,2},\d{3}|\d{3,5})\s*마리\s*\(전년\s*대비\s*(-?[\d.]+)%\s*(증가|감소)", seg):
+        month, v = int(m.group(1)), int(m.group(2).replace(",", ""))
+        if not 1 <= month <= 12 or not 1000 <= v <= 20000:  # 월 도축 1천~2만 마리 범위 밖이면 판독 오류로 봄
+            continue
+        pct = float(m.group(3)) * (1 if m.group(4) == "증가" else -1)
+        out.append({"period": f"{issue_year_for(issue, month=month)}-{month:02d}", "head": v, "yoy_pct": pct})
+    if not out:
+        raise ValueError("월별 도축 마릿수 문장을 읽지 못했습니다")
+    return out
+
+
 PRICE_ITEMS = [("분유떼기\\s*암송아지", "calf_female", "분유떼기 암송아지"),
                ("초임만삭우", "heifer_springer", "초임만삭우"),
                ("초산우", "first_calver", "초산우"),
@@ -221,35 +275,40 @@ def collect(http_get, download, prev=None, info=None):
             results[name] = fn(full)
         except ValueError as e:
             errors.append(f"{name}: {e}")
+    for name, fn in (("feed", parse_feed), ("slaughter", parse_slaughter)):
+        try:
+            results[name] = fn(full, info["issue"])
+        except ValueError as e:
+            errors.append(f"{name}: {e}")
     prices, skipped = parse_prices(full)
-    issue_year, issue_month = int(info["issue"][:4]), int(info["issue"][5:7])
-    issue_q = (issue_month - 1) // 3 + 1
     for p in prices:
-        # 보고서는 직전 분기를 다룬다: 발간 분기 이상인 분기(예: 3월호의 '4분기')는 전년도
         q = p.pop("quarter")
-        p["period"] = f"{issue_year - 1 if q >= issue_q else issue_year}-Q{q}"
+        p["period"] = f"{issue_year_for(info['issue'], q=q)}-Q{q}"
     if not results and not prices:
         raise RuntimeError("추출 실패 — " + "; ".join(errors))
 
-    merged = {"supply": {}, "herd": {}, "prices": {}}
+    merged = {"supply": {}, "herd": {}, "prices": {}, "feed": {}, "slaughter": {}}
     for k in merged:
         for r in (prev or {}).get(k, []):
             merged[k][(r["period"], r.get("item"))] = r
-    for k in ("supply", "herd"):
+    for k in ("supply", "herd", "feed", "slaughter"):
         for r in results.get(k, []):
             merged[k][(r["period"], None)] = {**r, "issue": info["issue"]}
     for r in prices:
         merged["prices"][(r["period"], r["item"])] = {**r, "issue": info["issue"]}
     return {
         "id": "krei_dairy",
-        "title": "KREI 축산관측 젖소 (원유 수급·사육 마릿수·산지가격)",
+        "title": "KREI 축산관측 젖소 (원유 수급·사육·산지가격·배합사료·도축)",
         "source": "한국농촌경제연구원 농업관측센터 「축산관측 젖소」 (원유 수급표 원자료: 낙농진흥회)",
         "source_url": LIST_URL,
         "latest_issue": info["title"],
         "latest_issue_url": info["url"],
         "method": "PDF 300dpi OCR(Tesseract) · 표는 합계·재고 연결 검증 통과분만 반영",
         "warnings": errors + ([f"산지가격 판독 불가로 제외: {', '.join(skipped)}"] if skipped else []),
-        "units": {"supply": "천 톤(원유 환산)", "herd": "천 마리", "prices": "원/마리"},
+        "units": {"supply": "천 톤(원유 환산)", "herd": "천 마리", "prices": "원/마리",
+                  "feed": "천 톤", "slaughter": "마리"},
+        "feed": sorted(merged["feed"].values(), key=lambda r: r["period"]),
+        "slaughter": sorted(merged["slaughter"].values(), key=lambda r: r["period"]),
         "supply": sorted(merged["supply"].values(), key=lambda r: r["period"]),
         "herd": sorted(merged["herd"].values(), key=lambda r: r["period"]),
         "prices": sorted(merged["prices"].values(), key=lambda r: (r["item"], r["period"])),
