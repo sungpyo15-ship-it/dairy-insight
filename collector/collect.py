@@ -11,6 +11,7 @@
   KOSIS_API_KEY   국가통계포털 OpenAPI 인증키 (https://kosis.kr/openapi)
   ECOS_API_KEY    한국은행 ECOS 인증키 (없으면 체험용 'sample' 키로 최근 10개월만)
   DATA_GO_KR_KEY  공공데이터포털 인증키 — 관세청 품목별 수출입실적 (조사료 수입)
+세계은행 원자재 가격(Pink Sheet)은 인증키 없이 수집한다.
 """
 import datetime as dt
 import html
@@ -23,6 +24,8 @@ import traceback
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+import io
+import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUTO = os.path.join(ROOT, "data", "auto")
@@ -257,6 +260,89 @@ def collect_forage():
 
 
 # ---------------------------------------------------------------------------
+# 5) 세계은행 원자재 가격 (Pink Sheet) — 국제 곡물 월평균 가격 (인증키 불필요)
+#    라이선스: CC BY 4.0 — 출처 "World Bank Commodity Price Data (The Pink Sheet)" 표기
+# ---------------------------------------------------------------------------
+WB_PAGE = "https://www.worldbank.org/en/research/commodity-markets"
+# (파일의 열 이름, 앱 표시 이름) — 열 위치가 아니라 이름으로 찾는다
+WB_ITEMS = [
+    ("Maize", "옥수수"),
+    ("Soybean meal", "대두박"),
+    ("Soybeans", "대두"),
+    ("Wheat, US HRW", "밀 (미국 HRW)"),
+]
+XNS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+
+
+def read_xlsx_sheet(data, sheet_name):
+    """표준 라이브러리로 xlsx 한 시트를 [{열문자: 값}] 목록으로 읽는다."""
+    z = zipfile.ZipFile(io.BytesIO(data))
+    wb = z.read("xl/workbook.xml").decode()
+    rid = re.search(r'<sheet [^>]*name="%s"[^>]*r:id="([^"]+)"' % re.escape(sheet_name), wb)
+    if not rid:
+        raise RuntimeError(f"시트 '{sheet_name}'를 찾지 못했습니다")
+    rels = z.read("xl/_rels/workbook.xml.rels").decode()
+    target = re.search(r'Id="%s"[^>]*Target="([^"]+)"' % rid.group(1), rels) or \
+        re.search(r'Target="([^"]+)"[^>]*Id="%s"' % rid.group(1), rels)
+    path = "xl/" + target.group(1).lstrip("/").replace("xl/", "")
+    ss = []
+    if "xl/sharedStrings.xml" in z.namelist():
+        for si in ET.fromstring(z.read("xl/sharedStrings.xml")).iter(XNS + "si"):
+            ss.append("".join(t.text or "" for t in si.iter(XNS + "t")))
+    rows = []
+    for r in ET.fromstring(z.read(path)).iter(XNS + "row"):
+        row = {}
+        for c in r.iter(XNS + "c"):
+            col, t, v = re.sub(r"\d", "", c.get("r")), c.get("t"), c.find(XNS + "v")
+            if t == "inlineStr":
+                row[col] = "".join(x.text or "" for x in c.iter(XNS + "t"))
+            elif v is not None:
+                row[col] = ss[int(v.text)] if t == "s" else v.text
+        rows.append(row)
+    return rows
+
+
+def collect_worldbank():
+    page = http_get(WB_PAGE)
+    m = re.search(r'https?://[^"\' ]*CMO-Historical-Data-Monthly\.xlsx', page)
+    if not m:
+        raise RuntimeError("월간 자료 파일 링크를 찾지 못했습니다")
+    url = m.group(0)
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        data = r.read()
+    rows = read_xlsx_sheet(data, "Monthly Prices")
+    updated = next((v for r in rows[:6] for v in r.values() if str(v).startswith("Updated")), "")
+    hdr_i = next(i for i, r in enumerate(rows[:15]) if "Maize" in r.values())
+    hdr, unit_row = rows[hdr_i], rows[hdr_i + 1]
+    cols = {}
+    for name, ko in WB_ITEMS:
+        col = next((k for k, v in hdr.items() if v.strip() == name), None)
+        if not col:
+            raise RuntimeError(f"'{name}' 열을 찾지 못했습니다 — 파일 구성 변경 확인 필요")
+        if "$/mt" not in unit_row.get(col, ""):
+            raise RuntimeError(f"'{name}' 단위가 바뀌었습니다: {unit_row.get(col)}")
+        cols[name] = (col, ko)
+    cutoff = recent_months(MONTHS_BACK + 1)[-1]
+    recs = []
+    for r in rows[hdr_i + 2:]:
+        pm = re.fullmatch(r"(\d{4})M(\d{2})", str(r.get("A", "")).strip())
+        if not pm or pm.group(1) + pm.group(2) < cutoff:
+            continue
+        for name, (col, ko) in cols.items():
+            val = num(r.get(col))
+            if val is not None:
+                recs.append({"month": f"{pm.group(1)}-{pm.group(2)}", "item": name, "name": ko,
+                             "usd_per_ton": round(val, 2)})
+    if not recs:
+        raise RuntimeError("수집된 행이 없습니다")
+    return {"id": "grain_prices", "title": "국제 곡물 가격 (월평균, USD/톤)",
+            "source": "World Bank Commodity Price Data (The Pink Sheet), CC BY 4.0",
+            "source_url": WB_PAGE, "file_url": url, "published": updated,
+            "records": sorted(recs, key=lambda x: (x["item"], x["month"]))}
+
+
+# ---------------------------------------------------------------------------
 def save(result):
     os.makedirs(AUTO, exist_ok=True)
     result["collected_at"] = now_kst()
@@ -275,6 +361,7 @@ def latest_period(result):
 def main():
     jobs = [("carcass", "젖소·육우 도체 성적·경락가", collect_mtrace),
             ("usdkrw", "원/달러 환율", collect_ecos),
+            ("grain_prices", "국제 곡물 가격 (세계은행)", collect_worldbank),
             ("forage_import", "조사료 수입", collect_forage)]
     jobs += [(s[0], s[5], (lambda s=s: collect_kosis(s))) for s in KOSIS_TABLES]
 

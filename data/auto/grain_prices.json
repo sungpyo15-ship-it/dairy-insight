@@ -1,0 +1,1475 @@
+{
+ "id": "grain_prices",
+ "title": "국제 곡물 가격 (월평균, USD/톤)",
+ "source": "World Bank Commodity Price Data (The Pink Sheet), CC BY 4.0",
+ "source_url": "https://www.worldbank.org/en/research/commodity-markets",
+ "file_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+ "published": "Updated on November 03, 2026",
+ "records": [
+  {
+   "month": "2021-10",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 239.6
+  },
+  {
+   "month": "2021-11",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 248.7
+  },
+  {
+   "month": "2021-12",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 264.5
+  },
+  {
+   "month": "2022-01",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 276.6
+  },
+  {
+   "month": "2022-02",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 292.6
+  },
+  {
+   "month": "2022-03",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 335.5
+  },
+  {
+   "month": "2022-04",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 348.2
+  },
+  {
+   "month": "2022-05",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 344.8
+  },
+  {
+   "month": "2022-06",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 335.7
+  },
+  {
+   "month": "2022-07",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 323.0
+  },
+  {
+   "month": "2022-08",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 289.8
+  },
+  {
+   "month": "2022-09",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 312.7
+  },
+  {
+   "month": "2022-10",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 343.6
+  },
+  {
+   "month": "2022-11",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 320.9
+  },
+  {
+   "month": "2022-12",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 302.2
+  },
+  {
+   "month": "2023-01",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 302.8
+  },
+  {
+   "month": "2023-02",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 298.2
+  },
+  {
+   "month": "2023-03",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 282.5
+  },
+  {
+   "month": "2023-04",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 291.1
+  },
+  {
+   "month": "2023-05",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 268.1
+  },
+  {
+   "month": "2023-06",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 266.9
+  },
+  {
+   "month": "2023-07",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 242.4
+  },
+  {
+   "month": "2023-08",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 207.6
+  },
+  {
+   "month": "2023-09",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 223.8
+  },
+  {
+   "month": "2023-10",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 230.7
+  },
+  {
+   "month": "2023-11",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 211.3
+  },
+  {
+   "month": "2023-12",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 206.5
+  },
+  {
+   "month": "2024-01",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 198.6
+  },
+  {
+   "month": "2024-02",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 189.1
+  },
+  {
+   "month": "2024-03",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 190.6
+  },
+  {
+   "month": "2024-04",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 191.7
+  },
+  {
+   "month": "2024-05",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 197.8
+  },
+  {
+   "month": "2024-06",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 192.5
+  },
+  {
+   "month": "2024-07",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 177.4
+  },
+  {
+   "month": "2024-08",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 170.3
+  },
+  {
+   "month": "2024-09",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 185.0
+  },
+  {
+   "month": "2024-10",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 190.3
+  },
+  {
+   "month": "2024-11",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 201.3
+  },
+  {
+   "month": "2024-12",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 202.6
+  },
+  {
+   "month": "2025-01",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 214.4
+  },
+  {
+   "month": "2025-02",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 220.9
+  },
+  {
+   "month": "2025-03",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 207.4
+  },
+  {
+   "month": "2025-04",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 215.0
+  },
+  {
+   "month": "2025-05",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 203.9
+  },
+  {
+   "month": "2025-06",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 196.1
+  },
+  {
+   "month": "2025-07",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 192.0
+  },
+  {
+   "month": "2025-08",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 185.5
+  },
+  {
+   "month": "2025-09",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 197.4
+  },
+  {
+   "month": "2025-10",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 198.1
+  },
+  {
+   "month": "2025-11",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 202.0
+  },
+  {
+   "month": "2025-12",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 205.7
+  },
+  {
+   "month": "2026-01",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 204.5
+  },
+  {
+   "month": "2026-02",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 209.6
+  },
+  {
+   "month": "2026-03",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 212.7
+  },
+  {
+   "month": "2026-04",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 214.0
+  },
+  {
+   "month": "2026-05",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 216.2
+  },
+  {
+   "month": "2026-06",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 197.1
+  },
+  {
+   "month": "2026-07",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 213.4
+  },
+  {
+   "month": "2026-08",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 224.0
+  },
+  {
+   "month": "2026-09",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 239.6
+  },
+  {
+   "month": "2026-10",
+   "item": "Maize",
+   "name": "옥수수",
+   "usd_per_ton": 226.5
+  },
+  {
+   "month": "2021-10",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 451.0
+  },
+  {
+   "month": "2021-11",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 443.0
+  },
+  {
+   "month": "2021-12",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 462.0
+  },
+  {
+   "month": "2022-01",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 526.0
+  },
+  {
+   "month": "2022-02",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 569.0
+  },
+  {
+   "month": "2022-03",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 601.0
+  },
+  {
+   "month": "2022-04",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 579.0
+  },
+  {
+   "month": "2022-05",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 530.0
+  },
+  {
+   "month": "2022-06",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 528.0
+  },
+  {
+   "month": "2022-07",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 536.0
+  },
+  {
+   "month": "2022-08",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 535.0
+  },
+  {
+   "month": "2022-09",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 537.0
+  },
+  {
+   "month": "2022-10",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 542.0
+  },
+  {
+   "month": "2022-11",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 519.0
+  },
+  {
+   "month": "2022-12",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 571.0
+  },
+  {
+   "month": "2023-01",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 605.0
+  },
+  {
+   "month": "2023-02",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 605.0
+  },
+  {
+   "month": "2023-03",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 581.0
+  },
+  {
+   "month": "2023-04",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 547.0
+  },
+  {
+   "month": "2023-05",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 519.0
+  },
+  {
+   "month": "2023-06",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 492.0
+  },
+  {
+   "month": "2023-07",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 517.0
+  },
+  {
+   "month": "2023-08",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 515.0
+  },
+  {
+   "month": "2023-09",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 509.0
+  },
+  {
+   "month": "2023-10",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 512.0
+  },
+  {
+   "month": "2023-11",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 572.0
+  },
+  {
+   "month": "2023-12",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 524.0
+  },
+  {
+   "month": "2024-01",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 494.0
+  },
+  {
+   "month": "2024-02",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 457.0
+  },
+  {
+   "month": "2024-03",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 441.0
+  },
+  {
+   "month": "2024-04",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 429.0
+  },
+  {
+   "month": "2024-05",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 479.0
+  },
+  {
+   "month": "2024-06",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 481.0
+  },
+  {
+   "month": "2024-07",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 472.0
+  },
+  {
+   "month": "2024-08",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 436.0
+  },
+  {
+   "month": "2024-09",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 436.0
+  },
+  {
+   "month": "2024-10",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 422.0
+  },
+  {
+   "month": "2024-11",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 385.0
+  },
+  {
+   "month": "2024-12",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 376.0
+  },
+  {
+   "month": "2025-01",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 368.0
+  },
+  {
+   "month": "2025-02",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 358.0
+  },
+  {
+   "month": "2025-03",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 369.0
+  },
+  {
+   "month": "2025-04",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 369.0
+  },
+  {
+   "month": "2025-05",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 358.0
+  },
+  {
+   "month": "2025-06",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 353.0
+  },
+  {
+   "month": "2025-07",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 335.0
+  },
+  {
+   "month": "2025-08",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 354.0
+  },
+  {
+   "month": "2025-09",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 358.0
+  },
+  {
+   "month": "2025-10",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 356.0
+  },
+  {
+   "month": "2025-11",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 411.0
+  },
+  {
+   "month": "2025-12",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 399.0
+  },
+  {
+   "month": "2026-01",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 386.0
+  },
+  {
+   "month": "2026-02",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 391.0
+  },
+  {
+   "month": "2026-03",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 404.0
+  },
+  {
+   "month": "2026-04",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 416.0
+  },
+  {
+   "month": "2026-05",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 422.0
+  },
+  {
+   "month": "2026-06",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 419.0
+  },
+  {
+   "month": "2026-07",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 410.0
+  },
+  {
+   "month": "2026-08",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 406.0
+  },
+  {
+   "month": "2026-09",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 447.0
+  },
+  {
+   "month": "2026-10",
+   "item": "Soybean meal",
+   "name": "대두박",
+   "usd_per_ton": 453.0
+  },
+  {
+   "month": "2021-10",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 552.0
+  },
+  {
+   "month": "2021-11",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 551.0
+  },
+  {
+   "month": "2021-12",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 554.0
+  },
+  {
+   "month": "2022-01",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 606.0
+  },
+  {
+   "month": "2022-02",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 662.0
+  },
+  {
+   "month": "2022-03",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 721.0
+  },
+  {
+   "month": "2022-04",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 721.0
+  },
+  {
+   "month": "2022-05",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 724.0
+  },
+  {
+   "month": "2022-06",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 737.0
+  },
+  {
+   "month": "2022-07",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 678.0
+  },
+  {
+   "month": "2022-08",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 671.0
+  },
+  {
+   "month": "2022-09",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 664.0
+  },
+  {
+   "month": "2022-10",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 626.0
+  },
+  {
+   "month": "2022-11",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 649.0
+  },
+  {
+   "month": "2022-12",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 646.0
+  },
+  {
+   "month": "2023-01",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 627.0
+  },
+  {
+   "month": "2023-02",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 651.0
+  },
+  {
+   "month": "2023-03",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 628.0
+  },
+  {
+   "month": "2023-04",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 615.0
+  },
+  {
+   "month": "2023-05",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 595.0
+  },
+  {
+   "month": "2023-06",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 592.0
+  },
+  {
+   "month": "2023-07",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 634.0
+  },
+  {
+   "month": "2023-08",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 584.0
+  },
+  {
+   "month": "2023-09",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 619.0
+  },
+  {
+   "month": "2023-10",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 530.0
+  },
+  {
+   "month": "2023-11",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 553.0
+  },
+  {
+   "month": "2023-12",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 547.0
+  },
+  {
+   "month": "2024-01",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 547.0
+  },
+  {
+   "month": "2024-02",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 520.0
+  },
+  {
+   "month": "2024-03",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 487.0
+  },
+  {
+   "month": "2024-04",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 477.0
+  },
+  {
+   "month": "2024-05",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 490.0
+  },
+  {
+   "month": "2024-06",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 480.0
+  },
+  {
+   "month": "2024-07",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 470.0
+  },
+  {
+   "month": "2024-08",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 400.0
+  },
+  {
+   "month": "2024-09",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 391.0
+  },
+  {
+   "month": "2024-10",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 442.0
+  },
+  {
+   "month": "2024-11",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 436.0
+  },
+  {
+   "month": "2024-12",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 409.0
+  },
+  {
+   "month": "2025-01",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 411.0
+  },
+  {
+   "month": "2025-02",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 412.0
+  },
+  {
+   "month": "2025-03",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 401.0
+  },
+  {
+   "month": "2025-04",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 408.0
+  },
+  {
+   "month": "2025-05",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 414.0
+  },
+  {
+   "month": "2025-06",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 416.0
+  },
+  {
+   "month": "2025-07",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 410.0
+  },
+  {
+   "month": "2025-08",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 407.0
+  },
+  {
+   "month": "2025-09",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 404.0
+  },
+  {
+   "month": "2025-10",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 404.0
+  },
+  {
+   "month": "2025-11",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 446.0
+  },
+  {
+   "month": "2025-12",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 440.0
+  },
+  {
+   "month": "2026-01",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 425.0
+  },
+  {
+   "month": "2026-02",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 459.0
+  },
+  {
+   "month": "2026-03",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 473.0
+  },
+  {
+   "month": "2026-04",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 463.0
+  },
+  {
+   "month": "2026-05",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 473.0
+  },
+  {
+   "month": "2026-06",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 464.0
+  },
+  {
+   "month": "2026-07",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 478.0
+  },
+  {
+   "month": "2026-08",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 482.0
+  },
+  {
+   "month": "2026-09",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 524.0
+  },
+  {
+   "month": "2026-10",
+   "item": "Soybeans",
+   "name": "대두",
+   "usd_per_ton": 515.0
+  },
+  {
+   "month": "2021-10",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 354.7
+  },
+  {
+   "month": "2021-11",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 379.5
+  },
+  {
+   "month": "2021-12",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 376.8
+  },
+  {
+   "month": "2022-01",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 374.2
+  },
+  {
+   "month": "2022-02",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 390.5
+  },
+  {
+   "month": "2022-03",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 486.3
+  },
+  {
+   "month": "2022-04",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 495.3
+  },
+  {
+   "month": "2022-05",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 522.3
+  },
+  {
+   "month": "2022-06",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 459.6
+  },
+  {
+   "month": "2022-07",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 382.5
+  },
+  {
+   "month": "2022-08",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 382.9
+  },
+  {
+   "month": "2022-09",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 419.1
+  },
+  {
+   "month": "2022-10",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 438.0
+  },
+  {
+   "month": "2022-11",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 422.7
+  },
+  {
+   "month": "2022-12",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 386.3
+  },
+  {
+   "month": "2023-01",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 380.4
+  },
+  {
+   "month": "2023-02",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 394.8
+  },
+  {
+   "month": "2023-03",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 369.9
+  },
+  {
+   "month": "2023-04",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 378.2
+  },
+  {
+   "month": "2023-05",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 367.7
+  },
+  {
+   "month": "2023-06",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 345.5
+  },
+  {
+   "month": "2023-07",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 345.5
+  },
+  {
+   "month": "2023-08",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 315.8
+  },
+  {
+   "month": "2023-09",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 314.7
+  },
+  {
+   "month": "2023-10",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 298.1
+  },
+  {
+   "month": "2023-11",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 283.6
+  },
+  {
+   "month": "2023-12",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 291.1
+  },
+  {
+   "month": "2024-01",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 283.9
+  },
+  {
+   "month": "2024-02",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 278.5
+  },
+  {
+   "month": "2024-03",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 274.8
+  },
+  {
+   "month": "2024-04",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 272.3
+  },
+  {
+   "month": "2024-05",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 289.4
+  },
+  {
+   "month": "2024-06",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 265.6
+  },
+  {
+   "month": "2024-07",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 260.3
+  },
+  {
+   "month": "2024-08",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 250.9
+  },
+  {
+   "month": "2024-09",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 269.7
+  },
+  {
+   "month": "2024-10",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 272.9
+  },
+  {
+   "month": "2024-11",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 253.8
+  },
+  {
+   "month": "2024-12",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 252.2
+  },
+  {
+   "month": "2025-01",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 254.1
+  },
+  {
+   "month": "2025-02",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 264.6
+  },
+  {
+   "month": "2025-03",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 255.4
+  },
+  {
+   "month": "2025-04",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 249.6
+  },
+  {
+   "month": "2025-05",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 237.0
+  },
+  {
+   "month": "2025-06",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 240.1
+  },
+  {
+   "month": "2025-07",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 235.0
+  },
+  {
+   "month": "2025-08",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 231.1
+  },
+  {
+   "month": "2025-09",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 233.8
+  },
+  {
+   "month": "2025-10",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 230.8
+  },
+  {
+   "month": "2025-11",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 245.9
+  },
+  {
+   "month": "2025-12",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 242.8
+  },
+  {
+   "month": "2026-01",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 249.9
+  },
+  {
+   "month": "2026-02",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 257.6
+  },
+  {
+   "month": "2026-03",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 276.0
+  },
+  {
+   "month": "2026-04",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 282.0
+  },
+  {
+   "month": "2026-05",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 303.0
+  },
+  {
+   "month": "2026-06",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 286.0
+  },
+  {
+   "month": "2026-07",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 310.0
+  },
+  {
+   "month": "2026-08",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 330.0
+  },
+  {
+   "month": "2026-09",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 347.0
+  },
+  {
+   "month": "2026-10",
+   "item": "Wheat, US HRW",
+   "name": "밀 (미국 HRW)",
+   "usd_per_ton": 317.0
+  }
+ ],
+ "collected_at": "2026-11-24 22:34 KST"
+}

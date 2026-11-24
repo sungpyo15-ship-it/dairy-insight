@@ -52,6 +52,27 @@ function fromForage(d) {
   });
 }
 
+// 세계은행 곡물 가격 + 원화 환산(원/kg = USD/톤 × 원/달러 ÷ 1000, 두 자료가 모두 있는 달만)
+function fromGrain(d, fx) {
+  if (!d) return [];
+  const rate = Object.fromEntries((fx?.records || []).filter((r) => r.value != null).map((r) => [r.month, r.value]));
+  const items = [...new Set(d.records.map((r) => r.item))];
+  const base = { group: '국제 곡물', source: d.source, url: d.source_url, cycle: '월간', collected: d.collected_at };
+  const out = items.map((it) => {
+    const rs = d.records.filter((r) => r.item === it);
+    return { id: 'grain_' + it, name: `${rs[0].name} 국제가격`, unit: 'USD/톤', note: `세계은행 월평균 · ${d.published || ''}`,
+      series: rs.map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base };
+  });
+  ['Maize', 'Soybean meal'].forEach((it) => {
+    const rs = d.records.filter((r) => r.item === it && rate[r.month]);
+    if (rs.length) out.push({ ...base, id: 'grain_krw_' + it, name: `${rs[0].name} 원화 환산`, unit: '원/kg',
+      note: '세계은행 월평균 가격 × 한국은행 월평균 환율 (운임·관세·통관비 제외)',
+      source: `${d.source} · 한국은행 ECOS`,
+      series: rs.map((r) => ({ t: r.month, v: Math.round(r.usd_per_ton * rate[r.month] / 10) / 100 })) });
+  });
+  return out;
+}
+
 function fromManual(m) {
   if (!m) return [];
   return m.indicators.map((i) => ({ ...i, cycle: '수동 입력', manual: true,
@@ -63,8 +84,8 @@ async function load() {
   // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
   const has = (id) => !!status?.datasets?.[id]?.last_success;
   const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
-  const [carcass, usdkrw, forage, manual, briefs] = await Promise.all([
-    auto('carcass'), auto('usdkrw'), auto('forage_import'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
+  const [carcass, usdkrw, forage, grain, manual, briefs] = await Promise.all([
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('grain_prices'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
@@ -73,6 +94,7 @@ async function load() {
     ...fromManual(manual).filter((i) => i.group === '원유'),
     ...fromCarcass(carcass),
     ...fromForage(forage),
+    ...fromGrain(grain, usdkrw),
     ...fromSimple(usdkrw, '거시', '원/달러 환율'),
     ...fromManual(manual).filter((i) => i.group !== '원유'),
   ];
@@ -116,7 +138,7 @@ function renderCards() {
     return `<button class="card" data-id="${esc(i.id)}">
       <div class="g">${esc(i.group)} · ${esc(last.t)}</div>
       <div class="n">${esc(i.name)}</div>
-      <div><span class="v">${fmt(last.v, i.unit === '원' ? 1 : 0)}</span><span class="u">${esc(i.unit)}</span></div>
+      <div><span class="v">${fmt(last.v, ['원', '원/kg'].includes(i.unit) && last.v < 10000 ? 1 : 0)}</span><span class="u">${esc(i.unit)}</span></div>
       ${c ? `<div class="d ${c.cls}">${esc(c.prevT)} 대비 ${c.arrow} ${fmt(Math.abs(c.diff), i.unit === '원' ? 1 : 0)} (${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%)</div>` : '<div class="d flat">비교 자료 없음</div>'}
       ${sparkline(i.series)}
     </button>`;
