@@ -40,7 +40,8 @@ function fromSimple(d, group, name) {
 }
 
 // 관세청 수입 실적(조사료·유제품): 품목별 수입량·톤당 수입단가, 품목군(category)별로 묶어 표시
-function fromCustoms(d) {
+function fromCustoms(d, fx) {
+  const rate = fxMap(fx);
   if (!d) return [];
   const hsList = [...new Set(d.records.map((r) => r.hs))];
   return hsList.flatMap((hs) => {
@@ -51,12 +52,25 @@ function fromCustoms(d) {
     return [
       { id: `imp_t_${hs}`, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base },
       { id: `imp_p_${hs}`, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base },
-    ].filter((i) => i.series.length).concat(subSeries(rs, base));
+      krwSeries(`imp_k_${hs}`, `${rs[0].name} 원화 수입원가`, rs.map((r) => ({ t: r.month, v: r.usd_per_ton })), rate, base, base.group),
+    ].filter((i) => i && i.series.length).concat(subSeries(rs, base, rate));
   });
 }
 
 // 6자리 품목 안에 세부품목(10자리)이 둘 이상이면 세부품목별 수입량·단가도 따로 만든다 (예: 알팔파 건초 vs 기타 건초)
-function subSeries(rs, base) {
+function fxMap(fx) {
+  return Object.fromEntries((fx?.records || []).filter((r) => r.value != null).map((r) => [r.month, r.value]));
+}
+
+// 원화 수입원가(원/kg) = 톤당 수입단가(USD, CIF) × 월평균 환율 ÷ 1000 — 조사료만, 환율이 있는 달만
+function krwSeries(id, name, usdSeries, rate, base, category) {
+  if (category !== '조사료') return null;
+  const series = usdSeries.filter((p) => p.v != null && rate[p.t]).map((p) => ({ t: p.t, v: Math.round(p.v * rate[p.t] / 10) / 100 }));
+  return { ...base, id, name, unit: '원/kg', series, source: `${base.source} · 한국은행 ECOS 환율`,
+    note: '관세청 신고 수입단가(CIF) × 월평균 원/달러 환율. 관세·통관·내륙운송비·유통마진 제외' };
+}
+
+function subSeries(rs, base, rate = {}) {
   const codes = {};
   rs.forEach((r) => (r.subs || []).forEach((sb) => {
     const c = (codes[sb.code] = codes[sb.code] || { name: sb.name, ton: [], price: [] });
@@ -72,7 +86,8 @@ function subSeries(rs, base) {
     return [
       { ...b, id: `sub_t_${code}`, name: `${label} 수입량`, unit: '톤', series: c.ton },
       { ...b, id: `sub_p_${code}`, name: `${label} 수입단가`, unit: 'USD/톤', series: c.price },
-    ].filter((i) => i.series.length);
+      krwSeries(`sub_k_${code}`, `${label} 원화 수입원가`, c.price, rate, b, base.group),
+    ].filter((i) => i && i.series.length);
   });
 }
 
@@ -97,6 +112,18 @@ function fromGrain(d, fx) {
   return out;
 }
 
+// 미국 건초 생산자물가지수 (BLS PPI)
+function fromUsHay(d) {
+  if (!d) return [];
+  return [...new Set(d.records.map((r) => r.series))].map((sid) => {
+    const rs = d.records.filter((r) => r.series === sid);
+    return { id: 'ushay_' + sid, group: '해외 조사료', name: rs[0].name, unit: '지수', cycle: '월간',
+      source: `${d.source} · ${sid}`, url: `https://fred.stlouisfed.org/series/${sid}`, collected: d.collected_at,
+      note: '1982=100 기준 지수(가격 아님). 미국 현지 건초 가격 흐름 참고용 — 수출용 건초 가격과는 차이가 있음',
+      series: rs.map((r) => ({ t: r.month, v: r.value })) };
+  });
+}
+
 function fromManual(m) {
   if (!m) return [];
   return m.indicators.map((i) => ({ ...i, cycle: '수동 입력', manual: true,
@@ -108,8 +135,8 @@ async function load() {
   // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
   const has = (id) => !!status?.datasets?.[id]?.last_success;
   const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
-  const [carcass, usdkrw, forage, dairyImp, grain, manual, briefs] = await Promise.all([
-    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
+  const [carcass, usdkrw, forage, dairyImp, grain, usHay, manual, briefs] = await Promise.all([
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'), auto('us_hay_ppi'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
   const kosis = (await Promise.all(kosisIds.map((k) => getJSON(`data/auto/${k}.json`)))).filter(Boolean);
@@ -117,8 +144,9 @@ async function load() {
   INDICATORS = [
     ...fromManual(manual).filter((i) => i.group === '원유'),
     ...fromCarcass(carcass),
-    ...fromCustoms(dairyImp),
-    ...fromCustoms(forage),
+    ...fromCustoms(dairyImp, usdkrw),
+    ...fromCustoms(forage, usdkrw),
+    ...fromUsHay(usHay),
     ...fromGrain(grain, usdkrw),
     ...fromSimple(usdkrw, '거시', '원/달러 환율'),
     ...fromManual(manual).filter((i) => i.group !== '원유'),

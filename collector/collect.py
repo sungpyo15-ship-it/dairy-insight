@@ -466,6 +466,54 @@ def collect_worldbank():
 
 
 # ---------------------------------------------------------------------------
+# 6) 미국 건초 생산자물가지수 (BLS PPI, FRED 경유) — 인증키 불필요
+#    가격(달러)이 아니라 지수(1982=100)다. 미국 현지 건초 가격 흐름을 보는 용도.
+# ---------------------------------------------------------------------------
+FRED_SERIES = [
+    ("WPU01810101", "미국 알팔파 건초 생산자물가지수"),
+    ("WPU01810102", "미국 기타 건초 생산자물가지수"),
+]
+
+
+def curl_get(url, tries=3):
+    """FRED는 Python 기본 HTTP 클라이언트와 브라우저 흉내 UA의 연결을 끊어서 기본 curl로 내려받는다."""
+    import subprocess
+    import time
+    for attempt in range(tries):
+        r = subprocess.run(["curl", "-sS", "-f", "-L", "-m", "60", url],  # 기본 curl UA 사용 (브라우저 흉내 UA는 FRED가 차단)
+                           capture_output=True, text=True)
+        if r.returncode == 0 and r.stdout:
+            return r.stdout
+        if attempt == tries - 1:
+            raise RuntimeError(f"curl 실패({r.returncode}): {r.stderr.strip()[:200]}")
+        print(f"  재시도 {attempt + 1}/{tries - 1}: curl {r.returncode}")
+        time.sleep(5 if attempt == 0 else 15)
+
+
+def collect_fred_hay():
+    cutoff = recent_months(MONTHS_BACK + 1)[-1]
+    recs = []
+    for sid, name in FRED_SERIES:
+        text = curl_get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}")
+        lines = text.strip().splitlines()
+        if not lines or sid not in lines[0]:
+            raise RuntimeError(f"{sid} 응답 형식이 바뀌었습니다: {lines[0][:80] if lines else ''}")
+        for ln in lines[1:]:
+            date, _, val = ln.partition(",")
+            ym = date[:7].replace("-", "")
+            v = num(val)
+            if v is None or ym < cutoff:
+                continue
+            recs.append({"month": date[:7], "series": sid, "name": name, "value": v})
+    if not recs:
+        raise RuntimeError("수집된 행이 없습니다")
+    return {"id": "us_hay_ppi", "title": "미국 건초 생산자물가지수 (1982=100)",
+            "source": "U.S. Bureau of Labor Statistics PPI, FRED(세인트루이스 연준) 제공",
+            "source_url": "https://fred.stlouisfed.org/series/WPU01810101", "unit": "지수(1982=100)",
+            "records": sorted(recs, key=lambda x: (x["series"], x["month"]))}
+
+
+# ---------------------------------------------------------------------------
 def save(result):
     os.makedirs(AUTO, exist_ok=True)
     result["collected_at"] = now_kst()
@@ -485,6 +533,7 @@ def main():
     jobs = [("carcass", "젖소·육우 도체 성적·경락가", collect_mtrace),
             ("usdkrw", "원/달러 환율", collect_ecos),
             ("grain_prices", "국제 곡물 가격 (세계은행)", collect_worldbank),
+            ("us_hay_ppi", "미국 건초 생산자물가지수 (FRED)", collect_fred_hay),
             ("forage_import", "조사료 수입", lambda: collect_customs("forage_import")),
             ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import"))]
     jobs += [(s[0], s[5], (lambda s=s: collect_kosis(s))) for s in KOSIS_TABLES]
