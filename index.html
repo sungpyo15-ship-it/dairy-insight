@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f6f5c">
+  <title>DAIRY INSIGHT | 낙농 인사이트</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">DAIRY INSIGHT</div>
+    <div class="updated" id="updated"></div>
+  </header>
+
+  <div class="notice" id="notice" hidden></div>
+
+  <main>
+    <!-- 시세 -->
+    <section class="view active" id="view-market">
+      <div class="chips" id="groupChips"></div>
+      <div class="cards" id="cards"></div>
+      <div class="detail" id="detail" hidden>
+        <div class="detail-head">
+          <h2 id="detailTitle"></h2>
+          <button class="icon" id="detailClose" aria-label="닫기">✕</button>
+        </div>
+        <div id="detailChart"></div>
+        <p class="src" id="detailSrc"></p>
+      </div>
+    </section>
+
+    <!-- 계산기 -->
+    <section class="view" id="view-calc">
+      <div class="panel">
+        <h2>유대 · IOFC 계산기</h2>
+        <p class="hint">IOFC(사료비 제외 수익) = 두당 일 유대수입 − 두당 일 사료비. 단가는 소속 집유주체 기준으로 직접 입력하세요.</p>
+        <div class="form">
+          <label>착유두수 <input type="number" id="c_heads" value="60" min="1"></label>
+          <label>두당 일평균 유량 (kg) <input type="number" id="c_yield" value="31" step="0.1"></label>
+          <label>기본 원유가 (원/L) <input type="number" id="c_base" value="1084"></label>
+          <label>성분·위생 인센티브 합계 (원/L) <input type="number" id="c_incent" value="120"></label>
+          <label>두당 일 사료비 (원) <input type="number" id="c_feed" value="17500"></label>
+          <label>쿼터 초과·가공유 정산 비율 (%) <input type="number" id="c_procpct" value="10" min="0" max="100"></label>
+          <label>가공유 단가 (원/L) <input type="number" id="c_proc" value="882"></label>
+        </div>
+        <div class="result" id="calcResult"></div>
+        <h3>첨가제 투자 시뮬레이션</h3>
+        <div class="form">
+          <label>첨가제 두당 일 비용 (원) <input type="number" id="c_addcost" value="400"></label>
+          <label>기대 유량 증가 (kg/두/일) <input type="number" id="c_addgain" value="0.8" step="0.1"></label>
+        </div>
+        <div class="result" id="addResult"></div>
+        <p class="hint">기대 효과치는 농장 실증·문헌값으로 보수적으로 입력하세요. 결과는 참고용 추정치입니다.</p>
+      </div>
+    </section>
+
+    <!-- 시황 -->
+    <section class="view" id="view-brief">
+      <div id="briefs"></div>
+    </section>
+
+    <!-- 상담 -->
+    <section class="view" id="view-contact">
+      <div class="panel">
+        <h2>농장 컨설팅 신청</h2>
+        <p class="hint">검정성적·사료 급여표를 기반으로 개선안을 드립니다.</p>
+        <form id="leadForm" class="form">
+          <label>농장명 <input name="farm" required></label>
+          <label>지역 <input name="region"></label>
+          <label>착유두수 <input name="heads" type="number"></label>
+          <label>관심 분야
+            <select name="topic">
+              <option>유량·유성분 개선</option>
+              <option>번식성적</option>
+              <option>사료비 절감</option>
+              <option>송아지·육성우</option>
+              <option>기능성 첨가제</option>
+            </select>
+          </label>
+          <label>연락처 <input name="phone" type="tel" required></label>
+          <label class="check"><input type="checkbox" name="agree" required> 개인정보 수집·이용(상담 목적, 1년 보관)에 동의합니다</label>
+          <button type="submit" class="primary">상담 신청</button>
+        </form>
+        <div class="result" id="leadResult" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabs">
+    <button data-view="market" class="active">시세</button>
+    <button data-view="calc">계산기</button>
+    <button data-view="brief">시황</button>
+    <button data-view="contact">상담</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
