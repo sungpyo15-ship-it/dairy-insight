@@ -283,7 +283,7 @@ const SECTIONS = {
 };
 // 홈 '핵심 지표' (있는 것만 순서대로 표시)
 const HOME_KPIS = ['krei_prod', 'krei_milking', 'kosis_profit_net', 'cow_price', 'krei_price_cull_cow', 'krei_feed_total',
-  'imp_k_121490', 'grain_krw_Maize', 'usdkrw'];
+  'imp_k_121490', 'grain_krw_Maize'];
 
 let BY_ID = {};
 
@@ -326,7 +326,7 @@ async function load() {
 
 // ---- 카드 -----------------------------------------------------------------
 const tLabel = (i, t) => (i.cycle === '분기' ? `${t.slice(0, 4)}년 ${Math.ceil(+t.slice(5, 7) / 3)}분기` : i.cycle === '연간' ? `${t}년` : t);
-const digits = (i, v) => ((['원', '원/kg'].includes(i.unit) && Math.abs(v) < 10000) || ['만원/두', '%'].includes(i.unit) || (i.unit === '마리' && Math.abs(v) < 1000 && v % 1) ? 1 : 0);
+const digits = (i, v) => ((i.unit === '원' && Math.abs(v) < 10000) || (i.unit === '원/kg' && Math.abs(v) < 1000) || ['만원/두', '%'].includes(i.unit) || (i.unit === '마리' && Math.abs(v) < 1000 && v % 1) ? 1 : 0);
 
 function change(s) {
   if (s.length < 2) return null;
@@ -359,9 +359,48 @@ function card(i, { showGroup = false } = {}) {
 }
 
 // ---- 홈 -------------------------------------------------------------------
+// 홈 '오늘의 핵심 기록' 타일: 분야 색 꼬리표 + 큰 숫자 + 증감 배지 + 면적형 미니 그래프
+const SECTION_TAG = { milk: ['원유·유제품', 'milk'], cattle: ['젖소·가축', 'cattle'], feed: ['사료·조사료', 'feed'] };
+function sectionOf(i) {
+  if (i.group === '거시') return ['환율', 'macro'];
+  const key = Object.keys(SECTIONS).find((k) => SECTIONS[k].subs.some((sb) => sb.groups.includes(i.group)));
+  return SECTION_TAG[key] || ['기타', 'macro'];
+}
+function sparkArea(s, id) {
+  const h = s.map((p) => p.v).slice(-24);
+  if (h.length < 2) return '';
+  const w = 200, ht = 44, min = Math.min(...h), max = Math.max(...h), r = max - min || 1;
+  const pts = h.map((v, k) => [k / (h.length - 1) * w, ht - 4 - ((v - min) / r) * (ht - 10)]);
+  const line = pts.map((q) => q.join(',')).join(' ');
+  const gid = 'g' + id.replace(/\W/g, '');
+  const [lx, ly] = pts[pts.length - 1];
+  return `<svg class="kpi-spark" viewBox="0 0 ${w} ${ht}" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".28"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+    <polygon points="0,${ht} ${line} ${w},${ht}" fill="url(#${gid})"/>
+    <polyline points="${line}" fill="none" stroke="currentColor" stroke-width="2.2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <circle cx="${lx}" cy="${ly}" r="3.2" fill="currentColor"/></svg>`;
+}
+// 타일용 짧은 이름·단위: 괄호 설명 제거(기간은 위에 표시), 10만 원 이상 '원/…'은 만원 단위로
+const shortName = (n) => n.replace(/\s*\([^)]*\)/g, '').trim();
+function tileValue(i, v) {
+  if (/^원\//.test(i.unit) && Math.abs(v) >= 100000) return [fmt(v / 10000, 1), '만' + i.unit];
+  return [fmt(v, digits(i, v)), i.unit];
+}
+function kpiTile(i) {
+  const last = i.series[i.series.length - 1], c = change(i.series), [tag, cls] = sectionOf(i);
+  const [val, unit] = tileValue(i, last.v);
+  return `<button class="card kpi kpi-${cls}" data-id="${esc(i.id)}">
+    <span class="kpi-top"><span class="kpi-tag">${esc(tag)}</span><span class="kpi-when">${esc(tLabel(i, last.t))}</span></span>
+    <span class="kpi-name">${esc(shortName(i.name))}</span>
+    <span class="kpi-val">${val}<small>${esc(unit)}</small></span>
+    ${c ? `<span class="kpi-chg ${c.cls}">${c.arrow} ${c.pct >= 0 ? '+' : ''}${fmt(c.pct, 1)}%</span>` : '<span class="kpi-chg flat">비교 없음</span>'}
+    ${sparkArea(i.series, i.id)}
+  </button>`;
+}
+
 function renderHome() {
   const kpis = HOME_KPIS.map((id) => BY_ID[id]).filter((i) => i && i.series.length);
-  $('#homeKpis').innerHTML = kpis.map((i) => card(i, { showGroup: true })).join('') || '<p class="hint">자료를 불러오는 중입니다.</p>';
+  $('#homeKpis').innerHTML = kpis.map(kpiTile).join('') || '<p class="hint">자료를 불러오는 중입니다.</p>';
   $('#homeToc').innerHTML = Object.entries(SECTIONS).map(([key, s]) => {
     const n = INDICATORS.filter((i) => s.subs.some((sb) => sb.groups.includes(i.group)) && !i.sub && i.series.length).length;
     return `<a class="toc-card" href="#${key}">
