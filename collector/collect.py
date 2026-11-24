@@ -203,26 +203,84 @@ KOSIS_TABLES = [
 ]
 
 
+def _kosis_call(url, params):
+    d = json.loads(http_get(url + "?" + urllib.parse.urlencode(params)))
+    if isinstance(d, dict) and d.get("err"):
+        raise KosisError(d.get("err"), d.get("errMsg"))
+    return d
+
+
+class KosisError(RuntimeError):
+    def __init__(self, code, msg):
+        super().__init__(f"KOSIS 오류 {code}: {msg}")
+        self.code = str(code)
+
+
+def _kosis_shape(key, org, tbl):
+    """메타 API로 분류 단계 수(objL1~n)와 수록주기 목록을 확인한다. 실패하면 (None, [])."""
+    meta = "https://kosis.kr/openapi/statisticsData.do"
+    base = {"method": "getMeta", "apiKey": key, "format": "json", "jsonVD": "Y", "orgId": org, "tblId": tbl}
+    levels, periods = None, []
+    try:
+        itm = _kosis_call(meta, {**base, "type": "ITM"})
+        objs = {r.get("OBJ_ID") for r in itm if r.get("OBJ_ID") and r.get("OBJ_ID") != "ITEM"
+                and r.get("OBJ_NM") != "항목"}
+        levels = len(objs) or None
+    except Exception as e:
+        print(f"  KOSIS 메타(ITM) 조회 실패 {tbl}: {e}")
+    try:
+        prd = _kosis_call(meta, {**base, "type": "PRD"})
+        periods = [r.get("PRD_SE") for r in prd if r.get("PRD_SE")]
+    except Exception as e:
+        print(f"  KOSIS 메타(PRD) 조회 실패 {tbl}: {e}")
+    return levels, periods
+
+
+PRD_CODE = {"월": "M", "분기": "Q", "반기": "H", "년": "Y", "연": "Y"}
+
+
 def collect_kosis(spec):
     key = (os.environ.get("KOSIS_API_KEY") or "").strip()
     if not key:
         return None
     sid, org, tbl, prd, cnt, title = spec
-    base = "https://kosis.kr/openapi/Param/statisticsParameterData.do"
-    q = {"method": "getList", "apiKey": key, "itmId": "ALL", "objL1": "ALL", "objL2": "ALL",
-         "objL3": "ALL", "format": "json", "jsonVD": "Y", "prdSe": prd,
-         "newEstPrdCnt": str(cnt), "orgId": org, "tblId": tbl}
-    d = json.loads(http_get(base + "?" + urllib.parse.urlencode(q)))
-    if isinstance(d, dict):
-        raise RuntimeError(f"KOSIS 오류 {d.get('err')}: {d.get('errMsg')}")
-    recs = [{"period": r.get("PRD_DE"), "item": r.get("ITM_NM"), "unit": r.get("UNIT_NM"),
-             "c1": r.get("C1_NM"), "c2": r.get("C2_NM"), "c3": r.get("C3_NM"),
-             "value": num(r.get("DT"))} for r in d]
-    if not recs:
-        raise RuntimeError("수집된 행이 없습니다")
-    return {"id": sid, "title": title, "source": f"KOSIS {org}/{tbl}",
-            "source_url": f"https://kosis.kr/statHtml/statHtml.do?orgId={org}&tblId={tbl}",
-            "period_type": prd, "records": recs}
+    url = "https://kosis.kr/openapi/Param/statisticsParameterData.do"
+    levels, periods = _kosis_shape(key, org, tbl)
+    prd_codes = [PRD_CODE.get(p, p) for p in periods]
+    # 시도 순서: (메타가 알려준 단계 수, 주기) → 실패 시 단계 1~4 × 주기 후보를 차례로
+    prd_try = [p for p in [prd] + prd_codes + ["M", "Q", "Y"] if p in ("M", "Q", "H", "Y")]
+    prd_try = list(dict.fromkeys(prd_try))
+    lvl_try = list(dict.fromkeys(([levels] if levels else []) + [1, 2, 3, 4]))
+    last_err = None
+    for p in prd_try:
+        for n in lvl_try:
+            q = {"method": "getList", "apiKey": key, "itmId": "ALL", "format": "json", "jsonVD": "Y",
+                 "prdSe": p, "newEstPrdCnt": str(cnt), "orgId": org, "tblId": tbl}
+            q.update({f"objL{k}": "ALL" for k in range(1, n + 1)})
+            try:
+                d = _kosis_call(url, q)
+            except KosisError as e:
+                last_err = e
+                if e.code in ("10", "11"):  # 인증키 문제 — 더 시도해도 같음
+                    raise
+                if e.code == "31" and int(q["newEstPrdCnt"]) > 2:  # 조회 셀 수 초과 → 기간 축소
+                    q["newEstPrdCnt"] = str(max(2, cnt // 3))
+                    try:
+                        d = _kosis_call(url, q)
+                    except KosisError as e2:
+                        last_err = e2
+                        continue
+                else:
+                    continue
+            recs = [{"period": r.get("PRD_DE"), "item": r.get("ITM_NM"), "unit": r.get("UNIT_NM"),
+                     "c1": r.get("C1_NM"), "c2": r.get("C2_NM"), "c3": r.get("C3_NM"),
+                     "c4": r.get("C4_NM"), "value": num(r.get("DT"))} for r in d]
+            if recs:
+                print(f"  KOSIS {tbl}: 주기 {p}, 분류 {n}단계로 수집")
+                return {"id": sid, "title": title, "source": f"KOSIS {org}/{tbl}",
+                        "source_url": f"https://kosis.kr/statHtml/statHtml.do?orgId={org}&tblId={tbl}",
+                        "period_type": p, "levels": n, "records": recs}
+    raise RuntimeError(f"모든 조회 조건 실패 (메타: 분류 {levels}단계, 주기 {prd_codes}) — 마지막 {last_err}")
 
 
 # ---------------------------------------------------------------------------
@@ -265,13 +323,20 @@ def _customs_key():
     return key
 
 
+MIN_TON_FOR_PRICE = 1.0  # 1톤 미만 소량 거래는 단가가 왜곡되므로 단가를 계산하지 않음
+
+
+def unit_price(wgt_kg, usd):
+    return round(usd / (wgt_kg / 1000), 1) if wgt_kg and usd and wgt_kg / 1000 >= MIN_TON_FOR_PRICE else None
+
+
 def collect_customs(set_id):
     key = _customs_key()
     if not key:
         return None
     spec = CUSTOMS_SETS[set_id]
     months = recent_months(36)
-    agg, names = {}, {}
+    agg, names, sub_names = {}, {}, {}
     # API는 조회기간 1년 이내 제한 → 12개월 단위로 나눠 요청
     for i in range(0, len(months), 12):
         chunk = months[i:i + 12]
@@ -286,23 +351,28 @@ def collect_customs(set_id):
                 ym = re.sub(r"\D", "", it.findtext("year") or "")
                 if len(ym) != 6:
                     continue  # '총계' 행 제외
-                if it.findtext("statKor"):
-                    names.setdefault(hs, set()).add(it.findtext("statKor").strip())
+                kor = (it.findtext("statKor") or "").strip()
+                if kor:
+                    names.setdefault(hs, set()).add(kor)
                 # 세부품목(10자리) 단위로 덮어써서 같은 달이 중복 응답돼도 두 번 더하지 않음
-                sub = it.findtext("hsCd") or it.findtext("statKor") or hs
+                sub = (it.findtext("hsCd") or kor or hs).strip()
+                sub_names[sub] = kor or sub_names.get(sub, "")
                 agg[(hs, ym, sub)] = (num(it.findtext("impWgt")) or 0, num(it.findtext("impDlr")) or 0)
     totals = {}
-    for (hs, ym, _), (w, u) in agg.items():
-        t = totals.setdefault((hs, ym), [0.0, 0.0])
-        t[0] += w
-        t[1] += u
+    for (hs, ym, sub), (w, u) in agg.items():
+        t = totals.setdefault((hs, ym), {"wgt": 0.0, "usd": 0.0, "subs": []})
+        t["wgt"] += w
+        t["usd"] += u
+        t["subs"].append({"code": sub, "name": sub_names.get(sub, ""), "import_ton": round(w / 1000, 1),
+                          "usd_per_ton": unit_price(w, u)})
     meta = {hs: (name, cat) for hs, name, cat in spec["items"]}
     recs = []
-    for (hs, ym), (wgt, usd) in totals.items():
+    for (hs, ym), t in totals.items():
         recs.append({"month": f"{ym[:4]}-{ym[4:]}", "hs": hs, "name": meta[hs][0], "category": meta[hs][1],
-                     "import_ton": round(wgt / 1000, 1),
-                     "import_kusd": round(usd / 1000, 1),
-                     "usd_per_ton": round(usd / (wgt / 1000), 1) if wgt and usd else None})
+                     "import_ton": round(t["wgt"] / 1000, 1),
+                     "import_kusd": round(t["usd"] / 1000, 1),
+                     "usd_per_ton": unit_price(t["wgt"], t["usd"]),
+                     "subs": sorted(t["subs"], key=lambda x: x["code"])})
     if not recs:
         raise RuntimeError("수집된 행이 없습니다")
     return {"id": set_id, "title": spec["title"],

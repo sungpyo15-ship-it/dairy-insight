@@ -51,6 +51,27 @@ function fromCustoms(d) {
     return [
       { id: `imp_t_${hs}`, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base },
       { id: `imp_p_${hs}`, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base },
+    ].filter((i) => i.series.length).concat(subSeries(rs, base));
+  });
+}
+
+// 6자리 품목 안에 세부품목(10자리)이 둘 이상이면 세부품목별 수입량·단가도 따로 만든다 (예: 알팔파 건초 vs 기타 건초)
+function subSeries(rs, base) {
+  const codes = {};
+  rs.forEach((r) => (r.subs || []).forEach((sb) => {
+    const c = (codes[sb.code] = codes[sb.code] || { name: sb.name, ton: [], price: [] });
+    if (sb.name) c.name = sb.name;
+    if (sb.import_ton != null) c.ton.push({ t: r.month, v: sb.import_ton });
+    if (sb.usd_per_ton != null) c.price.push({ t: r.month, v: sb.usd_per_ton });
+  }));
+  const list = Object.entries(codes).filter(([, c]) => c.ton.some((p) => p.v >= 1));
+  if (list.length < 2) return [];
+  return list.flatMap(([code, c]) => {
+    const label = `${rs[0].name.split(' (')[0]} › ${c.name || code}`;
+    const b = { ...base, source: `${base.source.split(' · HS')[0]} · HSK ${code}`, note: `세부품목 ${code}${c.name ? ' · ' + c.name : ''}` };
+    return [
+      { ...b, id: `sub_t_${code}`, name: `${label} 수입량`, unit: '톤', series: c.ton },
+      { ...b, id: `sub_p_${code}`, name: `${label} 수입단가`, unit: 'USD/톤', series: c.price },
     ].filter((i) => i.series.length);
   });
 }
