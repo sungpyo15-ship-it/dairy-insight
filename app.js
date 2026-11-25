@@ -894,7 +894,8 @@ function calc() {
     ${row('성분·위생 인센티브', A.inc.total, B.inc.total)}
     ${row('　유지방 / 유단백', A.inc.fat + A.inc.protein, B.inc.fat + B.inc.protein)}
     ${row('　체세포 / 세균', A.inc.scc + A.inc.bact, B.inc.scc + B.inc.bact)}
-    ${row('평균 정산 유대', A.avg, B.avg, (x) => fmt(x, 1), 1, true)}
+    ${row('음용유 L당 유대 (기본가+인센티브)', CS.common.pDrink + A.inc.total, CS.common.pDrink + B.inc.total)}
+    ${row('평균 정산 유대 (전체 물량 평균)', A.avg, B.avg, (x) => fmt(x, 1), 1, true)}
     ${grp('납유량 배분 (L/일)')}
     ${row('총 납유량', A.V, B.V)}
     ${row('　음용유 배정', A.vd, B.vd)}
@@ -917,6 +918,7 @@ function calc() {
     ${row('건물 kg당 사료비', A.feedPerDM, B.feedPerDM, won, -1)}
     ${row('사료효율 (L ÷ 건물 kg)', A.eff, B.eff, (x) => fmt(x, 2))}
   </tbody></table></div>
+  ${B.inc.total >= A.inc.total && B.avg < A.avg ? `<p class="mix-note">ℹ 목표의 성적(인센티브 +${fmt(B.inc.total - A.inc.total)}원/L)이 더 좋은데 평균 정산 유대가 낮은 이유: 늘어난 납유량이 음용유 배정 상한(${fmt(CS.common.quota * CS.common.rDrink / 100)}L)을 넘어 <b>가공유·나머지 구간과 쿼터 초과분(${fmt(CS.common.pExcess)}원/L)</b>으로 정산되기 때문입니다. 판단은 평균 단가가 아니라 <b>유대수입과 IOFC</b>로 하세요.</p>` : ''}
   <p class="hint">목표 달성 시 연간 사료비 공제 수익 <b class="${B.iofc >= A.iofc ? 'up' : 'down'}">${B.iofc >= A.iofc ? '+' : ''}${fmt((B.iofc - A.iofc) * 365 / 10000, 0)}만 원</b>${B.ve > 0 ? ` · 목표 납유량 중 ${fmt(B.ve)}L/일이 쿼터를 넘어 ${fmt(CS.common.pExcess)}원/L로 정산됩니다 — 쿼터 구매 분석을 확인하세요.` : ''}</p>`;
 
   // 급여표 합계

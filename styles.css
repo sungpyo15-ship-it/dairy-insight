@@ -382,3 +382,4 @@ details.panel summary { cursor: pointer; font-weight: 700; font-size: 15px; }
 .rules-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .rules-bar .ghost { text-decoration: none; display: inline-flex; align-items: center; }
 .file-btn { cursor: pointer; }
+.mix-note { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-text); font-size: 13px; line-height: 1.55; }
