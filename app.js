@@ -98,12 +98,12 @@ function fromGrain(d, fx) {
   const base = { group: '국제 곡물', source: d.source, url: d.source_url, cycle: '월간', collected: d.collected_at };
   const out = items.map((it) => {
     const rs = d.records.filter((r) => r.item === it);
-    return { id: 'grain_' + it, name: `${rs[0].name} 국제가격`, unit: 'USD/톤', note: `세계은행 월평균 · ${d.published || ''}`,
+    return { id: 'grain_' + it, live: GRAIN_LIVE[it], name: `${rs[0].name} 국제가격`, unit: 'USD/톤', note: `세계은행 월평균 · ${d.published || ''}`,
       series: rs.map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base };
   });
   ['Maize', 'Soybean meal'].forEach((it) => {
     const rs = d.records.filter((r) => r.item === it && rate[r.month]);
-    if (rs.length) out.push({ ...base, id: 'grain_krw_' + it, name: `${rs[0].name} 원화 환산`, unit: '원/kg',
+    if (rs.length) out.push({ ...base, id: 'grain_krw_' + it, live: GRAIN_LIVE[it], name: `${rs[0].name} 원화 환산`, unit: '원/kg',
       note: '세계은행 월평균 가격 × 한국은행 월평균 환율 (운임·관세·통관비 제외)',
       source: `${d.source} · 한국은행 ECOS`,
       series: rs.map((r) => ({ t: r.month, v: Math.round(r.usd_per_ton * rate[r.month] / 10) / 100 })) });
@@ -277,10 +277,18 @@ const SECTIONS = {
     { id: 'f-mixed', title: '배합사료 생산', desc: '젖소용·착유우용·송아지용 (분기)', groups: ['배합사료'] },
     { id: 'f-forage', title: '조사료 수입', desc: '건초류·곡물 짚·알팔파 펠릿 수입량·단가·원화 수입원가', groups: ['조사료'] },
     { id: 'f-ushay', title: '해외 조사료', desc: '미국 알팔파·기타 건초 생산자물가지수', groups: ['해외 조사료'] },
-    { id: 'f-grain', title: '국제 곡물', desc: '옥수수·대두박·대두·밀 국제가격과 원화 환산', groups: ['국제 곡물'] },
-    { id: 'f-fx', title: '환율', desc: '원/달러 월평균', groups: ['거시'] },
+    { id: 'f-grain', title: '국제 곡물', desc: '옥수수·대두박·대두·밀 국제가격(월평균)과 원화 환산', groups: ['국제 곡물'], live: 'grain' },
+    { id: 'f-fx', title: '환율', desc: '원/달러 월평균', groups: ['거시'], live: 'fx' },
   ] },
 };
+// 네이버 증권 시세 화면 바로가기 (값을 가져오지 않고 원래 화면으로 연결만 함)
+const NAVER = 'https://m.stock.naver.com/marketindex/';
+const LIVE_LINKS = {
+  grain: [['옥수수', 'agricultural/Ccv1'], ['대두', 'agricultural/Scv1'], ['대두박', 'agricultural/SMcv1'], ['소맥(밀)', 'agricultural/Wcv1']],
+  fx: [['원/달러 환율', 'exchange/FX_USDKRW']],
+};
+const GRAIN_LIVE = { Maize: 'agricultural/Ccv1', Soybeans: 'agricultural/Scv1', 'Soybean meal': 'agricultural/SMcv1', 'Wheat, US HRW': 'agricultural/Wcv1' };
+
 // 홈 '핵심 지표' (있는 것만 순서대로 표시)
 const HOME_KPIS = ['krei_prod', 'krei_milking', 'kosis_profit_net', 'cow_price', 'krei_price_cull_cow', 'krei_feed_total',
   'imp_k_121490', 'grain_krw_Maize'];
@@ -311,7 +319,7 @@ async function load() {
     ...fromCustoms(forage, usdkrw),
     ...fromUsHay(usHay),
     ...fromGrain(grain, usdkrw),
-    ...fromSimple(usdkrw, '거시', '원/달러 환율'),
+    ...fromSimple(usdkrw, '거시', '원/달러 환율').map((i) => ({ ...i, live: 'exchange/FX_USDKRW' })),
     ...fromManual(manual).filter((i) => i.group !== '원유'),
   ];
   BY_ID = Object.fromEntries(INDICATORS.map((i) => [i.id, i]));
@@ -453,6 +461,7 @@ function renderSection(key) {
       return `<section class="block" id="${sb.id}">
         <h2 class="sec-title">${esc(sb.title)}</h2>${sb.desc ? `<p class="sec-desc">${esc(sb.desc)}</p>` : ''}
         <div class="cards">${main.map((i) => card(i)).join('')}</div>
+        ${sb.live ? `<div class="live-links"><span>오늘 시세 보기 <small>네이버 증권 ↗</small></span>${LIVE_LINKS[sb.live].map(([n, path]) => `<a href="${NAVER}${path}" target="_blank" rel="noopener">${esc(n)}</a>`).join('')}</div>` : ''}
         ${empty.length ? `<p class="pending">입력 예정: ${empty.map((i) => esc(i.name)).join(', ')} <span class="muted">(공식 발표값 확인 후 반영)</span></p>` : ''}
         ${detail.length ? `<details class="more-items"><summary>세부품목 ${detail.length}개 보기</summary>
           <div class="cards">${detail.map((i) => card(i)).join('')}</div></details>` : ''}
@@ -571,6 +580,7 @@ function openSheet(ind) {
     ${recent.map((p) => `<tr><td>${esc(tLabel(ind, p.t))}</td><td class="num">${fmt(p.v, digits(ind, p.v))}</td></tr>`).join('')}</tbody></table>`;
   const link = ind.url ? ` · <a href="${esc(ind.url)}" target="_blank" rel="noopener">원자료 보기</a>` : '';
   $('#sheetSrc').innerHTML = `${ind.note ? esc(ind.note) + '<br>' : ''}출처: ${esc(ind.source)}${link}<br>미발표 기간은 빈칸 · 임의 보정 없음`;
+  if (ind.live) $('#sheetSrc').innerHTML = `<a class="live-btn" href="${NAVER}${ind.live}" target="_blank" rel="noopener">오늘 시세 보기 (네이버 증권) ↗</a>` + $('#sheetSrc').innerHTML;
   showSheet('sheet');
 }
 

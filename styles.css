@@ -383,3 +383,10 @@ details.panel summary { cursor: pointer; font-weight: 700; font-size: 15px; }
 .rules-bar .ghost { text-decoration: none; display: inline-flex; align-items: center; }
 .file-btn { cursor: pointer; }
 .mix-note { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-text); font-size: 13px; line-height: 1.55; }
+
+/* 네이버 증권 시세 바로가기 */
+.live-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: var(--brand-soft); }
+.live-links span { font-size: 13px; font-weight: 700; margin-right: 4px; }
+.live-links span small { font-weight: 500; color: var(--muted); }
+.live-links a { font-size: 12.5px; font-weight: 700; text-decoration: none; color: var(--brand); background: var(--card); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; }
+.live-btn { display: block; text-align: center; margin: 0 0 10px; padding: 11px; border-radius: 12px; border: 1.5px solid var(--brand); color: var(--brand); font-weight: 800; text-decoration: none; }
