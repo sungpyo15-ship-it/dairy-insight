@@ -298,6 +298,21 @@ CUSTOMS_SETS = {
             ("121300", "곡물 짚 (볏짚·밀짚 등)", "조사료"),
         ],
     },
+    "feed_import": {
+        "title": "단미·부산물 사료원료 수입량·수입단가 (관세청)",
+        "items": [
+            ("230320", "비트펄프", "단미·부산물"),
+            ("120729", "면실 (통면실)", "단미·부산물"),
+            ("230610", "면실박", "단미·부산물"),
+            ("230400", "대두박", "단미·부산물"),
+            ("230641", "채종박 (카놀라박)", "단미·부산물"),
+            ("230330", "DDGS (주정박·양조박)", "단미·부산물"),
+            ("230310", "옥수수 글루텐피드 (전분박)", "단미·부산물"),
+            ("230230", "밀기울", "단미·부산물"),
+            ("230660", "팜박", "단미·부산물"),
+            ("100590", "사료용 옥수수", "단미·부산물"),
+        ],
+    },
     "dairy_import": {
         "title": "유제품 수입량·수입단가 (관세청)",
         "items": [
@@ -366,6 +381,7 @@ def collect_customs(set_id):
         t["subs"].append({"code": sub, "name": sub_names.get(sub, ""), "import_ton": round(w / 1000, 1),
                           "usd_per_ton": unit_price(w, u)})
     meta = {hs: (name, cat) for hs, name, cat in spec["items"]}
+    order = {hs: k for k, (hs, _, _) in enumerate(spec["items"])}
     recs = []
     for (hs, ym), t in totals.items():
         recs.append({"month": f"{ym[:4]}-{ym[4:]}", "hs": hs, "name": meta[hs][0], "category": meta[hs][1],
@@ -379,7 +395,7 @@ def collect_customs(set_id):
             "source": "관세청 품목별 수출입실적 (공공데이터포털)",
             "source_url": "https://www.data.go.kr/data/15100475/openapi.do",
             "hs_names": {k: sorted(v) for k, v in names.items()},
-            "records": sorted(recs, key=lambda x: (x["hs"], x["month"]))}
+            "records": sorted(recs, key=lambda x: (order[x["hs"]], x["month"]))}  # 목록에 적은 순서대로
 
 
 # ---------------------------------------------------------------------------
@@ -570,7 +586,8 @@ def main():
             ("krei_dairy", "KREI 축산관측 젖소 (원유 수급·사육·산지가격)", collect_krei),
             ("milk_rules", "유업체별 유대 정산 기준 (업로드 엑셀)", collect_milk_rules),
             ("forage_import", "조사료 수입", lambda: collect_customs("forage_import")),
-            ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import"))]
+            ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import")),
+            ("feed_import", "단미·부산물 사료원료 수입 (비트펄프·면실·대두박 등)", lambda: collect_customs("feed_import"))]
     jobs += [(s[0], s[5], (lambda s=s: collect_kosis(s))) for s in KOSIS_TABLES]
 
     try:

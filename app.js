@@ -48,10 +48,14 @@ function fromCustoms(d, fx) {
     const names = d.hs_names?.[hs]?.join(', ');
     const base = { group: rs[0].category || '조사료', source: `${d.source} · HS ${hs}`, url: d.source_url, cycle: '월간',
       collected: d.collected_at, note: names ? `관세청 품목명: ${names}` : '' };
+    const krw = krwSeries(`imp_k_${hs}`, `${rs[0].name} 원화 수입원가`, rs.map((r) => ({ t: r.month, v: r.usd_per_ton })), rate, base, base.group);
+    // 단미·부산물은 원화 수입원가를 대표 카드로, 수입량·단가는 '더 보기'로 접는다
+    const compact = base.group === '단미·부산물' && krw && krw.series.length;
     return [
-      { id: `imp_t_${hs}`, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base },
-      { id: `imp_p_${hs}`, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base },
-      krwSeries(`imp_k_${hs}`, `${rs[0].name} 원화 수입원가`, rs.map((r) => ({ t: r.month, v: r.usd_per_ton })), rate, base, base.group),
+      ...(compact ? [krw] : []),
+      { id: `imp_t_${hs}`, name: `${rs[0].name} 수입량`, unit: '톤', series: rs.filter((r) => r.import_ton != null).map((r) => ({ t: r.month, v: r.import_ton })), ...base, sub: !!compact },
+      { id: `imp_p_${hs}`, name: `${rs[0].name} 수입단가`, unit: 'USD/톤', series: rs.filter((r) => r.usd_per_ton != null).map((r) => ({ t: r.month, v: r.usd_per_ton })), ...base, sub: !!compact },
+      ...(compact ? [] : [krw]),
     ].filter((i) => i && i.series.length).concat(subSeries(rs, base, rate));
   });
 }
@@ -63,7 +67,7 @@ function fxMap(fx) {
 
 // 원화 수입원가(원/kg) = 톤당 수입단가(USD, CIF) × 월평균 환율 ÷ 1000 — 조사료만, 환율이 있는 달만
 function krwSeries(id, name, usdSeries, rate, base, category) {
-  if (category !== '조사료') return null;
+  if (!['조사료', '단미·부산물'].includes(category)) return null;
   const series = usdSeries.filter((p) => p.v != null && rate[p.t]).map((p) => ({ t: p.t, v: Math.round(p.v * rate[p.t] / 10) / 100 }));
   return { ...base, id, name, unit: '원/kg', series, source: `${base.source} · 한국은행 ECOS 환율`,
     note: '관세청 신고 수입단가(CIF) × 월평균 원/달러 환율. 관세·통관·내륙운송비·유통마진 제외' };
@@ -273,9 +277,10 @@ const SECTIONS = {
     { id: 'c-cost', title: '젖소 생산비', desc: '두당 사육비와 사료비 구성 (연간)', groups: ['생산비'] },
     { id: 'c-beef', title: '육우', desc: '육우 거세우 경락단가·판정두수·도체중 (월)', groups: ['육우'] },
   ] },
-  feed: { title: '사료·조사료', lead: '배합사료 생산, 조사료 수입원가, 국제 곡물과 환율', subs: [
+  feed: { title: '사료·조사료', lead: '배합사료 생산, 조사료·단미 원료 수입원가, 국제 곡물과 환율', subs: [
     { id: 'f-mixed', title: '배합사료 생산', desc: '젖소용·착유우용·송아지용 (분기)', groups: ['배합사료'] },
     { id: 'f-forage', title: '조사료 수입', desc: '건초류·곡물 짚·알팔파 펠릿 수입량·단가·원화 수입원가', groups: ['조사료'] },
+    { id: 'f-byprod', title: '단미·부산물 원료 수입', desc: '비트펄프·면실·대두박·DDGS 등 원화 수입원가 (관세청 신고가 × 환율, 관세·내륙운송 제외)', groups: ['단미·부산물'] },
     { id: 'f-ushay', title: '해외 조사료', desc: '미국 알팔파·기타 건초 생산자물가지수', groups: ['해외 조사료'] },
     { id: 'f-grain', title: '국제 곡물', desc: '옥수수·대두박·대두·밀 국제가격(월평균)과 원화 환산', groups: ['국제 곡물'], live: 'grain' },
     { id: 'f-fx', title: '환율', desc: '원/달러 월평균', groups: ['거시'], live: 'fx' },
@@ -300,8 +305,8 @@ async function load() {
   // 한 번이라도 수집에 성공한 데이터셋만 불러옴 (인증키 미설정 출처는 요청하지 않음)
   const has = (id) => !!status?.datasets?.[id]?.last_success;
   const auto = (id) => (has(id) ? getJSON(`data/auto/${id}.json`) : null);
-  const [carcass, usdkrw, forage, dairyImp, grain, usHay, krei, manual, briefs] = await Promise.all([
-    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('dairy_import'), auto('grain_prices'),
+  const [carcass, usdkrw, forage, feedImp, dairyImp, grain, usHay, krei, manual, briefs] = await Promise.all([
+    auto('carcass'), auto('usdkrw'), auto('forage_import'), auto('feed_import'), auto('dairy_import'), auto('grain_prices'),
     auto('us_hay_ppi'), auto('krei_dairy'), getJSON('data/manual.json'), getJSON('data/briefs.json'),
   ]);
   const kosisIds = Object.keys(status?.datasets || {}).filter((k) => k.startsWith('kosis_') && has(k));
@@ -317,6 +322,7 @@ async function load() {
     ...fromCarcass(carcass),
     ...fromCustoms(dairyImp, usdkrw),
     ...fromCustoms(forage, usdkrw),
+    ...fromCustoms(feedImp, usdkrw),
     ...fromUsHay(usHay),
     ...fromGrain(grain, usdkrw),
     ...fromSimple(usdkrw, '거시', '원/달러 환율').map((i) => ({ ...i, live: 'exchange/FX_USDKRW' })),
@@ -463,7 +469,7 @@ function renderSection(key) {
         <div class="cards">${main.map((i) => card(i)).join('')}</div>
         ${sb.live ? `<div class="live-links"><span>오늘 시세 보기 <small>네이버 증권 ↗</small></span>${LIVE_LINKS[sb.live].map(([n, path]) => `<a href="${NAVER}${path}" target="_blank" rel="noopener">${esc(n)}</a>`).join('')}</div>` : ''}
         ${empty.length ? `<p class="pending">입력 예정: ${empty.map((i) => esc(i.name)).join(', ')} <span class="muted">(공식 발표값 확인 후 반영)</span></p>` : ''}
-        ${detail.length ? `<details class="more-items"><summary>세부품목 ${detail.length}개 보기</summary>
+        ${detail.length ? `<details class="more-items"><summary>수입량·단가·세부품목 ${detail.length}개 더 보기</summary>
           <div class="cards">${detail.map((i) => card(i)).join('')}</div></details>` : ''}
       </section>`;
     }).join('') || '<p class="hint">아직 수집된 자료가 없습니다.</p>';
