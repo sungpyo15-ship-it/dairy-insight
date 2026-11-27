@@ -1,0 +1,6433 @@
+{
+ "id": "feed_import",
+ "title": "단미·부산물 사료원료 수입량·수입단가 (관세청)",
+ "source": "관세청 품목별 수출입실적 (공공데이터포털)",
+ "source_url": "https://www.data.go.kr/data/15100475/openapi.do",
+ "hs_names": {
+  "230320": [
+   "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)"
+  ],
+  "120729": [
+   "기타",
+   "사료용"
+  ],
+  "230610": [
+   "목화씨에서 나온 것"
+  ],
+  "230400": [
+   "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]"
+  ],
+  "230641": [
+   "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것"
+  ],
+  "230330": [
+   "기타",
+   "사료용"
+  ],
+  "230310": [
+   "전분박과 이와 유사한 박(residue)류"
+  ],
+  "230230": [
+   "밀에서 나온 것"
+  ],
+  "230660": [
+   "팜 너트(palm nut)나 핵(核)에서 나온 것"
+  ],
+  "100590": [
+   "기타",
+   "사료용",
+   "팝콘용"
+  ]
+ },
+ "records": [
+  {
+   "month": "2023-11",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 17523.6,
+   "import_kusd": 5767.0,
+   "usd_per_ton": 329.1,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 17523.6,
+     "usd_per_ton": 329.1
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9169.4,
+   "import_kusd": 2979.3,
+   "usd_per_ton": 324.9,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9169.4,
+     "usd_per_ton": 324.9
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 11157.9,
+   "import_kusd": 3467.9,
+   "usd_per_ton": 310.8,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 11157.9,
+     "usd_per_ton": 310.8
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 7507.1,
+   "import_kusd": 2277.7,
+   "usd_per_ton": 303.4,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 7507.1,
+     "usd_per_ton": 303.4
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 8935.9,
+   "import_kusd": 2767.6,
+   "usd_per_ton": 309.7,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 8935.9,
+     "usd_per_ton": 309.7
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 10867.6,
+   "import_kusd": 3066.5,
+   "usd_per_ton": 282.2,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 10867.6,
+     "usd_per_ton": 282.2
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 10269.7,
+   "import_kusd": 2833.1,
+   "usd_per_ton": 275.9,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 10269.7,
+     "usd_per_ton": 275.9
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9329.6,
+   "import_kusd": 2522.4,
+   "usd_per_ton": 270.4,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9329.6,
+     "usd_per_ton": 270.4
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 14481.5,
+   "import_kusd": 3793.2,
+   "usd_per_ton": 261.9,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 14481.5,
+     "usd_per_ton": 261.9
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9950.2,
+   "import_kusd": 2488.0,
+   "usd_per_ton": 250.0,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9950.2,
+     "usd_per_ton": 250.0
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 13060.0,
+   "import_kusd": 3293.7,
+   "usd_per_ton": 252.2,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 13060.0,
+     "usd_per_ton": 252.2
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 11655.6,
+   "import_kusd": 2846.2,
+   "usd_per_ton": 244.2,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 11655.6,
+     "usd_per_ton": 244.2
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 6114.2,
+   "import_kusd": 1546.6,
+   "usd_per_ton": 252.9,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 6114.2,
+     "usd_per_ton": 252.9
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 17522.0,
+   "import_kusd": 4195.9,
+   "usd_per_ton": 239.5,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 17522.0,
+     "usd_per_ton": 239.5
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 12096.1,
+   "import_kusd": 3007.0,
+   "usd_per_ton": 248.6,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 12096.1,
+     "usd_per_ton": 248.6
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9277.9,
+   "import_kusd": 2229.3,
+   "usd_per_ton": 240.3,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9277.9,
+     "usd_per_ton": 240.3
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9088.7,
+   "import_kusd": 2209.5,
+   "usd_per_ton": 243.1,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9088.7,
+     "usd_per_ton": 243.1
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9638.7,
+   "import_kusd": 2361.9,
+   "usd_per_ton": 245.0,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9638.7,
+     "usd_per_ton": 245.0
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 6676.5,
+   "import_kusd": 1734.8,
+   "usd_per_ton": 259.8,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 6676.5,
+     "usd_per_ton": 259.8
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 8517.4,
+   "import_kusd": 2040.8,
+   "usd_per_ton": 239.6,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 8517.4,
+     "usd_per_ton": 239.6
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 13229.0,
+   "import_kusd": 3265.2,
+   "usd_per_ton": 246.8,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 13229.0,
+     "usd_per_ton": 246.8
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 8177.4,
+   "import_kusd": 2009.9,
+   "usd_per_ton": 245.8,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 8177.4,
+     "usd_per_ton": 245.8
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9173.4,
+   "import_kusd": 2319.4,
+   "usd_per_ton": 252.8,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9173.4,
+     "usd_per_ton": 252.8
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 11391.4,
+   "import_kusd": 2920.6,
+   "usd_per_ton": 256.4,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 11391.4,
+     "usd_per_ton": 256.4
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 13352.4,
+   "import_kusd": 3423.4,
+   "usd_per_ton": 256.4,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 13352.4,
+     "usd_per_ton": 256.4
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 8009.2,
+   "import_kusd": 2107.1,
+   "usd_per_ton": 263.1,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 8009.2,
+     "usd_per_ton": 263.1
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 14301.5,
+   "import_kusd": 3755.2,
+   "usd_per_ton": 262.6,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 14301.5,
+     "usd_per_ton": 262.6
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9189.3,
+   "import_kusd": 2432.4,
+   "usd_per_ton": 264.7,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9189.3,
+     "usd_per_ton": 264.7
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 11511.5,
+   "import_kusd": 2957.6,
+   "usd_per_ton": 256.9,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 11511.5,
+     "usd_per_ton": 256.9
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 13131.8,
+   "import_kusd": 3355.1,
+   "usd_per_ton": 255.5,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 13131.8,
+     "usd_per_ton": 255.5
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 14106.5,
+   "import_kusd": 4065.8,
+   "usd_per_ton": 288.2,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 14106.5,
+     "usd_per_ton": 288.2
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9375.8,
+   "import_kusd": 2939.9,
+   "usd_per_ton": 313.6,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9375.8,
+     "usd_per_ton": 313.6
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 8131.3,
+   "import_kusd": 2492.2,
+   "usd_per_ton": 306.5,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 8131.3,
+     "usd_per_ton": 306.5
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 9285.4,
+   "import_kusd": 2899.1,
+   "usd_per_ton": 312.2,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 9285.4,
+     "usd_per_ton": 312.2
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 14779.5,
+   "import_kusd": 4807.0,
+   "usd_per_ton": 325.3,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 14779.5,
+     "usd_per_ton": 325.3
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230320",
+   "name": "비트펄프",
+   "category": "단미·부산물",
+   "import_ton": 4632.0,
+   "import_kusd": 1547.2,
+   "usd_per_ton": 334.0,
+   "subs": [
+    {
+     "code": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "name": "비트펄프(beet-pulp), 버개스(bagasse)와 그 밖의 설탕을 제조할 때 생기는 웨이스트(waste)",
+     "import_ton": 4632.0,
+     "usd_per_ton": 334.0
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 13235.0,
+   "import_kusd": 4553.7,
+   "usd_per_ton": 344.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 579.2,
+     "usd_per_ton": 300.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12655.8,
+     "usd_per_ton": 346.1
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 7611.3,
+   "import_kusd": 2693.1,
+   "usd_per_ton": 353.8,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 7611.3,
+     "usd_per_ton": 353.8
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 6282.3,
+   "import_kusd": 2149.2,
+   "usd_per_ton": 342.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 325.8,
+     "usd_per_ton": 337.6
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 5956.5,
+     "usd_per_ton": 342.4
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 16078.4,
+   "import_kusd": 5404.1,
+   "usd_per_ton": 336.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 254.8,
+     "usd_per_ton": 337.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 15823.7,
+     "usd_per_ton": 336.1
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 20889.8,
+   "import_kusd": 7034.6,
+   "usd_per_ton": 336.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 934.5,
+     "usd_per_ton": 341.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 19955.3,
+     "usd_per_ton": 336.6
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 13141.1,
+   "import_kusd": 4536.0,
+   "usd_per_ton": 345.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 116.4,
+     "usd_per_ton": 346.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13024.6,
+     "usd_per_ton": 345.2
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 13758.8,
+   "import_kusd": 4877.6,
+   "usd_per_ton": 354.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 936.7,
+     "usd_per_ton": 346.6
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12822.0,
+     "usd_per_ton": 355.1
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 9481.9,
+   "import_kusd": 3352.7,
+   "usd_per_ton": 353.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 117.7,
+     "usd_per_ton": 337.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 9364.3,
+     "usd_per_ton": 353.8
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 8093.2,
+   "import_kusd": 2850.1,
+   "usd_per_ton": 352.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 352.3,
+     "usd_per_ton": 346.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 7740.8,
+     "usd_per_ton": 352.4
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 13582.2,
+   "import_kusd": 4791.6,
+   "usd_per_ton": 352.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 594.4,
+     "usd_per_ton": 346.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12987.7,
+     "usd_per_ton": 353.1
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 9757.0,
+   "import_kusd": 3696.4,
+   "usd_per_ton": 378.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 230.2,
+     "usd_per_ton": 347.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 9526.8,
+     "usd_per_ton": 379.6
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 8743.6,
+   "import_kusd": 3357.3,
+   "usd_per_ton": 384.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 629.0,
+     "usd_per_ton": 341.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 8114.6,
+     "usd_per_ton": 387.3
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 9261.3,
+   "import_kusd": 3444.4,
+   "usd_per_ton": 371.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 468.6,
+     "usd_per_ton": 349.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 8792.7,
+     "usd_per_ton": 373.1
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 7742.4,
+   "import_kusd": 2733.5,
+   "usd_per_ton": 353.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 355.1,
+     "usd_per_ton": 348.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 7387.4,
+     "usd_per_ton": 353.3
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 14589.7,
+   "import_kusd": 4888.7,
+   "usd_per_ton": 335.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 90.7,
+     "usd_per_ton": 336.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 14499.0,
+     "usd_per_ton": 335.1
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 16128.8,
+   "import_kusd": 5339.4,
+   "usd_per_ton": 331.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 89.6,
+     "usd_per_ton": 336.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 16039.2,
+     "usd_per_ton": 331.0
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 9610.1,
+   "import_kusd": 3188.8,
+   "usd_per_ton": 331.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 3.0,
+     "usd_per_ton": 1048.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 9607.1,
+     "usd_per_ton": 331.6
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 10966.1,
+   "import_kusd": 3653.1,
+   "usd_per_ton": 333.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 10966.1,
+     "usd_per_ton": 333.1
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 8867.7,
+   "import_kusd": 2961.7,
+   "usd_per_ton": 334.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 8867.7,
+     "usd_per_ton": 334.0
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 11449.6,
+   "import_kusd": 3810.6,
+   "usd_per_ton": 332.8,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 11449.6,
+     "usd_per_ton": 332.8
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 8399.7,
+   "import_kusd": 2798.3,
+   "usd_per_ton": 333.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 8399.7,
+     "usd_per_ton": 333.1
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 6060.8,
+   "import_kusd": 2032.1,
+   "usd_per_ton": 335.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 6060.8,
+     "usd_per_ton": 335.3
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 14742.1,
+   "import_kusd": 5161.3,
+   "usd_per_ton": 350.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 14742.1,
+     "usd_per_ton": 350.1
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 11262.1,
+   "import_kusd": 4012.4,
+   "usd_per_ton": 356.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 11262.1,
+     "usd_per_ton": 356.3
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 8221.1,
+   "import_kusd": 2964.7,
+   "usd_per_ton": 360.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 8221.1,
+     "usd_per_ton": 360.6
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 5578.7,
+   "import_kusd": 1934.6,
+   "usd_per_ton": 346.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 5578.7,
+     "usd_per_ton": 346.7
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 10916.8,
+   "import_kusd": 3724.8,
+   "usd_per_ton": 341.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 10916.8,
+     "usd_per_ton": 341.2
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 14418.0,
+   "import_kusd": 4794.1,
+   "usd_per_ton": 332.5,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 14418.0,
+     "usd_per_ton": 332.5
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 13304.4,
+   "import_kusd": 4443.3,
+   "usd_per_ton": 334.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 13304.4,
+     "usd_per_ton": 334.0
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 10757.1,
+   "import_kusd": 3638.1,
+   "usd_per_ton": 338.2,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 10757.1,
+     "usd_per_ton": 338.2
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 12278.8,
+   "import_kusd": 4208.4,
+   "usd_per_ton": 342.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 12278.8,
+     "usd_per_ton": 342.7
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 9032.7,
+   "import_kusd": 3140.0,
+   "usd_per_ton": 347.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 9032.7,
+     "usd_per_ton": 347.6
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 15624.7,
+   "import_kusd": 5523.5,
+   "usd_per_ton": 353.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 15624.7,
+     "usd_per_ton": 353.5
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 7298.6,
+   "import_kusd": 2640.8,
+   "usd_per_ton": 361.8,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 7298.6,
+     "usd_per_ton": 361.8
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 8487.6,
+   "import_kusd": 3098.4,
+   "usd_per_ton": 365.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 8487.6,
+     "usd_per_ton": 365.0
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "120729",
+   "name": "면실 (통면실)",
+   "category": "단미·부산물",
+   "import_ton": 10055.5,
+   "import_kusd": 3793.9,
+   "usd_per_ton": 377.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 10055.5,
+     "usd_per_ton": 377.3
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 459.9,
+   "import_kusd": 229.5,
+   "usd_per_ton": 498.9,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 459.9,
+     "usd_per_ton": 498.9
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 519.3,
+   "import_kusd": 212.5,
+   "usd_per_ton": 409.2,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 519.3,
+     "usd_per_ton": 409.2
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 405.4,
+   "import_kusd": 177.9,
+   "usd_per_ton": 438.8,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 405.4,
+     "usd_per_ton": 438.8
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 199.7,
+   "import_kusd": 83.0,
+   "usd_per_ton": 415.7,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 199.7,
+     "usd_per_ton": 415.7
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 1163.0,
+   "import_kusd": 690.3,
+   "usd_per_ton": 593.6,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 1163.0,
+     "usd_per_ton": 593.6
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 492.6,
+   "import_kusd": 331.9,
+   "usd_per_ton": 673.8,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 492.6,
+     "usd_per_ton": 673.8
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 170.1,
+   "import_kusd": 182.9,
+   "usd_per_ton": 1075.2,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 170.1,
+     "usd_per_ton": 1075.2
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 589.0,
+   "import_kusd": 294.2,
+   "usd_per_ton": 499.6,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 589.0,
+     "usd_per_ton": 499.6
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 418.8,
+   "import_kusd": 553.9,
+   "usd_per_ton": 1322.6,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 418.8,
+     "usd_per_ton": 1322.6
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 267.1,
+   "import_kusd": 103.3,
+   "usd_per_ton": 386.7,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 267.1,
+     "usd_per_ton": 386.7
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 773.4,
+   "import_kusd": 369.9,
+   "usd_per_ton": 478.3,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 773.4,
+     "usd_per_ton": 478.3
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 219.4,
+   "import_kusd": 83.3,
+   "usd_per_ton": 379.5,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 219.4,
+     "usd_per_ton": 379.5
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 274.4,
+   "import_kusd": 111.9,
+   "usd_per_ton": 407.7,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 274.4,
+     "usd_per_ton": 407.7
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 498.9,
+   "import_kusd": 194.9,
+   "usd_per_ton": 390.7,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 498.9,
+     "usd_per_ton": 390.7
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 198.6,
+   "import_kusd": 73.8,
+   "usd_per_ton": 371.5,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 198.6,
+     "usd_per_ton": 371.5
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 396.9,
+   "import_kusd": 143.7,
+   "usd_per_ton": 362.1,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 396.9,
+     "usd_per_ton": 362.1
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 93.8,
+   "import_kusd": 35.2,
+   "usd_per_ton": 375.0,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 93.8,
+     "usd_per_ton": 375.0
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 299.5,
+   "import_kusd": 97.7,
+   "usd_per_ton": 326.4,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 299.5,
+     "usd_per_ton": 326.4
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 420.4,
+   "import_kusd": 141.1,
+   "usd_per_ton": 335.8,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 420.4,
+     "usd_per_ton": 335.8
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 540.7,
+   "import_kusd": 179.4,
+   "usd_per_ton": 331.8,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 540.7,
+     "usd_per_ton": 331.8
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 209.7,
+   "import_kusd": 134.4,
+   "usd_per_ton": 641.0,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 209.7,
+     "usd_per_ton": 641.0
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 384.8,
+   "import_kusd": 142.2,
+   "usd_per_ton": 369.4,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 384.8,
+     "usd_per_ton": 369.4
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 397.1,
+   "import_kusd": 155.3,
+   "usd_per_ton": 391.2,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 397.1,
+     "usd_per_ton": 391.2
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 198.0,
+   "import_kusd": 80.0,
+   "usd_per_ton": 404.2,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 198.0,
+     "usd_per_ton": 404.2
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 298.9,
+   "import_kusd": 127.1,
+   "usd_per_ton": 425.2,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 298.9,
+     "usd_per_ton": 425.2
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 574.0,
+   "import_kusd": 275.0,
+   "usd_per_ton": 479.1,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 574.0,
+     "usd_per_ton": 479.1
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 397.8,
+   "import_kusd": 154.3,
+   "usd_per_ton": 387.9,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 397.8,
+     "usd_per_ton": 387.9
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 412.0,
+   "import_kusd": 157.9,
+   "usd_per_ton": 383.2,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 412.0,
+     "usd_per_ton": 383.2
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 545.5,
+   "import_kusd": 221.1,
+   "usd_per_ton": 405.3,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 545.5,
+     "usd_per_ton": 405.3
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 347.5,
+   "import_kusd": 153.8,
+   "usd_per_ton": 442.5,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 347.5,
+     "usd_per_ton": 442.5
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 99.7,
+   "import_kusd": 43.2,
+   "usd_per_ton": 433.6,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 99.7,
+     "usd_per_ton": 433.6
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 195.7,
+   "import_kusd": 83.8,
+   "usd_per_ton": 427.9,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 195.7,
+     "usd_per_ton": 427.9
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230610",
+   "name": "면실박",
+   "category": "단미·부산물",
+   "import_ton": 10.0,
+   "import_kusd": 25.7,
+   "usd_per_ton": 2571.1,
+   "subs": [
+    {
+     "code": "목화씨에서 나온 것",
+     "name": "목화씨에서 나온 것",
+     "import_ton": 10.0,
+     "usd_per_ton": 2571.1
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 130591.4,
+   "import_kusd": 67384.9,
+   "usd_per_ton": 516.0,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 130591.4,
+     "usd_per_ton": 516.0
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 93411.0,
+   "import_kusd": 47655.7,
+   "usd_per_ton": 510.2,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 93411.0,
+     "usd_per_ton": 510.2
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 174856.9,
+   "import_kusd": 91606.2,
+   "usd_per_ton": 523.9,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 174856.9,
+     "usd_per_ton": 523.9
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 115234.9,
+   "import_kusd": 61413.5,
+   "usd_per_ton": 532.9,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 115234.9,
+     "usd_per_ton": 532.9
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 125692.6,
+   "import_kusd": 66651.0,
+   "usd_per_ton": 530.3,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 125692.6,
+     "usd_per_ton": 530.3
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 128458.4,
+   "import_kusd": 69225.0,
+   "usd_per_ton": 538.9,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 128458.4,
+     "usd_per_ton": 538.9
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 164426.0,
+   "import_kusd": 87857.0,
+   "usd_per_ton": 534.3,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 164426.0,
+     "usd_per_ton": 534.3
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 141293.3,
+   "import_kusd": 69551.4,
+   "usd_per_ton": 492.2,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 141293.3,
+     "usd_per_ton": 492.2
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 168328.3,
+   "import_kusd": 79219.9,
+   "usd_per_ton": 470.6,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 168328.3,
+     "usd_per_ton": 470.6
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 161042.5,
+   "import_kusd": 73297.5,
+   "usd_per_ton": 455.1,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 161042.5,
+     "usd_per_ton": 455.1
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 111336.6,
+   "import_kusd": 51760.5,
+   "usd_per_ton": 464.9,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 111336.6,
+     "usd_per_ton": 464.9
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 192238.2,
+   "import_kusd": 89245.3,
+   "usd_per_ton": 464.2,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 192238.2,
+     "usd_per_ton": 464.2
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 142372.5,
+   "import_kusd": 67545.0,
+   "usd_per_ton": 474.4,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 142372.5,
+     "usd_per_ton": 474.4
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 111348.0,
+   "import_kusd": 51604.0,
+   "usd_per_ton": 463.4,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 111348.0,
+     "usd_per_ton": 463.4
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 128720.9,
+   "import_kusd": 57940.1,
+   "usd_per_ton": 450.1,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 128720.9,
+     "usd_per_ton": 450.1
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 112998.6,
+   "import_kusd": 50370.4,
+   "usd_per_ton": 445.8,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 112998.6,
+     "usd_per_ton": 445.8
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 136824.0,
+   "import_kusd": 58803.8,
+   "usd_per_ton": 429.8,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 136824.0,
+     "usd_per_ton": 429.8
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 113660.1,
+   "import_kusd": 47686.4,
+   "usd_per_ton": 419.6,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 113660.1,
+     "usd_per_ton": 419.6
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 154699.3,
+   "import_kusd": 62285.7,
+   "usd_per_ton": 402.6,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 154699.3,
+     "usd_per_ton": 402.6
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 132446.3,
+   "import_kusd": 52026.7,
+   "usd_per_ton": 392.8,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 132446.3,
+     "usd_per_ton": 392.8
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 132617.6,
+   "import_kusd": 50974.1,
+   "usd_per_ton": 384.4,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 132617.6,
+     "usd_per_ton": 384.4
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 171162.7,
+   "import_kusd": 63119.9,
+   "usd_per_ton": 368.8,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 171162.7,
+     "usd_per_ton": 368.8
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 183037.7,
+   "import_kusd": 67202.0,
+   "usd_per_ton": 367.1,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 183037.7,
+     "usd_per_ton": 367.1
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 155572.4,
+   "import_kusd": 55127.3,
+   "usd_per_ton": 354.4,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 155572.4,
+     "usd_per_ton": 354.4
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 121103.1,
+   "import_kusd": 42225.4,
+   "usd_per_ton": 348.7,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 121103.1,
+     "usd_per_ton": 348.7
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 190686.8,
+   "import_kusd": 66164.4,
+   "usd_per_ton": 347.0,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 190686.8,
+     "usd_per_ton": 347.0
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 120422.2,
+   "import_kusd": 42903.0,
+   "usd_per_ton": 356.3,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 120422.2,
+     "usd_per_ton": 356.3
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 124706.7,
+   "import_kusd": 44082.6,
+   "usd_per_ton": 353.5,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 124706.7,
+     "usd_per_ton": 353.5
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 156381.3,
+   "import_kusd": 54117.2,
+   "usd_per_ton": 346.1,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 156381.3,
+     "usd_per_ton": 346.1
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 150781.2,
+   "import_kusd": 54051.5,
+   "usd_per_ton": 358.5,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 150781.2,
+     "usd_per_ton": 358.5
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 82799.0,
+   "import_kusd": 31438.9,
+   "usd_per_ton": 379.7,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 82799.0,
+     "usd_per_ton": 379.7
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 152345.5,
+   "import_kusd": 57785.0,
+   "usd_per_ton": 379.3,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 152345.5,
+     "usd_per_ton": 379.3
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 163298.0,
+   "import_kusd": 63837.5,
+   "usd_per_ton": 390.9,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 163298.0,
+     "usd_per_ton": 390.9
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 118764.5,
+   "import_kusd": 48442.1,
+   "usd_per_ton": 407.9,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 118764.5,
+     "usd_per_ton": 407.9
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 169723.2,
+   "import_kusd": 69642.6,
+   "usd_per_ton": 410.3,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 169723.2,
+     "usd_per_ton": 410.3
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230400",
+   "name": "대두박",
+   "category": "단미·부산물",
+   "import_ton": 160766.2,
+   "import_kusd": 65267.0,
+   "usd_per_ton": 406.0,
+   "subs": [
+    {
+     "code": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "name": "대두유를 추출할 때 얻는 오일 케이크와 고체 형태의 유박[잘게 부순 것인지 또는 펠릿(pellet) 모양인지에 상관없다]",
+     "import_ton": 160766.2,
+     "usd_per_ton": 406.0
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 110.3,
+   "import_kusd": 34.9,
+   "usd_per_ton": 316.2,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 110.3,
+     "usd_per_ton": 316.2
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 195.7,
+   "import_kusd": 2.9,
+   "usd_per_ton": 14.8,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 195.7,
+     "usd_per_ton": 14.8
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 1550.0,
+   "import_kusd": 449.6,
+   "usd_per_ton": 290.1,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 1550.0,
+     "usd_per_ton": 290.1
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 4574.7,
+   "import_kusd": 1006.5,
+   "usd_per_ton": 220.0,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 4574.7,
+     "usd_per_ton": 220.0
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 1978.8,
+   "import_kusd": 435.4,
+   "usd_per_ton": 220.0,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 1978.8,
+     "usd_per_ton": 220.0
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 0.0,
+   "import_kusd": 0.0,
+   "usd_per_ton": null,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 6159.4,
+   "import_kusd": 1258.3,
+   "usd_per_ton": 204.3,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 6159.4,
+     "usd_per_ton": 204.3
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 3150.0,
+   "import_kusd": 781.4,
+   "usd_per_ton": 248.1,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 3150.0,
+     "usd_per_ton": 248.1
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 3345.0,
+   "import_kusd": 1036.1,
+   "usd_per_ton": 309.8,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 3345.0,
+     "usd_per_ton": 309.8
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230641",
+   "name": "채종박 (카놀라박)",
+   "category": "단미·부산물",
+   "import_ton": 6300.0,
+   "import_kusd": 1875.3,
+   "usd_per_ton": 297.7,
+   "subs": [
+    {
+     "code": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "name": "저에루크산(low erucic acid) 유채(rape, colza)씨에서 나온 것",
+     "import_ton": 6300.0,
+     "usd_per_ton": 297.7
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 91705.1,
+   "import_kusd": 25804.0,
+   "usd_per_ton": 281.4,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 91705.1,
+     "usd_per_ton": 281.4
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 84686.0,
+   "import_kusd": 23743.8,
+   "usd_per_ton": 280.4,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 84686.0,
+     "usd_per_ton": 280.4
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 142181.5,
+   "import_kusd": 40662.7,
+   "usd_per_ton": 286.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 142181.5,
+     "usd_per_ton": 286.0
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 109213.4,
+   "import_kusd": 31288.5,
+   "usd_per_ton": 286.5,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 109213.4,
+     "usd_per_ton": 286.5
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 104882.9,
+   "import_kusd": 30900.2,
+   "usd_per_ton": 294.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 104882.9,
+     "usd_per_ton": 294.6
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 129203.2,
+   "import_kusd": 37618.0,
+   "usd_per_ton": 291.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 129203.2,
+     "usd_per_ton": 291.2
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 139240.1,
+   "import_kusd": 39244.9,
+   "usd_per_ton": 281.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 139240.1,
+     "usd_per_ton": 281.9
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 97408.9,
+   "import_kusd": 25830.5,
+   "usd_per_ton": 265.2,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 97408.9,
+     "usd_per_ton": 265.2
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 120709.0,
+   "import_kusd": 29973.5,
+   "usd_per_ton": 248.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 120709.0,
+     "usd_per_ton": 248.3
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 113798.6,
+   "import_kusd": 27669.9,
+   "usd_per_ton": 243.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 113798.6,
+     "usd_per_ton": 243.1
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 142441.1,
+   "import_kusd": 34126.0,
+   "usd_per_ton": 239.6,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 142441.1,
+     "usd_per_ton": 239.6
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 152376.4,
+   "import_kusd": 35681.7,
+   "usd_per_ton": 234.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 152376.4,
+     "usd_per_ton": 234.2
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 131830.7,
+   "import_kusd": 29968.8,
+   "usd_per_ton": 227.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 131830.7,
+     "usd_per_ton": 227.3
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 83179.1,
+   "import_kusd": 18706.8,
+   "usd_per_ton": 224.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 83179.1,
+     "usd_per_ton": 224.9
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 89270.9,
+   "import_kusd": 20418.5,
+   "usd_per_ton": 228.7,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 89270.9,
+     "usd_per_ton": 228.7
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 91621.8,
+   "import_kusd": 20786.2,
+   "usd_per_ton": 226.9,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 91621.8,
+     "usd_per_ton": 226.9
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 112829.1,
+   "import_kusd": 25688.5,
+   "usd_per_ton": 227.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 112829.1,
+     "usd_per_ton": 227.7
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 121874.6,
+   "import_kusd": 27636.1,
+   "usd_per_ton": 226.8,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 121874.6,
+     "usd_per_ton": 226.8
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 126293.6,
+   "import_kusd": 28670.5,
+   "usd_per_ton": 227.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 4.2,
+     "usd_per_ton": 448.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 126289.4,
+     "usd_per_ton": 227.0
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 113634.4,
+   "import_kusd": 25830.1,
+   "usd_per_ton": 227.3,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 113634.4,
+     "usd_per_ton": 227.3
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 114385.7,
+   "import_kusd": 26017.6,
+   "usd_per_ton": 227.5,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 114385.7,
+     "usd_per_ton": 227.5
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 129890.0,
+   "import_kusd": 29556.3,
+   "usd_per_ton": 227.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 24.0,
+     "usd_per_ton": 362.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 129866.0,
+     "usd_per_ton": 227.5
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 141648.2,
+   "import_kusd": 32170.3,
+   "usd_per_ton": 227.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 141648.2,
+     "usd_per_ton": 227.1
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 135711.9,
+   "import_kusd": 30360.7,
+   "usd_per_ton": 223.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 135711.9,
+     "usd_per_ton": 223.7
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 120557.7,
+   "import_kusd": 26608.0,
+   "usd_per_ton": 220.7,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 120557.7,
+     "usd_per_ton": 220.7
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 116708.0,
+   "import_kusd": 25674.3,
+   "usd_per_ton": 220.0,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 116708.0,
+     "usd_per_ton": 220.0
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 131635.5,
+   "import_kusd": 29101.9,
+   "usd_per_ton": 221.1,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 131635.5,
+     "usd_per_ton": 221.1
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 98065.7,
+   "import_kusd": 22018.6,
+   "usd_per_ton": 224.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 98065.7,
+     "usd_per_ton": 224.5
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 130930.0,
+   "import_kusd": 30100.6,
+   "usd_per_ton": 229.9,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 130930.0,
+     "usd_per_ton": 229.9
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 106053.0,
+   "import_kusd": 24627.3,
+   "usd_per_ton": 232.2,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 106053.0,
+     "usd_per_ton": 232.2
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 130504.6,
+   "import_kusd": 30986.2,
+   "usd_per_ton": 237.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 130504.6,
+     "usd_per_ton": 237.4
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 135511.6,
+   "import_kusd": 33535.6,
+   "usd_per_ton": 247.5,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 135511.6,
+     "usd_per_ton": 247.5
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 113909.6,
+   "import_kusd": 29351.8,
+   "usd_per_ton": 257.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 113909.6,
+     "usd_per_ton": 257.7
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 140278.8,
+   "import_kusd": 37727.0,
+   "usd_per_ton": 268.9,
+   "subs": [
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 140278.8,
+     "usd_per_ton": 268.9
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 121104.3,
+   "import_kusd": 31484.8,
+   "usd_per_ton": 260.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 121104.3,
+     "usd_per_ton": 260.0
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230330",
+   "name": "DDGS (주정박·양조박)",
+   "category": "단미·부산물",
+   "import_ton": 144604.4,
+   "import_kusd": 36365.7,
+   "usd_per_ton": 251.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.1,
+     "usd_per_ton": null
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 144604.3,
+     "usd_per_ton": 251.5
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 83205.6,
+   "import_kusd": 22496.3,
+   "usd_per_ton": 270.4,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 83205.6,
+     "usd_per_ton": 270.4
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 66612.0,
+   "import_kusd": 17873.8,
+   "usd_per_ton": 268.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 66612.0,
+     "usd_per_ton": 268.3
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 93347.4,
+   "import_kusd": 24585.8,
+   "usd_per_ton": 263.4,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 93347.4,
+     "usd_per_ton": 263.4
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 74381.5,
+   "import_kusd": 18669.0,
+   "usd_per_ton": 251.0,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 74381.5,
+     "usd_per_ton": 251.0
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 89627.0,
+   "import_kusd": 19964.9,
+   "usd_per_ton": 222.8,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 89627.0,
+     "usd_per_ton": 222.8
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 87681.1,
+   "import_kusd": 19175.3,
+   "usd_per_ton": 218.7,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 87681.1,
+     "usd_per_ton": 218.7
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 77724.7,
+   "import_kusd": 16116.2,
+   "usd_per_ton": 207.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 77724.7,
+     "usd_per_ton": 207.3
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 81206.7,
+   "import_kusd": 14784.8,
+   "usd_per_ton": 182.1,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 81206.7,
+     "usd_per_ton": 182.1
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 75453.6,
+   "import_kusd": 13764.6,
+   "usd_per_ton": 182.4,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 75453.6,
+     "usd_per_ton": 182.4
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 77919.8,
+   "import_kusd": 13287.0,
+   "usd_per_ton": 170.5,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 77919.8,
+     "usd_per_ton": 170.5
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 80662.6,
+   "import_kusd": 13463.7,
+   "usd_per_ton": 166.9,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 80662.6,
+     "usd_per_ton": 166.9
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 85161.2,
+   "import_kusd": 12570.5,
+   "usd_per_ton": 147.6,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 85161.2,
+     "usd_per_ton": 147.6
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 77761.7,
+   "import_kusd": 11139.9,
+   "usd_per_ton": 143.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 77761.7,
+     "usd_per_ton": 143.3
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 74420.4,
+   "import_kusd": 10742.2,
+   "usd_per_ton": 144.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 74420.4,
+     "usd_per_ton": 144.3
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 97694.5,
+   "import_kusd": 14198.8,
+   "usd_per_ton": 145.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 97694.5,
+     "usd_per_ton": 145.3
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 89107.8,
+   "import_kusd": 13749.7,
+   "usd_per_ton": 154.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 89107.8,
+     "usd_per_ton": 154.3
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 78907.9,
+   "import_kusd": 11775.4,
+   "usd_per_ton": 149.2,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 78907.9,
+     "usd_per_ton": 149.2
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 95188.9,
+   "import_kusd": 14959.9,
+   "usd_per_ton": 157.2,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 95188.9,
+     "usd_per_ton": 157.2
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 93537.4,
+   "import_kusd": 14325.2,
+   "usd_per_ton": 153.1,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 93537.4,
+     "usd_per_ton": 153.1
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 86884.2,
+   "import_kusd": 14211.2,
+   "usd_per_ton": 163.6,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 86884.2,
+     "usd_per_ton": 163.6
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 78650.2,
+   "import_kusd": 12177.0,
+   "usd_per_ton": 154.8,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 78650.2,
+     "usd_per_ton": 154.8
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 83424.8,
+   "import_kusd": 13600.4,
+   "usd_per_ton": 163.0,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 83424.8,
+     "usd_per_ton": 163.0
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 83477.4,
+   "import_kusd": 13978.2,
+   "usd_per_ton": 167.4,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 83477.4,
+     "usd_per_ton": 167.4
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 71080.2,
+   "import_kusd": 12520.6,
+   "usd_per_ton": 176.1,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 71080.2,
+     "usd_per_ton": 176.1
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 63814.9,
+   "import_kusd": 12162.9,
+   "usd_per_ton": 190.6,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 63814.9,
+     "usd_per_ton": 190.6
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 78751.4,
+   "import_kusd": 14461.3,
+   "usd_per_ton": 183.6,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 78751.4,
+     "usd_per_ton": 183.6
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 88911.8,
+   "import_kusd": 17176.5,
+   "usd_per_ton": 193.2,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 88911.8,
+     "usd_per_ton": 193.2
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 81441.0,
+   "import_kusd": 16214.9,
+   "usd_per_ton": 199.1,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 81441.0,
+     "usd_per_ton": 199.1
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 88616.1,
+   "import_kusd": 17924.2,
+   "usd_per_ton": 202.3,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 88616.1,
+     "usd_per_ton": 202.3
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 82438.4,
+   "import_kusd": 17081.0,
+   "usd_per_ton": 207.2,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 82438.4,
+     "usd_per_ton": 207.2
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 58811.1,
+   "import_kusd": 12025.9,
+   "usd_per_ton": 204.5,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 58811.1,
+     "usd_per_ton": 204.5
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 82977.8,
+   "import_kusd": 16602.4,
+   "usd_per_ton": 200.1,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 82977.8,
+     "usd_per_ton": 200.1
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 73690.5,
+   "import_kusd": 14314.1,
+   "usd_per_ton": 194.2,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 73690.5,
+     "usd_per_ton": 194.2
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 107244.6,
+   "import_kusd": 20824.0,
+   "usd_per_ton": 194.2,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 107244.6,
+     "usd_per_ton": 194.2
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 100205.3,
+   "import_kusd": 19193.9,
+   "usd_per_ton": 191.5,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 100205.3,
+     "usd_per_ton": 191.5
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230310",
+   "name": "옥수수 글루텐피드 (전분박)",
+   "category": "단미·부산물",
+   "import_ton": 107653.6,
+   "import_kusd": 18993.7,
+   "usd_per_ton": 176.4,
+   "subs": [
+    {
+     "code": "전분박과 이와 유사한 박(residue)류",
+     "name": "전분박과 이와 유사한 박(residue)류",
+     "import_ton": 107653.6,
+     "usd_per_ton": 176.4
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 2260.8,
+   "import_kusd": 616.6,
+   "usd_per_ton": 272.7,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 2260.8,
+     "usd_per_ton": 272.7
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 8749.4,
+   "import_kusd": 2495.4,
+   "usd_per_ton": 285.2,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 8749.4,
+     "usd_per_ton": 285.2
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 1503.7,
+   "import_kusd": 365.5,
+   "usd_per_ton": 243.1,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 1503.7,
+     "usd_per_ton": 243.1
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 7581.2,
+   "import_kusd": 1841.8,
+   "usd_per_ton": 242.9,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 7581.2,
+     "usd_per_ton": 242.9
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 7836.3,
+   "import_kusd": 2041.2,
+   "usd_per_ton": 260.5,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 7836.3,
+     "usd_per_ton": 260.5
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 5369.8,
+   "import_kusd": 1359.8,
+   "usd_per_ton": 253.2,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 5369.8,
+     "usd_per_ton": 253.2
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 8483.2,
+   "import_kusd": 1951.3,
+   "usd_per_ton": 230.0,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 8483.2,
+     "usd_per_ton": 230.0
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 10633.8,
+   "import_kusd": 2294.4,
+   "usd_per_ton": 215.8,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 10633.8,
+     "usd_per_ton": 215.8
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 327.6,
+   "import_kusd": 65.0,
+   "usd_per_ton": 198.4,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 327.6,
+     "usd_per_ton": 198.4
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 11125.0,
+   "import_kusd": 2068.8,
+   "usd_per_ton": 186.0,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 11125.0,
+     "usd_per_ton": 186.0
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 10240.4,
+   "import_kusd": 1985.5,
+   "usd_per_ton": 193.9,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 10240.4,
+     "usd_per_ton": 193.9
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 642.4,
+   "import_kusd": 127.7,
+   "usd_per_ton": 198.8,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 642.4,
+     "usd_per_ton": 198.8
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 7941.5,
+   "import_kusd": 1557.1,
+   "usd_per_ton": 196.1,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 7941.5,
+     "usd_per_ton": 196.1
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 12854.1,
+   "import_kusd": 2587.5,
+   "usd_per_ton": 201.3,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 12854.1,
+     "usd_per_ton": 201.3
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 12076.0,
+   "import_kusd": 2397.7,
+   "usd_per_ton": 198.6,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 12076.0,
+     "usd_per_ton": 198.6
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 13118.4,
+   "import_kusd": 2564.0,
+   "usd_per_ton": 195.5,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 13118.4,
+     "usd_per_ton": 195.5
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 2798.5,
+   "import_kusd": 565.8,
+   "usd_per_ton": 202.2,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 2798.5,
+     "usd_per_ton": 202.2
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 9671.1,
+   "import_kusd": 1837.8,
+   "usd_per_ton": 190.0,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 9671.1,
+     "usd_per_ton": 190.0
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 12899.5,
+   "import_kusd": 2394.7,
+   "usd_per_ton": 185.6,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 12899.5,
+     "usd_per_ton": 185.6
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 7775.2,
+   "import_kusd": 1435.2,
+   "usd_per_ton": 184.6,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 7775.2,
+     "usd_per_ton": 184.6
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 2280.9,
+   "import_kusd": 422.8,
+   "usd_per_ton": 185.4,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 2280.9,
+     "usd_per_ton": 185.4
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 9281.8,
+   "import_kusd": 1743.4,
+   "usd_per_ton": 187.8,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 9281.8,
+     "usd_per_ton": 187.8
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 6460.4,
+   "import_kusd": 1201.7,
+   "usd_per_ton": 186.0,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 6460.4,
+     "usd_per_ton": 186.0
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 13186.1,
+   "import_kusd": 2680.8,
+   "usd_per_ton": 203.3,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 13186.1,
+     "usd_per_ton": 203.3
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 2272.7,
+   "import_kusd": 477.8,
+   "usd_per_ton": 210.2,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 2272.7,
+     "usd_per_ton": 210.2
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 11338.8,
+   "import_kusd": 2282.7,
+   "usd_per_ton": 201.3,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 11338.8,
+     "usd_per_ton": 201.3
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 18899.2,
+   "import_kusd": 3672.4,
+   "usd_per_ton": 194.3,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 18899.2,
+     "usd_per_ton": 194.3
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 17797.1,
+   "import_kusd": 3606.4,
+   "usd_per_ton": 202.6,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 17797.1,
+     "usd_per_ton": 202.6
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 7819.9,
+   "import_kusd": 1657.7,
+   "usd_per_ton": 212.0,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 7819.9,
+     "usd_per_ton": 212.0
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 475.0,
+   "import_kusd": 103.0,
+   "usd_per_ton": 216.9,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 475.0,
+     "usd_per_ton": 216.9
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 5220.0,
+   "import_kusd": 1116.7,
+   "usd_per_ton": 213.9,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 5220.0,
+     "usd_per_ton": 213.9
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 2180.0,
+   "import_kusd": 466.3,
+   "usd_per_ton": 213.9,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 2180.0,
+     "usd_per_ton": 213.9
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 7363.1,
+   "import_kusd": 1561.6,
+   "usd_per_ton": 212.1,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 7363.1,
+     "usd_per_ton": 212.1
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 2884.0,
+   "import_kusd": 677.8,
+   "usd_per_ton": 235.0,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 2884.0,
+     "usd_per_ton": 235.0
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 3783.5,
+   "import_kusd": 868.9,
+   "usd_per_ton": 229.7,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 3783.5,
+     "usd_per_ton": 229.7
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230230",
+   "name": "밀기울",
+   "category": "단미·부산물",
+   "import_ton": 8250.0,
+   "import_kusd": 1942.2,
+   "usd_per_ton": 235.4,
+   "subs": [
+    {
+     "code": "밀에서 나온 것",
+     "name": "밀에서 나온 것",
+     "import_ton": 8250.0,
+     "usd_per_ton": 235.4
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 87943.6,
+   "import_kusd": 15574.8,
+   "usd_per_ton": 177.1,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 87943.6,
+     "usd_per_ton": 177.1
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 93556.7,
+   "import_kusd": 17972.0,
+   "usd_per_ton": 192.1,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 93556.7,
+     "usd_per_ton": 192.1
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 95773.2,
+   "import_kusd": 19061.1,
+   "usd_per_ton": 199.0,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 95773.2,
+     "usd_per_ton": 199.0
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 98139.7,
+   "import_kusd": 18975.8,
+   "usd_per_ton": 193.4,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 98139.7,
+     "usd_per_ton": 193.4
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 77447.6,
+   "import_kusd": 14821.5,
+   "usd_per_ton": 191.4,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 77447.6,
+     "usd_per_ton": 191.4
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 72226.3,
+   "import_kusd": 13798.4,
+   "usd_per_ton": 191.0,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 72226.3,
+     "usd_per_ton": 191.0
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 94342.3,
+   "import_kusd": 17511.6,
+   "usd_per_ton": 185.6,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 94342.3,
+     "usd_per_ton": 185.6
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 81343.5,
+   "import_kusd": 14532.9,
+   "usd_per_ton": 178.7,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 81343.5,
+     "usd_per_ton": 178.7
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 77157.8,
+   "import_kusd": 13237.8,
+   "usd_per_ton": 171.6,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 77157.8,
+     "usd_per_ton": 171.6
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 82812.6,
+   "import_kusd": 13875.1,
+   "usd_per_ton": 167.5,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 82812.6,
+     "usd_per_ton": 167.5
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 55931.8,
+   "import_kusd": 9404.7,
+   "usd_per_ton": 168.1,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 55931.8,
+     "usd_per_ton": 168.1
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 105293.9,
+   "import_kusd": 16824.4,
+   "usd_per_ton": 159.8,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 105293.9,
+     "usd_per_ton": 159.8
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 69127.7,
+   "import_kusd": 10900.5,
+   "usd_per_ton": 157.7,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 69127.7,
+     "usd_per_ton": 157.7
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 61592.2,
+   "import_kusd": 9100.2,
+   "usd_per_ton": 147.7,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 61592.2,
+     "usd_per_ton": 147.7
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 103532.5,
+   "import_kusd": 15542.4,
+   "usd_per_ton": 150.1,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 103532.5,
+     "usd_per_ton": 150.1
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 86617.5,
+   "import_kusd": 12811.9,
+   "usd_per_ton": 147.9,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 86617.5,
+     "usd_per_ton": 147.9
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 79441.2,
+   "import_kusd": 11606.3,
+   "usd_per_ton": 146.1,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 79441.2,
+     "usd_per_ton": 146.1
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 75189.7,
+   "import_kusd": 11367.1,
+   "usd_per_ton": 151.2,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 75189.7,
+     "usd_per_ton": 151.2
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 66096.5,
+   "import_kusd": 10239.4,
+   "usd_per_ton": 154.9,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 66096.5,
+     "usd_per_ton": 154.9
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 86241.5,
+   "import_kusd": 13853.3,
+   "usd_per_ton": 160.6,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 86241.5,
+     "usd_per_ton": 160.6
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 73591.2,
+   "import_kusd": 11698.5,
+   "usd_per_ton": 159.0,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 73591.2,
+     "usd_per_ton": 159.0
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 76394.6,
+   "import_kusd": 11689.2,
+   "usd_per_ton": 153.0,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 76394.6,
+     "usd_per_ton": 153.0
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 74254.1,
+   "import_kusd": 11354.4,
+   "usd_per_ton": 152.9,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 74254.1,
+     "usd_per_ton": 152.9
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 86944.7,
+   "import_kusd": 13240.0,
+   "usd_per_ton": 152.3,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 86944.7,
+     "usd_per_ton": 152.3
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 52574.5,
+   "import_kusd": 8106.7,
+   "usd_per_ton": 154.2,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 52574.5,
+     "usd_per_ton": 154.2
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 85503.5,
+   "import_kusd": 13164.3,
+   "usd_per_ton": 154.0,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 85503.5,
+     "usd_per_ton": 154.0
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 84417.0,
+   "import_kusd": 13254.8,
+   "usd_per_ton": 157.0,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 84417.0,
+     "usd_per_ton": 157.0
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 66336.7,
+   "import_kusd": 10575.1,
+   "usd_per_ton": 159.4,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 66336.7,
+     "usd_per_ton": 159.4
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 83557.8,
+   "import_kusd": 13824.3,
+   "usd_per_ton": 165.4,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 83557.8,
+     "usd_per_ton": 165.4
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 81458.0,
+   "import_kusd": 13598.1,
+   "usd_per_ton": 166.9,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 81458.0,
+     "usd_per_ton": 166.9
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 71171.3,
+   "import_kusd": 12331.1,
+   "usd_per_ton": 173.3,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 71171.3,
+     "usd_per_ton": 173.3
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 65190.3,
+   "import_kusd": 11629.3,
+   "usd_per_ton": 178.4,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 65190.3,
+     "usd_per_ton": 178.4
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 81536.7,
+   "import_kusd": 14661.1,
+   "usd_per_ton": 179.8,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 81536.7,
+     "usd_per_ton": 179.8
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 47479.6,
+   "import_kusd": 8842.2,
+   "usd_per_ton": 186.2,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 47479.6,
+     "usd_per_ton": 186.2
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 71186.6,
+   "import_kusd": 13303.4,
+   "usd_per_ton": 186.9,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 71186.6,
+     "usd_per_ton": 186.9
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "230660",
+   "name": "팜박",
+   "category": "단미·부산물",
+   "import_ton": 89942.4,
+   "import_kusd": 16864.3,
+   "usd_per_ton": 187.5,
+   "subs": [
+    {
+     "code": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "name": "팜 너트(palm nut)나 핵(核)에서 나온 것",
+     "import_ton": 89942.4,
+     "usd_per_ton": 187.5
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1089485.4,
+   "import_kusd": 289323.1,
+   "usd_per_ton": 265.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 193748.5,
+     "usd_per_ton": 276.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 894986.3,
+     "usd_per_ton": 262.7
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 750.7,
+     "usd_per_ton": 987.9
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1101127.3,
+   "import_kusd": 283166.0,
+   "usd_per_ton": 257.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 228966.5,
+     "usd_per_ton": 275.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 871791.9,
+     "usd_per_ton": 251.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 368.9,
+     "usd_per_ton": 979.0
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 906413.7,
+   "import_kusd": 240702.7,
+   "usd_per_ton": 265.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 211226.7,
+     "usd_per_ton": 292.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 694669.9,
+     "usd_per_ton": 256.8
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 517.1,
+     "usd_per_ton": 1037.8
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1080057.8,
+   "import_kusd": 280988.7,
+   "usd_per_ton": 260.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 183611.0,
+     "usd_per_ton": 267.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 896132.3,
+     "usd_per_ton": 258.5
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 314.6,
+     "usd_per_ton": 919.4
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 817182.7,
+   "import_kusd": 214673.9,
+   "usd_per_ton": 262.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 259358.0,
+     "usd_per_ton": 272.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 556735.2,
+     "usd_per_ton": 256.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1089.5,
+     "usd_per_ton": 981.6
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1004157.3,
+   "import_kusd": 261314.1,
+   "usd_per_ton": 260.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 67053.9,
+     "usd_per_ton": 275.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 936082.7,
+     "usd_per_ton": 258.4
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1020.7,
+     "usd_per_ton": 923.9
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 853524.4,
+   "import_kusd": 222646.3,
+   "usd_per_ton": 260.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 224132.1,
+     "usd_per_ton": 258.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 627516.1,
+     "usd_per_ton": 259.8
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1876.2,
+     "usd_per_ton": 931.2
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 831264.8,
+   "import_kusd": 212415.6,
+   "usd_per_ton": 255.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 125792.1,
+     "usd_per_ton": 276.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 704654.0,
+     "usd_per_ton": 250.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 818.6,
+     "usd_per_ton": 941.5
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 974979.4,
+   "import_kusd": 242737.1,
+   "usd_per_ton": 249.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 219841.7,
+     "usd_per_ton": 255.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 753604.9,
+     "usd_per_ton": 245.6
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1532.8,
+     "usd_per_ton": 946.1
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 977578.6,
+   "import_kusd": 245406.3,
+   "usd_per_ton": 251.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 239668.4,
+     "usd_per_ton": 263.6
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 736751.7,
+     "usd_per_ton": 245.8
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1158.5,
+     "usd_per_ton": 953.9
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 820269.0,
+   "import_kusd": 206684.8,
+   "usd_per_ton": 252.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 139807.2,
+     "usd_per_ton": 268.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 679477.1,
+     "usd_per_ton": 247.5
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 984.7,
+     "usd_per_ton": 928.2
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1000119.8,
+   "import_kusd": 251567.8,
+   "usd_per_ton": 251.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 145135.8,
+     "usd_per_ton": 272.6
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 854251.3,
+     "usd_per_ton": 247.3
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 732.7,
+     "usd_per_ton": 980.8
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1017359.5,
+   "import_kusd": 251701.5,
+   "usd_per_ton": 247.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 186841.1,
+     "usd_per_ton": 261.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 829799.5,
+     "usd_per_ton": 243.7
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 718.8,
+     "usd_per_ton": 916.8
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1058400.2,
+   "import_kusd": 261454.1,
+   "usd_per_ton": 247.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 214446.6,
+     "usd_per_ton": 270.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 843372.3,
+     "usd_per_ton": 240.5
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 581.3,
+     "usd_per_ton": 922.2
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 993132.2,
+   "import_kusd": 243602.8,
+   "usd_per_ton": 245.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 259365.5,
+     "usd_per_ton": 258.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 733038.7,
+     "usd_per_ton": 239.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 727.9,
+     "usd_per_ton": 924.3
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 897840.5,
+   "import_kusd": 226865.9,
+   "usd_per_ton": 252.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 122364.0,
+     "usd_per_ton": 282.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 774846.6,
+     "usd_per_ton": 247.5
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 629.9,
+     "usd_per_ton": 893.8
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 903324.7,
+   "import_kusd": 223270.7,
+   "usd_per_ton": 247.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 199657.2,
+     "usd_per_ton": 258.2
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 703309.3,
+     "usd_per_ton": 243.7
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 358.2,
+     "usd_per_ton": 865.0
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 967486.1,
+   "import_kusd": 236656.5,
+   "usd_per_ton": 244.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 162919.9,
+     "usd_per_ton": 265.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 804031.1,
+     "usd_per_ton": 239.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 535.1,
+     "usd_per_ton": 840.1
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 947628.8,
+   "import_kusd": 236297.8,
+   "usd_per_ton": 249.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 122536.3,
+     "usd_per_ton": 267.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 823940.7,
+     "usd_per_ton": 245.8
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1151.8,
+     "usd_per_ton": 857.5
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 958208.7,
+   "import_kusd": 246275.4,
+   "usd_per_ton": 257.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 177044.3,
+     "usd_per_ton": 265.5
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 780576.0,
+     "usd_per_ton": 254.6
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 588.4,
+     "usd_per_ton": 871.3
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 873264.6,
+   "import_kusd": 223317.0,
+   "usd_per_ton": 255.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 183515.5,
+     "usd_per_ton": 263.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 689141.4,
+     "usd_per_ton": 253.0
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 607.6,
+     "usd_per_ton": 826.7
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 860226.5,
+   "import_kusd": 219532.9,
+   "usd_per_ton": 255.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 133114.3,
+     "usd_per_ton": 269.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 726624.4,
+     "usd_per_ton": 252.1
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 487.8,
+     "usd_per_ton": 882.2
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 972684.3,
+   "import_kusd": 244820.9,
+   "usd_per_ton": 251.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 224404.9,
+     "usd_per_ton": 270.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 747381.3,
+     "usd_per_ton": 245.3
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 898.2,
+     "usd_per_ton": 843.0
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 995905.1,
+   "import_kusd": 239452.1,
+   "usd_per_ton": 240.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 103521.7,
+     "usd_per_ton": 261.0
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 891856.7,
+     "usd_per_ton": 237.7
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 526.7,
+     "usd_per_ton": 841.3
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 819932.4,
+   "import_kusd": 196484.3,
+   "usd_per_ton": 239.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 105626.5,
+     "usd_per_ton": 254.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 713390.1,
+     "usd_per_ton": 236.6
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 915.8,
+     "usd_per_ton": 838.4
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1112327.2,
+   "import_kusd": 265225.1,
+   "usd_per_ton": 238.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 168620.4,
+     "usd_per_ton": 254.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 942727.3,
+     "usd_per_ton": 234.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 979.6,
+     "usd_per_ton": 860.6
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 836077.1,
+   "import_kusd": 200411.0,
+   "usd_per_ton": 239.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 150689.7,
+     "usd_per_ton": 255.9
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 684362.4,
+     "usd_per_ton": 235.2
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1025.1,
+     "usd_per_ton": 843.6
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 876119.9,
+   "import_kusd": 213974.7,
+   "usd_per_ton": 244.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 106073.1,
+     "usd_per_ton": 260.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 769249.1,
+     "usd_per_ton": 241.4
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 797.7,
+     "usd_per_ton": 851.8
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 952607.7,
+   "import_kusd": 240764.1,
+   "usd_per_ton": 252.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 201585.7,
+     "usd_per_ton": 260.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 749746.2,
+     "usd_per_ton": 249.7
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1275.7,
+     "usd_per_ton": 831.3
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 993091.8,
+   "import_kusd": 253471.0,
+   "usd_per_ton": 255.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 162926.8,
+     "usd_per_ton": 264.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 829351.2,
+     "usd_per_ton": 252.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 813.8,
+     "usd_per_ton": 820.6
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 957363.7,
+   "import_kusd": 241172.6,
+   "usd_per_ton": 251.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 171804.3,
+     "usd_per_ton": 264.4
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 784997.8,
+     "usd_per_ton": 248.8
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 561.6,
+     "usd_per_ton": 790.9
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 920649.0,
+   "import_kusd": 232325.1,
+   "usd_per_ton": 252.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 229414.7,
+     "usd_per_ton": 268.7
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 690362.5,
+     "usd_per_ton": 246.2
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 871.8,
+     "usd_per_ton": 832.0
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1079009.2,
+   "import_kusd": 279289.7,
+   "usd_per_ton": 258.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 217766.0,
+     "usd_per_ton": 295.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 860109.9,
+     "usd_per_ton": 249.0
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 1133.2,
+     "usd_per_ton": 780.3
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 911228.8,
+   "import_kusd": 242313.7,
+   "usd_per_ton": 265.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 228518.7,
+     "usd_per_ton": 288.8
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 682137.8,
+     "usd_per_ton": 257.8
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 572.2,
+     "usd_per_ton": 817.6
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 938189.6,
+   "import_kusd": 252895.5,
+   "usd_per_ton": 269.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 116262.7,
+     "usd_per_ton": 277.3
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 821078.6,
+     "usd_per_ton": 267.9
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 848.4,
+     "usd_per_ton": 820.0
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "100590",
+   "name": "사료용 옥수수",
+   "category": "단미·부산물",
+   "import_ton": 1059416.6,
+   "import_kusd": 289318.3,
+   "usd_per_ton": 273.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 112824.8,
+     "usd_per_ton": 289.1
+    },
+    {
+     "code": "사료용",
+     "name": "사료용",
+     "import_ton": 945658.4,
+     "usd_per_ton": 270.6
+    },
+    {
+     "code": "팝콘용",
+     "name": "팝콘용",
+     "import_ton": 933.4,
+     "usd_per_ton": 829.8
+    }
+   ]
+  }
+ ],
+ "collected_at": "2026-11-27 23:18 KST"
+}

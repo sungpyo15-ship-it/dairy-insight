@@ -3376,6 +3376,1050 @@
   },
   {
    "month": "2023-11",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 474.2,
+   "import_kusd": 9132.1,
+   "usd_per_ton": 19259.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.2,
+     "usd_per_ton": 22965.6
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 472.0,
+     "usd_per_ton": 19272.0
+    }
+   ]
+  },
+  {
+   "month": "2023-12",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 264.0,
+   "import_kusd": 5095.7,
+   "usd_per_ton": 19300.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 8.6,
+     "usd_per_ton": 14295.4
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.4,
+     "usd_per_ton": 7368.8
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 254.1,
+     "usd_per_ton": 19534.8
+    }
+   ]
+  },
+  {
+   "month": "2024-01",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 388.4,
+   "import_kusd": 7355.4,
+   "usd_per_ton": 18939.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.7,
+     "usd_per_ton": 22123.7
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.5,
+     "usd_per_ton": 4829.7
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 385.1,
+     "usd_per_ton": 18980.8
+    }
+   ]
+  },
+  {
+   "month": "2024-02",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 384.8,
+   "import_kusd": 7019.0,
+   "usd_per_ton": 18240.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.5,
+     "usd_per_ton": 21574.1
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.1,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 383.2,
+     "usd_per_ton": 18229.0
+    }
+   ]
+  },
+  {
+   "month": "2024-03",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 299.8,
+   "import_kusd": 5797.4,
+   "usd_per_ton": 19334.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.4,
+     "usd_per_ton": 22843.4
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.3,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 298.2,
+     "usd_per_ton": 19329.5
+    }
+   ]
+  },
+  {
+   "month": "2024-04",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 404.2,
+   "import_kusd": 8040.3,
+   "usd_per_ton": 19892.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.2,
+     "usd_per_ton": 19206.4
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.4,
+     "usd_per_ton": 7364.9
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 401.7,
+     "usd_per_ton": 19936.9
+    }
+   ]
+  },
+  {
+   "month": "2024-05",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 289.8,
+   "import_kusd": 5553.7,
+   "usd_per_ton": 19163.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.8,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.2,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 288.8,
+     "usd_per_ton": 19164.5
+    }
+   ]
+  },
+  {
+   "month": "2024-06",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 403.3,
+   "import_kusd": 7921.1,
+   "usd_per_ton": 19642.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.1,
+     "usd_per_ton": 7761.6
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 401.3,
+     "usd_per_ton": 19667.5
+    }
+   ]
+  },
+  {
+   "month": "2024-07",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 432.5,
+   "import_kusd": 8504.0,
+   "usd_per_ton": 19660.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.1,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 431.4,
+     "usd_per_ton": 19656.9
+    }
+   ]
+  },
+  {
+   "month": "2024-08",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 384.7,
+   "import_kusd": 7824.4,
+   "usd_per_ton": 20338.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.0,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.3,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 383.5,
+     "usd_per_ton": 20337.7
+    }
+   ]
+  },
+  {
+   "month": "2024-09",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 281.2,
+   "import_kusd": 5497.0,
+   "usd_per_ton": 19547.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 2.2,
+     "usd_per_ton": 8169.6
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 278.1,
+     "usd_per_ton": 19629.9
+    }
+   ]
+  },
+  {
+   "month": "2024-10",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 289.4,
+   "import_kusd": 6490.2,
+   "usd_per_ton": 22424.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.1,
+     "usd_per_ton": 20639.4
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.2,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 288.1,
+     "usd_per_ton": 22440.4
+    }
+   ]
+  },
+  {
+   "month": "2024-11",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 309.5,
+   "import_kusd": 6337.1,
+   "usd_per_ton": 20476.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.7,
+     "usd_per_ton": 18122.6
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.2,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 307.7,
+     "usd_per_ton": 20494.3
+    }
+   ]
+  },
+  {
+   "month": "2024-12",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 370.3,
+   "import_kusd": 7561.9,
+   "usd_per_ton": 20423.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.1,
+     "usd_per_ton": 20598.0
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 368.3,
+     "usd_per_ton": 20454.1
+    }
+   ]
+  },
+  {
+   "month": "2025-01",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 395.3,
+   "import_kusd": 7780.2,
+   "usd_per_ton": 19679.7,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.8,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.1,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 394.4,
+     "usd_per_ton": 19677.4
+    }
+   ]
+  },
+  {
+   "month": "2025-02",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 422.0,
+   "import_kusd": 8422.0,
+   "usd_per_ton": 19956.2,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.8,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.3,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 420.9,
+     "usd_per_ton": 19949.5
+    }
+   ]
+  },
+  {
+   "month": "2025-03",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 291.0,
+   "import_kusd": 6484.9,
+   "usd_per_ton": 22286.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.0,
+     "usd_per_ton": 20625.6
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.3,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 289.7,
+     "usd_per_ton": 22303.2
+    }
+   ]
+  },
+  {
+   "month": "2025-04",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 285.5,
+   "import_kusd": 6239.1,
+   "usd_per_ton": 21855.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.7,
+     "usd_per_ton": 7835.9
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 282.9,
+     "usd_per_ton": 21941.6
+    }
+   ]
+  },
+  {
+   "month": "2025-05",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 441.5,
+   "import_kusd": 9246.5,
+   "usd_per_ton": 20943.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.8,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.2,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 440.5,
+     "usd_per_ton": 20941.7
+    }
+   ]
+  },
+  {
+   "month": "2025-06",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 415.3,
+   "import_kusd": 8917.0,
+   "usd_per_ton": 21471.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.7,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.2,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 414.4,
+     "usd_per_ton": 21471.7
+    }
+   ]
+  },
+  {
+   "month": "2025-07",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 440.4,
+   "import_kusd": 9763.4,
+   "usd_per_ton": 22171.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.3,
+     "usd_per_ton": 7696.1
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 438.2,
+     "usd_per_ton": 22214.6
+    }
+   ]
+  },
+  {
+   "month": "2025-08",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 473.3,
+   "import_kusd": 9895.9,
+   "usd_per_ton": 20909.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 2.2,
+     "usd_per_ton": 20664.8
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.4,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 470.7,
+     "usd_per_ton": 20922.0
+    }
+   ]
+  },
+  {
+   "month": "2025-09",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 388.7,
+   "import_kusd": 8496.7,
+   "usd_per_ton": 21859.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.8,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.4,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 387.5,
+     "usd_per_ton": 21868.3
+    }
+   ]
+  },
+  {
+   "month": "2025-10",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 276.8,
+   "import_kusd": 6446.0,
+   "usd_per_ton": 23289.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.6,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.2,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 276.0,
+     "usd_per_ton": 23301.0
+    }
+   ]
+  },
+  {
+   "month": "2025-11",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 406.0,
+   "import_kusd": 9067.0,
+   "usd_per_ton": 22334.1,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.6,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.3,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 405.0,
+     "usd_per_ton": 22345.5
+    }
+   ]
+  },
+  {
+   "month": "2025-12",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 397.8,
+   "import_kusd": 8342.2,
+   "usd_per_ton": 20971.5,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.7,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.3,
+     "usd_per_ton": 7971.0
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 395.8,
+     "usd_per_ton": 21021.1
+    }
+   ]
+  },
+  {
+   "month": "2026-01",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 422.3,
+   "import_kusd": 9777.3,
+   "usd_per_ton": 23151.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 2.4,
+     "usd_per_ton": 20958.8
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.6,
+     "usd_per_ton": 8189.7
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 418.3,
+     "usd_per_ton": 23222.5
+    }
+   ]
+  },
+  {
+   "month": "2026-02",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 342.1,
+   "import_kusd": 7222.5,
+   "usd_per_ton": 21112.0,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 4.4,
+     "usd_per_ton": 15547.9
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 1.2,
+     "usd_per_ton": 7508.9
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 336.4,
+     "usd_per_ton": 21235.3
+    }
+   ]
+  },
+  {
+   "month": "2026-03",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 313.7,
+   "import_kusd": 5939.8,
+   "usd_per_ton": 18935.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.7,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.3,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 312.7,
+     "usd_per_ton": 18939.9
+    }
+   ]
+  },
+  {
+   "month": "2026-04",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 315.2,
+   "import_kusd": 5844.4,
+   "usd_per_ton": 18542.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.6,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 313.8,
+     "usd_per_ton": 18565.3
+    }
+   ]
+  },
+  {
+   "month": "2026-05",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 298.3,
+   "import_kusd": 5996.8,
+   "usd_per_ton": 20100.4,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.6,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.4,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 297.3,
+     "usd_per_ton": 20117.5
+    }
+   ]
+  },
+  {
+   "month": "2026-06",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 348.5,
+   "import_kusd": 8433.2,
+   "usd_per_ton": 24198.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.5,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.9,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 347.1,
+     "usd_per_ton": 24243.0
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 396.2,
+   "import_kusd": 8093.0,
+   "usd_per_ton": 20426.9,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.7,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.7,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 394.8,
+     "usd_per_ton": 20457.8
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 357.3,
+   "import_kusd": 7718.9,
+   "usd_per_ton": 21606.3,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 0.6,
+     "usd_per_ton": null
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.7,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 356.0,
+     "usd_per_ton": 21631.3
+    }
+   ]
+  },
+  {
+   "month": "2026-09",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 210.0,
+   "import_kusd": 5411.8,
+   "usd_per_ton": 25772.6,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 1.0,
+     "usd_per_ton": 14245.2
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.5,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 208.5,
+     "usd_per_ton": 25869.7
+    }
+   ]
+  },
+  {
+   "month": "2026-10",
+   "hs": "190110",
+   "name": "조제분유 (영유아용 조제식료품)",
+   "category": "분유",
+   "import_ton": 423.6,
+   "import_kusd": 7777.4,
+   "usd_per_ton": 18360.8,
+   "subs": [
+    {
+     "code": "기타",
+     "name": "기타",
+     "import_ton": 4.2,
+     "usd_per_ton": 7390.5
+    },
+    {
+     "code": "오트밀의 것",
+     "name": "오트밀의 것",
+     "import_ton": 0.6,
+     "usd_per_ton": null
+    },
+    {
+     "code": "조제 분유",
+     "name": "조제 분유",
+     "import_ton": 418.9,
+     "usd_per_ton": 18483.5
+    }
+   ]
+  },
+  {
+   "month": "2023-11",
    "hs": "040410",
    "name": "유장·유장분말 (대용유 원료)",
    "category": "유청·대용유 원료",
@@ -7543,1051 +8587,7 @@
      "usd_per_ton": 4595.3
     }
    ]
-  },
-  {
-   "month": "2023-11",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 474.2,
-   "import_kusd": 9132.1,
-   "usd_per_ton": 19259.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.2,
-     "usd_per_ton": 22965.6
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 472.0,
-     "usd_per_ton": 19272.0
-    }
-   ]
-  },
-  {
-   "month": "2023-12",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 264.0,
-   "import_kusd": 5095.7,
-   "usd_per_ton": 19300.3,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 8.6,
-     "usd_per_ton": 14295.4
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.4,
-     "usd_per_ton": 7368.8
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 254.1,
-     "usd_per_ton": 19534.8
-    }
-   ]
-  },
-  {
-   "month": "2024-01",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 388.4,
-   "import_kusd": 7355.4,
-   "usd_per_ton": 18939.3,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.7,
-     "usd_per_ton": 22123.7
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.5,
-     "usd_per_ton": 4829.7
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 385.1,
-     "usd_per_ton": 18980.8
-    }
-   ]
-  },
-  {
-   "month": "2024-02",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 384.8,
-   "import_kusd": 7019.0,
-   "usd_per_ton": 18240.1,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.5,
-     "usd_per_ton": 21574.1
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.1,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 383.2,
-     "usd_per_ton": 18229.0
-    }
-   ]
-  },
-  {
-   "month": "2024-03",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 299.8,
-   "import_kusd": 5797.4,
-   "usd_per_ton": 19334.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.4,
-     "usd_per_ton": 22843.4
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.3,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 298.2,
-     "usd_per_ton": 19329.5
-    }
-   ]
-  },
-  {
-   "month": "2024-04",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 404.2,
-   "import_kusd": 8040.3,
-   "usd_per_ton": 19892.1,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.2,
-     "usd_per_ton": 19206.4
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.4,
-     "usd_per_ton": 7364.9
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 401.7,
-     "usd_per_ton": 19936.9
-    }
-   ]
-  },
-  {
-   "month": "2024-05",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 289.8,
-   "import_kusd": 5553.7,
-   "usd_per_ton": 19163.0,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.8,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.2,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 288.8,
-     "usd_per_ton": 19164.5
-    }
-   ]
-  },
-  {
-   "month": "2024-06",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 403.3,
-   "import_kusd": 7921.1,
-   "usd_per_ton": 19642.0,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.1,
-     "usd_per_ton": 7761.6
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 401.3,
-     "usd_per_ton": 19667.5
-    }
-   ]
-  },
-  {
-   "month": "2024-07",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 432.5,
-   "import_kusd": 8504.0,
-   "usd_per_ton": 19660.8,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.0,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.1,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 431.4,
-     "usd_per_ton": 19656.9
-    }
-   ]
-  },
-  {
-   "month": "2024-08",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 384.7,
-   "import_kusd": 7824.4,
-   "usd_per_ton": 20338.1,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.0,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.3,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 383.5,
-     "usd_per_ton": 20337.7
-    }
-   ]
-  },
-  {
-   "month": "2024-09",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 281.2,
-   "import_kusd": 5497.0,
-   "usd_per_ton": 19547.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 2.2,
-     "usd_per_ton": 8169.6
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 278.1,
-     "usd_per_ton": 19629.9
-    }
-   ]
-  },
-  {
-   "month": "2024-10",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 289.4,
-   "import_kusd": 6490.2,
-   "usd_per_ton": 22424.9,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.1,
-     "usd_per_ton": 20639.4
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.2,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 288.1,
-     "usd_per_ton": 22440.4
-    }
-   ]
-  },
-  {
-   "month": "2024-11",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 309.5,
-   "import_kusd": 6337.1,
-   "usd_per_ton": 20476.1,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.7,
-     "usd_per_ton": 18122.6
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.2,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 307.7,
-     "usd_per_ton": 20494.3
-    }
-   ]
-  },
-  {
-   "month": "2024-12",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 370.3,
-   "import_kusd": 7561.9,
-   "usd_per_ton": 20423.7,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.1,
-     "usd_per_ton": 20598.0
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 368.3,
-     "usd_per_ton": 20454.1
-    }
-   ]
-  },
-  {
-   "month": "2025-01",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 395.3,
-   "import_kusd": 7780.2,
-   "usd_per_ton": 19679.7,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.8,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.1,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 394.4,
-     "usd_per_ton": 19677.4
-    }
-   ]
-  },
-  {
-   "month": "2025-02",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 422.0,
-   "import_kusd": 8422.0,
-   "usd_per_ton": 19956.2,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.8,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.3,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 420.9,
-     "usd_per_ton": 19949.5
-    }
-   ]
-  },
-  {
-   "month": "2025-03",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 291.0,
-   "import_kusd": 6484.9,
-   "usd_per_ton": 22286.8,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.0,
-     "usd_per_ton": 20625.6
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.3,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 289.7,
-     "usd_per_ton": 22303.2
-    }
-   ]
-  },
-  {
-   "month": "2025-04",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 285.5,
-   "import_kusd": 6239.1,
-   "usd_per_ton": 21855.5,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.7,
-     "usd_per_ton": 7835.9
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 282.9,
-     "usd_per_ton": 21941.6
-    }
-   ]
-  },
-  {
-   "month": "2025-05",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 441.5,
-   "import_kusd": 9246.5,
-   "usd_per_ton": 20943.4,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.8,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.2,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 440.5,
-     "usd_per_ton": 20941.7
-    }
-   ]
-  },
-  {
-   "month": "2025-06",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 415.3,
-   "import_kusd": 8917.0,
-   "usd_per_ton": 21471.9,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.7,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.2,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 414.4,
-     "usd_per_ton": 21471.7
-    }
-   ]
-  },
-  {
-   "month": "2025-07",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 440.4,
-   "import_kusd": 9763.4,
-   "usd_per_ton": 22171.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.3,
-     "usd_per_ton": 7696.1
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 438.2,
-     "usd_per_ton": 22214.6
-    }
-   ]
-  },
-  {
-   "month": "2025-08",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 473.3,
-   "import_kusd": 9895.9,
-   "usd_per_ton": 20909.9,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 2.2,
-     "usd_per_ton": 20664.8
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.4,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 470.7,
-     "usd_per_ton": 20922.0
-    }
-   ]
-  },
-  {
-   "month": "2025-09",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 388.7,
-   "import_kusd": 8496.7,
-   "usd_per_ton": 21859.3,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.8,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.4,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 387.5,
-     "usd_per_ton": 21868.3
-    }
-   ]
-  },
-  {
-   "month": "2025-10",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 276.8,
-   "import_kusd": 6446.0,
-   "usd_per_ton": 23289.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.6,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.2,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 276.0,
-     "usd_per_ton": 23301.0
-    }
-   ]
-  },
-  {
-   "month": "2025-11",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 406.0,
-   "import_kusd": 9067.0,
-   "usd_per_ton": 22334.1,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.6,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.3,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 405.0,
-     "usd_per_ton": 22345.5
-    }
-   ]
-  },
-  {
-   "month": "2025-12",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 397.8,
-   "import_kusd": 8342.2,
-   "usd_per_ton": 20971.5,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.7,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.3,
-     "usd_per_ton": 7971.0
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 395.8,
-     "usd_per_ton": 21021.1
-    }
-   ]
-  },
-  {
-   "month": "2026-01",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 422.3,
-   "import_kusd": 9777.3,
-   "usd_per_ton": 23151.9,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 2.4,
-     "usd_per_ton": 20958.8
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.6,
-     "usd_per_ton": 8189.7
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 418.3,
-     "usd_per_ton": 23222.5
-    }
-   ]
-  },
-  {
-   "month": "2026-02",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 342.1,
-   "import_kusd": 7222.5,
-   "usd_per_ton": 21112.0,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 4.4,
-     "usd_per_ton": 15547.9
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 1.2,
-     "usd_per_ton": 7508.9
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 336.4,
-     "usd_per_ton": 21235.3
-    }
-   ]
-  },
-  {
-   "month": "2026-03",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 313.7,
-   "import_kusd": 5939.8,
-   "usd_per_ton": 18935.3,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.7,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.3,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 312.7,
-     "usd_per_ton": 18939.9
-    }
-   ]
-  },
-  {
-   "month": "2026-04",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 315.2,
-   "import_kusd": 5844.4,
-   "usd_per_ton": 18542.9,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.6,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 313.8,
-     "usd_per_ton": 18565.3
-    }
-   ]
-  },
-  {
-   "month": "2026-05",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 298.3,
-   "import_kusd": 5996.8,
-   "usd_per_ton": 20100.4,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.6,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.4,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 297.3,
-     "usd_per_ton": 20117.5
-    }
-   ]
-  },
-  {
-   "month": "2026-06",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 348.5,
-   "import_kusd": 8433.2,
-   "usd_per_ton": 24198.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.5,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.9,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 347.1,
-     "usd_per_ton": 24243.0
-    }
-   ]
-  },
-  {
-   "month": "2026-07",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 396.2,
-   "import_kusd": 8093.0,
-   "usd_per_ton": 20426.9,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.7,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.7,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 394.8,
-     "usd_per_ton": 20457.8
-    }
-   ]
-  },
-  {
-   "month": "2026-08",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 357.3,
-   "import_kusd": 7718.9,
-   "usd_per_ton": 21606.3,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 0.6,
-     "usd_per_ton": null
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.7,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 356.0,
-     "usd_per_ton": 21631.3
-    }
-   ]
-  },
-  {
-   "month": "2026-09",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 210.0,
-   "import_kusd": 5411.8,
-   "usd_per_ton": 25772.6,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 1.0,
-     "usd_per_ton": 14245.2
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.5,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 208.5,
-     "usd_per_ton": 25869.7
-    }
-   ]
-  },
-  {
-   "month": "2026-10",
-   "hs": "190110",
-   "name": "조제분유 (영유아용 조제식료품)",
-   "category": "분유",
-   "import_ton": 423.6,
-   "import_kusd": 7777.4,
-   "usd_per_ton": 18360.8,
-   "subs": [
-    {
-     "code": "기타",
-     "name": "기타",
-     "import_ton": 4.2,
-     "usd_per_ton": 7390.5
-    },
-    {
-     "code": "오트밀의 것",
-     "name": "오트밀의 것",
-     "import_ton": 0.6,
-     "usd_per_ton": null
-    },
-    {
-     "code": "조제 분유",
-     "name": "조제 분유",
-     "import_ton": 418.9,
-     "usd_per_ton": 18483.5
-    }
-   ]
   }
  ],
- "collected_at": "2026-11-27 11:32 KST"
+ "collected_at": "2026-11-27 23:18 KST"
 }
