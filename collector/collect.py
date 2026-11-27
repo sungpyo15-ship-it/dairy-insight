@@ -583,7 +583,7 @@ def main():
             ("usdkrw", "원/달러 환율", collect_ecos),
             ("grain_prices", "국제 곡물 가격 (세계은행)", collect_worldbank),
             ("us_hay_ppi", "미국 건초 생산자물가지수 (FRED)", collect_fred_hay),
-            ("krei_dairy", "KREI 축산관측 젖소 (원유 수급·사육·산지가격)", collect_krei),
+            ("krei_dairy", "KREI 축산관측 젖소 (원유 수급·사육·산지가격·배합사료·도축)", collect_krei),
             ("milk_rules", "유업체별 유대 정산 기준 (업로드 엑셀)", collect_milk_rules),
             ("forage_import", "조사료 수입", lambda: collect_customs("forage_import")),
             ("dairy_import", "유제품 수입 (우유·멸균유·분유·유청·버터·치즈)", lambda: collect_customs("dairy_import")),
